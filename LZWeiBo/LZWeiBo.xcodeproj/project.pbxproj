@@ -7,25 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1893CF011C78114D005C5F66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893CF001C78114D005C5F66 /* main.m */; };
-		1893CF041C78114D005C5F66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893CF031C78114D005C5F66 /* AppDelegate.m */; };
-		1893CF071C78114D005C5F66 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1893CF061C78114D005C5F66 /* ViewController.m */; };
-		1893CF0A1C78114D005C5F66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF081C78114D005C5F66 /* Main.storyboard */; };
 		1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0B1C78114D005C5F66 /* Assets.xcassets */; };
 		1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */; };
+		18C16A491C80AFD600923474 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C16A471C80AFD600923474 /* AppDelegate.m */; };
+		18C16A4A1C80AFD600923474 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C16A481C80AFD600923474 /* main.m */; };
+		18C16A4E1C80BD3500923474 /* LZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C16A4D1C80BD3500923474 /* LZHomeViewController.m */; };
+		18C16A511C80BD4D00923474 /* LZMessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C16A501C80BD4D00923474 /* LZMessageCenterViewController.m */; };
+		18C16A541C80BD6200923474 /* LZDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C16A531C80BD6200923474 /* LZDiscoverViewController.m */; };
+		18C16A571C80BD7500923474 /* LZProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C16A561C80BD7500923474 /* LZProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1893CEFC1C78114D005C5F66 /* LZWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1893CF001C78114D005C5F66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1893CF021C78114D005C5F66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1893CF031C78114D005C5F66 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1893CF051C78114D005C5F66 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1893CF061C78114D005C5F66 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1893CF091C78114D005C5F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1893CF0B1C78114D005C5F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1893CF0E1C78114D005C5F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1893CF101C78114D005C5F66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18C16A461C80AFD600923474 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18C16A471C80AFD600923474 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18C16A481C80AFD600923474 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18C16A4B1C80B10D00923474 /* LZWeiBo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZWeiBo.pch; sourceTree = "<group>"; };
+		18C16A4C1C80BD3500923474 /* LZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZHomeViewController.h; sourceTree = "<group>"; };
+		18C16A4D1C80BD3500923474 /* LZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZHomeViewController.m; sourceTree = "<group>"; };
+		18C16A4F1C80BD4D00923474 /* LZMessageCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZMessageCenterViewController.h; sourceTree = "<group>"; };
+		18C16A501C80BD4D00923474 /* LZMessageCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZMessageCenterViewController.m; sourceTree = "<group>"; };
+		18C16A521C80BD6200923474 /* LZDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZDiscoverViewController.h; sourceTree = "<group>"; };
+		18C16A531C80BD6200923474 /* LZDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZDiscoverViewController.m; sourceTree = "<group>"; };
+		18C16A551C80BD7500923474 /* LZProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZProfileViewController.h; sourceTree = "<group>"; };
+		18C16A561C80BD7500923474 /* LZProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +66,7 @@
 		1893CEFE1C78114D005C5F66 /* LZWeiBo */ = {
 			isa = PBXGroup;
 			children = (
-				1893CF021C78114D005C5F66 /* AppDelegate.h */,
-				1893CF031C78114D005C5F66 /* AppDelegate.m */,
-				1893CF051C78114D005C5F66 /* ViewController.h */,
-				1893CF061C78114D005C5F66 /* ViewController.m */,
-				1893CF081C78114D005C5F66 /* Main.storyboard */,
+				18C16A451C80AFD600923474 /* Classes */,
 				1893CF0B1C78114D005C5F66 /* Assets.xcassets */,
 				1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */,
 				1893CF101C78114D005C5F66 /* Info.plist */,
@@ -74,9 +78,27 @@
 		1893CEFF1C78114D005C5F66 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1893CF001C78114D005C5F66 /* main.m */,
+				18C16A4B1C80B10D00923474 /* LZWeiBo.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18C16A451C80AFD600923474 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				18C16A461C80AFD600923474 /* AppDelegate.h */,
+				18C16A471C80AFD600923474 /* AppDelegate.m */,
+				18C16A4C1C80BD3500923474 /* LZHomeViewController.h */,
+				18C16A4D1C80BD3500923474 /* LZHomeViewController.m */,
+				18C16A4F1C80BD4D00923474 /* LZMessageCenterViewController.h */,
+				18C16A501C80BD4D00923474 /* LZMessageCenterViewController.m */,
+				18C16A521C80BD6200923474 /* LZDiscoverViewController.h */,
+				18C16A531C80BD6200923474 /* LZDiscoverViewController.m */,
+				18C16A551C80BD7500923474 /* LZProfileViewController.h */,
+				18C16A561C80BD7500923474 /* LZProfileViewController.m */,
+				18C16A481C80AFD600923474 /* main.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +161,6 @@
 			files = (
 				1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */,
 				1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */,
-				1893CF0A1C78114D005C5F66 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,23 +171,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1893CF071C78114D005C5F66 /* ViewController.m in Sources */,
-				1893CF041C78114D005C5F66 /* AppDelegate.m in Sources */,
-				1893CF011C78114D005C5F66 /* main.m in Sources */,
+				18C16A4A1C80AFD600923474 /* main.m in Sources */,
+				18C16A511C80BD4D00923474 /* LZMessageCenterViewController.m in Sources */,
+				18C16A571C80BD7500923474 /* LZProfileViewController.m in Sources */,
+				18C16A541C80BD6200923474 /* LZDiscoverViewController.m in Sources */,
+				18C16A4E1C80BD3500923474 /* LZHomeViewController.m in Sources */,
+				18C16A491C80AFD600923474 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1893CF081C78114D005C5F66 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1893CF091C78114D005C5F66 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -263,6 +279,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LZWeiBo/LZWeiBo.pch;
 				INFOPLIST_FILE = LZWeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -276,6 +294,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LZWeiBo/LZWeiBo.pch;
 				INFOPLIST_FILE = LZWeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
