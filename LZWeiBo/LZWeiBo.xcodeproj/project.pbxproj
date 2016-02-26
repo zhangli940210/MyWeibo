@@ -105,8 +105,9 @@
 		1893CEF41C78114D005C5F66 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LZ;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "小码哥";
+				ORGANIZATIONNAME = m14a;
 				TargetAttributes = {
 					1893CEFB1C78114D005C5F66 = {
 						CreatedOnToolsVersion = 7.2;
@@ -261,9 +262,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = LZWeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.520it.LZWeiBo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.m14a.cn.LZWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -272,9 +275,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = LZWeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.520it.LZWeiBo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.m14a.cn.LZWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -298,6 +303,7 @@
 				1893CF151C78114D005C5F66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
