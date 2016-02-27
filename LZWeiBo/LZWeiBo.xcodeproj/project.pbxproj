@@ -16,6 +16,7 @@
 		1834F0AA1C81D14C00765525 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F0961C81D14C00765525 /* main.m */; };
 		1834F0AB1C81D14C00765525 /* LZMessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F09B1C81D14C00765525 /* LZMessageCenterViewController.m */; };
 		1834F0AC1C81D14C00765525 /* LZProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F0A11C81D14C00765525 /* LZProfileViewController.m */; };
+		1834F0AF1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F0AE1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m */; };
 		1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0B1C78114D005C5F66 /* Assets.xcassets */; };
 		1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,8 @@
 		1834F09B1C81D14C00765525 /* LZMessageCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZMessageCenterViewController.m; sourceTree = "<group>"; };
 		1834F0A01C81D14C00765525 /* LZProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZProfileViewController.h; sourceTree = "<group>"; };
 		1834F0A11C81D14C00765525 /* LZProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZProfileViewController.m; sourceTree = "<group>"; };
+		1834F0AD1C81DA0A00765525 /* UIBarButtonItem+LZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LZExtension.h"; sourceTree = "<group>"; };
+		1834F0AE1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LZExtension.m"; sourceTree = "<group>"; };
 		1893CEFC1C78114D005C5F66 /* LZWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1893CF0B1C78114D005C5F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1893CF0E1C78114D005C5F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 			children = (
 				1834F08A1C81D14C00765525 /* UIView+LZExtension.h */,
 				1834F08B1C81D14C00765525 /* UIView+LZExtension.m */,
+				1834F0AD1C81DA0A00765525 /* UIBarButtonItem+LZExtension.h */,
+				1834F0AE1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				1834F0AB1C81D14C00765525 /* LZMessageCenterViewController.m in Sources */,
 				1834F0AA1C81D14C00765525 /* main.m in Sources */,
 				1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */,
+				1834F0AF1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m in Sources */,
 				1834F0AC1C81D14C00765525 /* LZProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
