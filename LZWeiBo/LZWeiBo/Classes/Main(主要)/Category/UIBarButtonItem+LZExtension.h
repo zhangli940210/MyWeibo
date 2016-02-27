@@ -10,4 +10,6 @@
 
 @interface UIBarButtonItem (LZExtension)
 + (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage;
+
++ (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action color:(UIColor *)color highColor:(UIColor *)highColor title:(NSString *)title highTitle:(NSString *)highTitle;
 @end
