@@ -11,6 +11,7 @@
 #import "LZMessageCenterViewController.h"
 #import "LZDiscoverViewController.h"
 #import "LZProfileViewController.h"
+#import "LZNavigationController.h"
 
 @interface LZTabBarViewController ()
 
@@ -65,7 +66,8 @@
     childVc.view.backgroundColor = LZRandomColor;
     
     // 先给外面传进来的小控制器 包装 一个导航控制器
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:childVc];
+    // initWithRootViewController默认push了一次控制器
+    LZNavigationController *nav = [[LZNavigationController alloc] initWithRootViewController:childVc];
     // 添加为子控制器
     [self addChildViewController:nav];
 }

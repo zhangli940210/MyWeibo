@@ -4,6 +4,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "UIView+LZExtension.h"
 
 #ifdef DEBUG
 #define LZLog(...)  NSLog(__VA_ARGS__)
