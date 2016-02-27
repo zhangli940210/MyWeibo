@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1834F02D1C81776600765525 /* LZTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F02C1C81776600765525 /* LZTabBarViewController.m */; };
 		1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0B1C78114D005C5F66 /* Assets.xcassets */; };
 		1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */; };
 		18C16A491C80AFD600923474 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C16A471C80AFD600923474 /* AppDelegate.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1834F02B1C81776600765525 /* LZTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTabBarViewController.h; sourceTree = "<group>"; };
+		1834F02C1C81776600765525 /* LZTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZTabBarViewController.m; sourceTree = "<group>"; };
 		1893CEFC1C78114D005C5F66 /* LZWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1893CF0B1C78114D005C5F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1893CF0E1C78114D005C5F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 				18C16A531C80BD6200923474 /* LZDiscoverViewController.m */,
 				18C16A551C80BD7500923474 /* LZProfileViewController.h */,
 				18C16A561C80BD7500923474 /* LZProfileViewController.m */,
+				1834F02B1C81776600765525 /* LZTabBarViewController.h */,
+				1834F02C1C81776600765525 /* LZTabBarViewController.m */,
 				18C16A481C80AFD600923474 /* main.m */,
 			);
 			path = Classes;
@@ -177,6 +182,7 @@
 				18C16A541C80BD6200923474 /* LZDiscoverViewController.m in Sources */,
 				18C16A4E1C80BD3500923474 /* LZHomeViewController.m in Sources */,
 				18C16A491C80AFD600923474 /* AppDelegate.m in Sources */,
+				1834F02D1C81776600765525 /* LZTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
