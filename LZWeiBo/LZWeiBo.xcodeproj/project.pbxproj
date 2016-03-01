@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1820E8091C85F85B00956845 /* LZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820E8081C85F85B00956845 /* LZTabBar.m */; };
 		1834F0A41C81D14C00765525 /* LZDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F07F1C81D14C00765525 /* LZDiscoverViewController.m */; };
 		1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F0851C81D14C00765525 /* LZHomeViewController.m */; };
 		1834F0A61C81D14C00765525 /* UIView+LZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F08B1C81D14C00765525 /* UIView+LZExtension.m */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1820E8071C85F85B00956845 /* LZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTabBar.h; sourceTree = "<group>"; };
+		1820E8081C85F85B00956845 /* LZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZTabBar.m; sourceTree = "<group>"; };
 		1834F07E1C81D14C00765525 /* LZDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZDiscoverViewController.h; sourceTree = "<group>"; };
 		1834F07F1C81D14C00765525 /* LZDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZDiscoverViewController.m; sourceTree = "<group>"; };
 		1834F0841C81D14C00765525 /* LZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZHomeViewController.h; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 		1834F0971C81D14C00765525 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1820E8071C85F85B00956845 /* LZTabBar.h */,
+				1820E8081C85F85B00956845 /* LZTabBar.m */,
 				18BED61A1C85435E000BC2A0 /* LZSearchBar.h */,
 				18BED61B1C85435E000BC2A0 /* LZSearchBar.m */,
 				18BED61D1C856C93000BC2A0 /* LZDropdownMenu.h */,
@@ -391,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1834F0A81C81D14C00765525 /* LZTabBarViewController.m in Sources */,
+				1820E8091C85F85B00956845 /* LZTabBar.m in Sources */,
 				1834F0A41C81D14C00765525 /* LZDiscoverViewController.m in Sources */,
 				18BED6221C858508000BC2A0 /* LZTitleMenuViewController.m in Sources */,
 				1834F0A91C81D14C00765525 /* AppDelegate.m in Sources */,
