@@ -19,6 +19,7 @@
 		1834F0AF1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F0AE1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m */; };
 		1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0B1C78114D005C5F66 /* Assets.xcassets */; };
 		1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */; };
+		18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61B1C85435E000BC2A0 /* LZSearchBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		1893CF0B1C78114D005C5F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1893CF0E1C78114D005C5F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1893CF101C78114D005C5F66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BED61A1C85435E000BC2A0 /* LZSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZSearchBar.h; sourceTree = "<group>"; };
+		18BED61B1C85435E000BC2A0 /* LZSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZSearchBar.m; sourceTree = "<group>"; };
 		18C16A4B1C80B10D00923474 /* LZWeiBo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZWeiBo.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +190,8 @@
 		1834F0971C81D14C00765525 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18BED61A1C85435E000BC2A0 /* LZSearchBar.h */,
+				18BED61B1C85435E000BC2A0 /* LZSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 				1834F0A71C81D14C00765525 /* LZNavigationController.m in Sources */,
 				1834F0A61C81D14C00765525 /* UIView+LZExtension.m in Sources */,
 				1834F0AB1C81D14C00765525 /* LZMessageCenterViewController.m in Sources */,
+				18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */,
 				1834F0AA1C81D14C00765525 /* main.m in Sources */,
 				1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */,
 				1834F0AF1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m in Sources */,
