@@ -20,6 +20,7 @@
 		1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0B1C78114D005C5F66 /* Assets.xcassets */; };
 		1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */; };
 		18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61B1C85435E000BC2A0 /* LZSearchBar.m */; };
+		18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61E1C856C93000BC2A0 /* LZDropdownMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,8 @@
 		1893CF101C78114D005C5F66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18BED61A1C85435E000BC2A0 /* LZSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZSearchBar.h; sourceTree = "<group>"; };
 		18BED61B1C85435E000BC2A0 /* LZSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZSearchBar.m; sourceTree = "<group>"; };
+		18BED61D1C856C93000BC2A0 /* LZDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZDropdownMenu.h; sourceTree = "<group>"; };
+		18BED61E1C856C93000BC2A0 /* LZDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZDropdownMenu.m; sourceTree = "<group>"; };
 		18C16A4B1C80B10D00923474 /* LZWeiBo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZWeiBo.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +195,8 @@
 			children = (
 				18BED61A1C85435E000BC2A0 /* LZSearchBar.h */,
 				18BED61B1C85435E000BC2A0 /* LZSearchBar.m */,
+				18BED61D1C856C93000BC2A0 /* LZDropdownMenu.h */,
+				18BED61E1C856C93000BC2A0 /* LZDropdownMenu.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				1834F0A81C81D14C00765525 /* LZTabBarViewController.m in Sources */,
 				1834F0A41C81D14C00765525 /* LZDiscoverViewController.m in Sources */,
 				1834F0A91C81D14C00765525 /* AppDelegate.m in Sources */,
+				18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */,
 				1834F0A71C81D14C00765525 /* LZNavigationController.m in Sources */,
 				1834F0A61C81D14C00765525 /* UIView+LZExtension.m in Sources */,
 				1834F0AB1C81D14C00765525 /* LZMessageCenterViewController.m in Sources */,
