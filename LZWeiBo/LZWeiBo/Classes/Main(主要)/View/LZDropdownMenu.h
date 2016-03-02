@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class LZDropdownMenu;
+
+@protocol LZDropdownMenuDelegate <NSObject>
+@optional
+- (void)dropdownMenuDidDismiss:(LZDropdownMenu *)menu;
+- (void)dropdownMenuDidShow:(LZDropdownMenu *)menu;
+@end
+
 @interface LZDropdownMenu : UIView
 
 + (instancetype)menu;
+
+@property (nonatomic, weak) id<LZDropdownMenuDelegate> delegate;
 
 /**
  *  显示

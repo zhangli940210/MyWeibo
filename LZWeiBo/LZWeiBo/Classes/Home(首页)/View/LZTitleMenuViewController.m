@@ -19,7 +19,8 @@
 {
     [super viewDidLoad];
     
-    
+    // 设置tableView的背景色透明
+    self.tableView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,12 +44,16 @@
     }
     
     if (indexPath.row == 0) {
-        cell.textLabel.text = @"好友";
+        cell.textLabel.text = @"好友圈";
     } else if (indexPath.row == 1) {
-        cell.textLabel.text = @"密友";
+        cell.textLabel.text = @"群微博";
     } else if (indexPath.row == 2) {
-        cell.textLabel.text = @"全部";
+        cell.textLabel.text = @"特别关注";
     }
+    // 设置文字颜色
+    cell.textLabel.textColor = [UIColor whiteColor];
+    // 设置cell的背景色透明
+    cell.backgroundColor = [UIColor clearColor];
     
     return cell;
 }
