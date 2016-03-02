@@ -128,23 +128,15 @@
 
 - (void)startClick
 {
-    // 切换到LZTabBarViewController
-    /*
-     切换控制器的手段
-     1.push：依赖于UINavigationController，控制器的切换是可逆的，比如A切换到B，B又可以回到A
-     2.modal：控制器的切换是可逆的，比如A切换到B，B又可以回到A
-     3.切换window的rootViewController
-     */
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     window.rootViewController = [[LZTabBarViewController alloc] init];
-    
-    // modal方式，不建议采取：新特性控制器不会销毁
-    //    HWTabBarViewController *main = [[HWTabBarViewController alloc] init];
-    //    [self presentViewController:main animated:YES completion:nil];
 }
 
+/*
+// 证明LZNewfeatureViewController控制器挂了
 - (void)dealloc
 {
     LZLog(@"LZNewfeatureViewController-dealloc");
 }
+ */
 @end
