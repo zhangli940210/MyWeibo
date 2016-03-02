@@ -104,27 +104,9 @@
     shareBtn.centerY = imageView.height * 0.65;
     [shareBtn addTarget:self action:@selector(shareClick:) forControlEvents:UIControlEventTouchUpInside];
     [imageView addSubview:shareBtn];
-    //    shareBtn.backgroundColor = [UIColor redColor];
-    //    shareBtn.imageView.backgroundColor = [UIColor blueColor];
-    //    shareBtn.titleLabel.backgroundColor = [UIColor yellowColor];
-    
-    // top left bottom right
-    
-    // EdgeInsets: 自切
-    // contentEdgeInsets:会影响按钮内部的所有内容（里面的imageView和titleLabel）
-    //    shareBtn.contentEdgeInsets = UIEdgeInsetsMake(10, 100, 0, 0);
     
     // titleEdgeInsets:只影响按钮内部的titleLabel
     shareBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-    
-    // imageEdgeInsets:只影响按钮内部的imageView
-    //    shareBtn.imageEdgeInsets = UIEdgeInsetsMake(20, 0, 0, 50);
-    
-    
-    
-    //    shareBtn.titleEdgeInsets
-    //    shareBtn.imageEdgeInsets
-    //    shareBtn.contentEdgeInsets
     
     // 2.开始微博
     UIButton *startBtn = [[UIButton alloc] init];
@@ -146,7 +128,7 @@
 
 - (void)startClick
 {
-    // 切换到HWTabBarController
+    // 切换到LZTabBarViewController
     /*
      切换控制器的手段
      1.push：依赖于UINavigationController，控制器的切换是可逆的，比如A切换到B，B又可以回到A
@@ -163,40 +145,6 @@
 
 - (void)dealloc
 {
-    LZLog(@"HWNewfeatureViewController-dealloc");
+    LZLog(@"LZNewfeatureViewController-dealloc");
 }
-
-/*
- 1.程序启动会自动加载叫做Default的图片
- 1> 3.5inch 非retain屏幕：Default.png
- 2> 3.5inch retina屏幕：Default@2x.png
- 3> 4.0inch retain屏幕: Default-568h@2x.png
- 
- 2.只有程序启动时自动去加载的图片, 才会自动在4inch retina时查找-568h@2x.png
- */
-
-/*
- 一个控件用肉眼看不见，有哪些可能
- 1.根本没有创建实例化这个控件
- 2.没有设置尺寸
- 3.控件的颜色跟父控件的背景色一样（实际上已经显示了，只不过用肉眼看不见）
- 4.透明度alpha <= 0.01
- 5.hidden = YES
- 6.没有添加到父控件中
- 7.被其他控件挡住了
- 8.位置不对
- 9.父控件发生了以上情况
- 10.特殊情况
- * UIImageView没有设置image属性，或者设置的图片名不对
- * UILabel没有设置文字，或者文字颜色和跟父控件的背景色一样
- * UITextField没有设置文字，或者没有设置边框样式borderStyle
- * UIPageControl没有设置总页数，不会显示小圆点
- * UIButton内部imageView和titleLabel的frame被篡改了，或者imageView和titleLabel没有内容
- * .....
- 
- 添加一个控件的建议（调试技巧）：
- 1.最好设置背景色和尺寸
- 2.控件的颜色尽量不要跟父控件的背景色一样
- */
-
 @end
