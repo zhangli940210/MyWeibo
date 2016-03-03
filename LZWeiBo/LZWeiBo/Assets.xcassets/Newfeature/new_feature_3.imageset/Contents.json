@@ -14,9 +14,8 @@
       "scale" : "3x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "filename" : "new_feature_3-568h@2x.png",
-      "unassigned" : true,
       "subtype" : "retina4",
       "scale" : "2x"
     }

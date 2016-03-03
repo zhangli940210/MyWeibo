@@ -31,6 +31,10 @@
 		1894189A1C871EE000B284BA /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894188F1C871EE000B284BA /* AFURLRequestSerialization.m */; };
 		1894189B1C871EE000B284BA /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 189418911C871EE000B284BA /* AFURLResponseSerialization.m */; };
 		1894189C1C871EE000B284BA /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 189418931C871EE000B284BA /* AFURLSessionManager.m */; };
+		189434201C8870DD00BEB073 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894341C1C8870DD00BEB073 /* MBProgressHUD+MJ.m */; };
+		189434211C8870DD00BEB073 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1894341D1C8870DD00BEB073 /* MBProgressHUD.bundle */; };
+		189434221C8870DD00BEB073 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894341F1C8870DD00BEB073 /* MBProgressHUD.m */; };
+		189434261C88733300BEB073 /* LZAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 189434251C88733300BEB073 /* LZAccount.m */; };
 		18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61B1C85435E000BC2A0 /* LZSearchBar.m */; };
 		18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61E1C856C93000BC2A0 /* LZDropdownMenu.m */; };
 		18BED6221C858508000BC2A0 /* LZTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED6211C858508000BC2A0 /* LZTitleMenuViewController.m */; };
@@ -85,6 +89,13 @@
 		189418911C871EE000B284BA /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		189418921C871EE000B284BA /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		189418931C871EE000B284BA /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		1894341B1C8870DD00BEB073 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		1894341C1C8870DD00BEB073 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		1894341D1C8870DD00BEB073 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		1894341E1C8870DD00BEB073 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		1894341F1C8870DD00BEB073 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		189434241C88733300BEB073 /* LZAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAccount.h; sourceTree = "<group>"; };
+		189434251C88733300BEB073 /* LZAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAccount.m; sourceTree = "<group>"; };
 		18BED61A1C85435E000BC2A0 /* LZSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZSearchBar.h; sourceTree = "<group>"; };
 		18BED61B1C85435E000BC2A0 /* LZSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZSearchBar.m; sourceTree = "<group>"; };
 		18BED61D1C856C93000BC2A0 /* LZDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZDropdownMenu.h; sourceTree = "<group>"; };
@@ -211,6 +222,7 @@
 		1834F0911C81D14C00765525 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				1894341A1C8870DD00BEB073 /* MBProgressHUD */,
 				189418801C871EE000B284BA /* AFNetworking */,
 			);
 			path = Lib;
@@ -368,6 +380,7 @@
 		1894187B1C870C4B00B284BA /* OAuth(授权) */ = {
 			isa = PBXGroup;
 			children = (
+				189434231C88731700BEB073 /* Model */,
 				1894187C1C870C4B00B284BA /* Controller */,
 			);
 			path = "OAuth(授权)";
@@ -406,6 +419,27 @@
 				189418931C871EE000B284BA /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		1894341A1C8870DD00BEB073 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1894341B1C8870DD00BEB073 /* MBProgressHUD+MJ.h */,
+				1894341C1C8870DD00BEB073 /* MBProgressHUD+MJ.m */,
+				1894341D1C8870DD00BEB073 /* MBProgressHUD.bundle */,
+				1894341E1C8870DD00BEB073 /* MBProgressHUD.h */,
+				1894341F1C8870DD00BEB073 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		189434231C88731700BEB073 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				189434241C88733300BEB073 /* LZAccount.h */,
+				189434251C88733300BEB073 /* LZAccount.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		18C16A451C80AFD600923474 /* Classes */ = {
@@ -482,6 +516,7 @@
 			files = (
 				1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */,
 				1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */,
+				189434211C8870DD00BEB073 /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1894189C1C871EE000B284BA /* AFURLSessionManager.m in Sources */,
+				189434261C88733300BEB073 /* LZAccount.m in Sources */,
 				189418991C871EE000B284BA /* AFURLConnectionOperation.m in Sources */,
 				1834F0A81C81D14C00765525 /* LZTabBarViewController.m in Sources */,
 				189418961C871EE000B284BA /* AFHTTPSessionManager.m in Sources */,
@@ -505,11 +541,13 @@
 				18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */,
 				1834F0A71C81D14C00765525 /* LZNavigationController.m in Sources */,
 				1834F0A61C81D14C00765525 /* UIView+LZExtension.m in Sources */,
+				189434221C8870DD00BEB073 /* MBProgressHUD.m in Sources */,
 				189418951C871EE000B284BA /* AFHTTPRequestOperationManager.m in Sources */,
 				1894187F1C870C8500B284BA /* LZOAuthViewController.m in Sources */,
 				1894182E1C86872600B284BA /* LZNewfeatureViewController.m in Sources */,
 				1834F0AB1C81D14C00765525 /* LZMessageCenterViewController.m in Sources */,
 				18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */,
+				189434201C8870DD00BEB073 /* MBProgressHUD+MJ.m in Sources */,
 				1834F0AA1C81D14C00765525 /* main.m in Sources */,
 				1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */,
 				1834F0AF1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m in Sources */,
