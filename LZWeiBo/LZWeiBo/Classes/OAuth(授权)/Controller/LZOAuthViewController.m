@@ -11,7 +11,6 @@
 #import "LZNewfeatureViewController.h"
 #import "AFNetworking.h"
 #import "MBProgressHUD+MJ.h"
-#import "LZAccount.h"
 #import "LZAccountTool.h"
 
 @interface LZOAuthViewController () <UIWebViewDelegate>

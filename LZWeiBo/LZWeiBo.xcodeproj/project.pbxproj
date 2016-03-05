@@ -40,6 +40,7 @@
 		18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61E1C856C93000BC2A0 /* LZDropdownMenu.m */; };
 		18BED6221C858508000BC2A0 /* LZTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED6211C858508000BC2A0 /* LZTitleMenuViewController.m */; };
 		18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */; };
+		18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E333201C8AF75D00AE5B6E /* Foundation+Log.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,7 @@
 		18C16A4B1C80B10D00923474 /* LZWeiBo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZWeiBo.pch; sourceTree = "<group>"; };
 		18E3331D1C8AD9D000AE5B6E /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
+		18E333201C8AF75D00AE5B6E /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 		1834F0891C81D14C00765525 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				18E333201C8AF75D00AE5B6E /* Foundation+Log.m */,
 				1834F08A1C81D14C00765525 /* UIView+LZExtension.h */,
 				1834F08B1C81D14C00765525 /* UIView+LZExtension.m */,
 				1834F0AD1C81DA0A00765525 /* UIBarButtonItem+LZExtension.h */,
@@ -569,6 +572,7 @@
 				18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */,
 				189434201C8870DD00BEB073 /* MBProgressHUD+MJ.m in Sources */,
 				1834F0AA1C81D14C00765525 /* main.m in Sources */,
+				18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */,
 				1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */,
 				1834F0AF1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m in Sources */,
 				1894189A1C871EE000B284BA /* AFURLRequestSerialization.m in Sources */,
