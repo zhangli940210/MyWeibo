@@ -12,6 +12,7 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD+MJ.h"
 #import "LZAccount.h"
+#import "LZAccountTool.h"
 
 @interface LZOAuthViewController () <UIWebViewDelegate>
 
@@ -113,14 +114,10 @@
         
         [MBProgressHUD hideHUD];
         
-        // 沙盒路径
-        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *path = [doc stringByAppendingPathComponent:@"account.archive"];
-        
         // 将返回的账号字典数据 --> 模型，存进沙盒
         LZAccount *account = [LZAccount accountWithDict:responseObject];
-        // 自定义对象的存储必须用NSKeyedArchiver，不再有什么writeToFile方法
-        [NSKeyedArchiver archiveRootObject:account toFile:path];
+        // 通过工具,存储账号信息
+        [LZAccountTool saveAccount:account];
         
         // 切换窗口的根控制器
         NSString *key = @"CFBundleVersion";

@@ -18,6 +18,7 @@
 		1834F0AB1C81D14C00765525 /* LZMessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F09B1C81D14C00765525 /* LZMessageCenterViewController.m */; };
 		1834F0AC1C81D14C00765525 /* LZProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F0A11C81D14C00765525 /* LZProfileViewController.m */; };
 		1834F0AF1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F0AE1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m */; };
+		18630EEA1C8A7C0C00D2445E /* LZAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18630EE91C8A7C0C00D2445E /* LZAccountTool.m */; };
 		1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0B1C78114D005C5F66 /* Assets.xcassets */; };
 		1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */; };
 		1894182E1C86872600B284BA /* LZNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894182D1C86872600B284BA /* LZNewfeatureViewController.m */; };
@@ -62,6 +63,8 @@
 		1834F0A11C81D14C00765525 /* LZProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZProfileViewController.m; sourceTree = "<group>"; };
 		1834F0AD1C81DA0A00765525 /* UIBarButtonItem+LZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LZExtension.h"; sourceTree = "<group>"; };
 		1834F0AE1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LZExtension.m"; sourceTree = "<group>"; };
+		18630EE81C8A7C0C00D2445E /* LZAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAccountTool.h; sourceTree = "<group>"; };
+		18630EE91C8A7C0C00D2445E /* LZAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAccountTool.m; sourceTree = "<group>"; };
 		1893CEFC1C78114D005C5F66 /* LZWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1893CF0B1C78114D005C5F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1893CF0E1C78114D005C5F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -324,6 +327,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		18630EE71C8A7BF500D2445E /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				18630EE81C8A7C0C00D2445E /* LZAccountTool.h */,
+				18630EE91C8A7C0C00D2445E /* LZAccountTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		1893CEF31C78114D005C5F66 = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +392,7 @@
 		1894187B1C870C4B00B284BA /* OAuth(授权) */ = {
 			isa = PBXGroup;
 			children = (
+				18630EE71C8A7BF500D2445E /* Tool */,
 				189434231C88731700BEB073 /* Model */,
 				1894187C1C870C4B00B284BA /* Controller */,
 			);
@@ -540,6 +553,7 @@
 				189418981C871EE000B284BA /* AFSecurityPolicy.m in Sources */,
 				18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */,
 				1834F0A71C81D14C00765525 /* LZNavigationController.m in Sources */,
+				18630EEA1C8A7C0C00D2445E /* LZAccountTool.m in Sources */,
 				1834F0A61C81D14C00765525 /* UIView+LZExtension.m in Sources */,
 				189434221C8870DD00BEB073 /* MBProgressHUD.m in Sources */,
 				189418951C871EE000B284BA /* AFHTTPRequestOperationManager.m in Sources */,
