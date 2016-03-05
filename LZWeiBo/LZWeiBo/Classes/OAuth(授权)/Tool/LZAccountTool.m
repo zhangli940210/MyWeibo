@@ -60,7 +60,7 @@
         return nil;
     }
     
-    LZLog(@"%@---%@", expiresTime, now);
+//    LZLog(@"%@---%@", expiresTime, now);
     
     return account;
 }
