@@ -114,6 +114,7 @@
         
         [MBProgressHUD hideHUD];
         
+        
         // 将返回的账号字典数据 --> 模型，存进沙盒
         LZAccount *account = [LZAccount accountWithDict:responseObject];
         // 通过工具,存储账号信息

@@ -24,4 +24,5 @@
 
 + (instancetype)accountWithDict:(NSDictionary *)dict;
 
+
 @end

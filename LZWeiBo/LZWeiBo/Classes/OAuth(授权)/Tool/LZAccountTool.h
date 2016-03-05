@@ -10,7 +10,6 @@
 @class LZAccount;
 
 @interface LZAccountTool : NSObject
-
 /**
  *  存储账号信息
  *
