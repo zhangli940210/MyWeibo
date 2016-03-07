@@ -57,6 +57,8 @@
 		189434211C8870DD00BEB073 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1894341D1C8870DD00BEB073 /* MBProgressHUD.bundle */; };
 		189434221C8870DD00BEB073 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894341F1C8870DD00BEB073 /* MBProgressHUD.m */; };
 		189434261C88733300BEB073 /* LZAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 189434251C88733300BEB073 /* LZAccount.m */; };
+		18BA28A31C8DDA5600BCF0DD /* LZStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28A01C8DDA5600BCF0DD /* LZStatus.m */; };
+		18BA28A41C8DDA5600BCF0DD /* LZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28A21C8DDA5600BCF0DD /* LZUser.m */; };
 		18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61B1C85435E000BC2A0 /* LZSearchBar.m */; };
 		18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61E1C856C93000BC2A0 /* LZDropdownMenu.m */; };
 		18BED6221C858508000BC2A0 /* LZTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED6211C858508000BC2A0 /* LZTitleMenuViewController.m */; };
@@ -163,6 +165,10 @@
 		1894341F1C8870DD00BEB073 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		189434241C88733300BEB073 /* LZAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAccount.h; sourceTree = "<group>"; };
 		189434251C88733300BEB073 /* LZAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAccount.m; sourceTree = "<group>"; };
+		18BA289F1C8DDA5600BCF0DD /* LZStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZStatus.h; sourceTree = "<group>"; };
+		18BA28A01C8DDA5600BCF0DD /* LZStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZStatus.m; sourceTree = "<group>"; };
+		18BA28A11C8DDA5600BCF0DD /* LZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZUser.h; sourceTree = "<group>"; };
+		18BA28A21C8DDA5600BCF0DD /* LZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZUser.m; sourceTree = "<group>"; };
 		18BED61A1C85435E000BC2A0 /* LZSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZSearchBar.h; sourceTree = "<group>"; };
 		18BED61B1C85435E000BC2A0 /* LZSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZSearchBar.m; sourceTree = "<group>"; };
 		18BED61D1C856C93000BC2A0 /* LZDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZDropdownMenu.h; sourceTree = "<group>"; };
@@ -281,6 +287,10 @@
 		1834F0861C81D14C00765525 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18BA289F1C8DDA5600BCF0DD /* LZStatus.h */,
+				18BA28A01C8DDA5600BCF0DD /* LZStatus.m */,
+				18BA28A11C8DDA5600BCF0DD /* LZUser.h */,
+				18BA28A21C8DDA5600BCF0DD /* LZUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -682,6 +692,7 @@
 				182E2A541C8BFFAB00836441 /* LZTitleButton.m in Sources */,
 				182E2AC81C8C901500836441 /* UIImageView+HighlightedWebCache.m in Sources */,
 				182E2AC51C8C901500836441 /* UIImage+GIF.m in Sources */,
+				18BA28A31C8DDA5600BCF0DD /* LZStatus.m in Sources */,
 				18630EEA1C8A7C0C00D2445E /* LZAccountTool.m in Sources */,
 				1834F0A61C81D14C00765525 /* UIView+LZExtension.m in Sources */,
 				182E2ABD1C8C901500836441 /* SDImageCache.m in Sources */,
@@ -701,6 +712,7 @@
 				1834F0AA1C81D14C00765525 /* main.m in Sources */,
 				182E2AC31C8C901500836441 /* SDWebImagePrefetcher.m in Sources */,
 				182E2AC61C8C901500836441 /* UIImage+MultiFormat.m in Sources */,
+				18BA28A41C8DDA5600BCF0DD /* LZUser.m in Sources */,
 				182E2ABE1C8C901500836441 /* SDWebImageCompat.m in Sources */,
 				18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */,
 				1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */,
