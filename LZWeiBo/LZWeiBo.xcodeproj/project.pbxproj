@@ -59,6 +59,17 @@
 		189434261C88733300BEB073 /* LZAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 189434251C88733300BEB073 /* LZAccount.m */; };
 		18BA28A31C8DDA5600BCF0DD /* LZStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28A01C8DDA5600BCF0DD /* LZStatus.m */; };
 		18BA28A41C8DDA5600BCF0DD /* LZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28A21C8DDA5600BCF0DD /* LZUser.m */; };
+		18BA28BD1C8DEB7900BCF0DD /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28A71C8DEB7900BCF0DD /* MJArgument.m */; };
+		18BA28BE1C8DEB7900BCF0DD /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28A91C8DEB7900BCF0DD /* MJConst.m */; };
+		18BA28BF1C8DEB7900BCF0DD /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28AC1C8DEB7900BCF0DD /* MJFoundation.m */; };
+		18BA28C01C8DEB7900BCF0DD /* MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28AE1C8DEB7900BCF0DD /* MJIvar.m */; };
+		18BA28C11C8DEB7900BCF0DD /* MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28B01C8DEB7900BCF0DD /* MJMember.m */; };
+		18BA28C21C8DEB7900BCF0DD /* MJMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28B21C8DEB7900BCF0DD /* MJMethod.m */; };
+		18BA28C31C8DEB7900BCF0DD /* MJType.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28B41C8DEB7900BCF0DD /* MJType.m */; };
+		18BA28C41C8DEB7900BCF0DD /* MJTypeEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28B61C8DEB7900BCF0DD /* MJTypeEncoding.m */; };
+		18BA28C51C8DEB7900BCF0DD /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28B81C8DEB7900BCF0DD /* NSObject+MJCoding.m */; };
+		18BA28C61C8DEB7900BCF0DD /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28BA1C8DEB7900BCF0DD /* NSObject+MJKeyValue.m */; };
+		18BA28C71C8DEB7900BCF0DD /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28BC1C8DEB7900BCF0DD /* NSObject+MJMember.m */; };
 		18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61B1C85435E000BC2A0 /* LZSearchBar.m */; };
 		18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61E1C856C93000BC2A0 /* LZDropdownMenu.m */; };
 		18BED6221C858508000BC2A0 /* LZTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED6211C858508000BC2A0 /* LZTitleMenuViewController.m */; };
@@ -169,6 +180,29 @@
 		18BA28A01C8DDA5600BCF0DD /* LZStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZStatus.m; sourceTree = "<group>"; };
 		18BA28A11C8DDA5600BCF0DD /* LZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZUser.h; sourceTree = "<group>"; };
 		18BA28A21C8DDA5600BCF0DD /* LZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZUser.m; sourceTree = "<group>"; };
+		18BA28A61C8DEB7900BCF0DD /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
+		18BA28A71C8DEB7900BCF0DD /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
+		18BA28A81C8DEB7900BCF0DD /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
+		18BA28A91C8DEB7900BCF0DD /* MJConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJConst.m; sourceTree = "<group>"; };
+		18BA28AA1C8DEB7900BCF0DD /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		18BA28AB1C8DEB7900BCF0DD /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		18BA28AC1C8DEB7900BCF0DD /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		18BA28AD1C8DEB7900BCF0DD /* MJIvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJIvar.h; sourceTree = "<group>"; };
+		18BA28AE1C8DEB7900BCF0DD /* MJIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJIvar.m; sourceTree = "<group>"; };
+		18BA28AF1C8DEB7900BCF0DD /* MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJMember.h; sourceTree = "<group>"; };
+		18BA28B01C8DEB7900BCF0DD /* MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJMember.m; sourceTree = "<group>"; };
+		18BA28B11C8DEB7900BCF0DD /* MJMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJMethod.h; sourceTree = "<group>"; };
+		18BA28B21C8DEB7900BCF0DD /* MJMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJMethod.m; sourceTree = "<group>"; };
+		18BA28B31C8DEB7900BCF0DD /* MJType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJType.h; sourceTree = "<group>"; };
+		18BA28B41C8DEB7900BCF0DD /* MJType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJType.m; sourceTree = "<group>"; };
+		18BA28B51C8DEB7900BCF0DD /* MJTypeEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTypeEncoding.h; sourceTree = "<group>"; };
+		18BA28B61C8DEB7900BCF0DD /* MJTypeEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTypeEncoding.m; sourceTree = "<group>"; };
+		18BA28B71C8DEB7900BCF0DD /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		18BA28B81C8DEB7900BCF0DD /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		18BA28B91C8DEB7900BCF0DD /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		18BA28BA1C8DEB7900BCF0DD /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		18BA28BB1C8DEB7900BCF0DD /* NSObject+MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJMember.h"; sourceTree = "<group>"; };
+		18BA28BC1C8DEB7900BCF0DD /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
 		18BED61A1C85435E000BC2A0 /* LZSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZSearchBar.h; sourceTree = "<group>"; };
 		18BED61B1C85435E000BC2A0 /* LZSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZSearchBar.m; sourceTree = "<group>"; };
 		18BED61D1C856C93000BC2A0 /* LZDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZDropdownMenu.h; sourceTree = "<group>"; };
@@ -347,6 +381,7 @@
 		1834F0911C81D14C00765525 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				18BA28A51C8DEB7900BCF0DD /* MJExtension */,
 				182E2A991C8C901500836441 /* SDWebImage */,
 				1894341A1C8870DD00BEB073 /* MBProgressHUD */,
 				189418801C871EE000B284BA /* AFNetworking */,
@@ -584,6 +619,36 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		18BA28A51C8DEB7900BCF0DD /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				18BA28A61C8DEB7900BCF0DD /* MJArgument.h */,
+				18BA28A71C8DEB7900BCF0DD /* MJArgument.m */,
+				18BA28A81C8DEB7900BCF0DD /* MJConst.h */,
+				18BA28A91C8DEB7900BCF0DD /* MJConst.m */,
+				18BA28AA1C8DEB7900BCF0DD /* MJExtension.h */,
+				18BA28AB1C8DEB7900BCF0DD /* MJFoundation.h */,
+				18BA28AC1C8DEB7900BCF0DD /* MJFoundation.m */,
+				18BA28AD1C8DEB7900BCF0DD /* MJIvar.h */,
+				18BA28AE1C8DEB7900BCF0DD /* MJIvar.m */,
+				18BA28AF1C8DEB7900BCF0DD /* MJMember.h */,
+				18BA28B01C8DEB7900BCF0DD /* MJMember.m */,
+				18BA28B11C8DEB7900BCF0DD /* MJMethod.h */,
+				18BA28B21C8DEB7900BCF0DD /* MJMethod.m */,
+				18BA28B31C8DEB7900BCF0DD /* MJType.h */,
+				18BA28B41C8DEB7900BCF0DD /* MJType.m */,
+				18BA28B51C8DEB7900BCF0DD /* MJTypeEncoding.h */,
+				18BA28B61C8DEB7900BCF0DD /* MJTypeEncoding.m */,
+				18BA28B71C8DEB7900BCF0DD /* NSObject+MJCoding.h */,
+				18BA28B81C8DEB7900BCF0DD /* NSObject+MJCoding.m */,
+				18BA28B91C8DEB7900BCF0DD /* NSObject+MJKeyValue.h */,
+				18BA28BA1C8DEB7900BCF0DD /* NSObject+MJKeyValue.m */,
+				18BA28BB1C8DEB7900BCF0DD /* NSObject+MJMember.h */,
+				18BA28BC1C8DEB7900BCF0DD /* NSObject+MJMember.m */,
+			);
+			path = MJExtension;
+			sourceTree = "<group>";
+		};
 		18C16A451C80AFD600923474 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,19 +752,25 @@
 				18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */,
 				182E2ABF1C8C901500836441 /* SDWebImageDecoder.m in Sources */,
 				182E2A741C8C82D600836441 /* LZTestTwoViewController.m in Sources */,
+				18BA28BE1C8DEB7900BCF0DD /* MJConst.m in Sources */,
 				182E2AC21C8C901500836441 /* SDWebImageManager.m in Sources */,
+				18BA28C31C8DEB7900BCF0DD /* MJType.m in Sources */,
 				1834F0A71C81D14C00765525 /* LZNavigationController.m in Sources */,
 				182E2A541C8BFFAB00836441 /* LZTitleButton.m in Sources */,
 				182E2AC81C8C901500836441 /* UIImageView+HighlightedWebCache.m in Sources */,
 				182E2AC51C8C901500836441 /* UIImage+GIF.m in Sources */,
 				18BA28A31C8DDA5600BCF0DD /* LZStatus.m in Sources */,
+				18BA28BF1C8DEB7900BCF0DD /* MJFoundation.m in Sources */,
+				18BA28C51C8DEB7900BCF0DD /* NSObject+MJCoding.m in Sources */,
 				18630EEA1C8A7C0C00D2445E /* LZAccountTool.m in Sources */,
 				1834F0A61C81D14C00765525 /* UIView+LZExtension.m in Sources */,
 				182E2ABD1C8C901500836441 /* SDImageCache.m in Sources */,
 				182E2ABB1C8C901500836441 /* MKAnnotationView+WebCache.m in Sources */,
 				182E2AC11C8C901500836441 /* SDWebImageDownloaderOperation.m in Sources */,
+				18BA28C21C8DEB7900BCF0DD /* MJMethod.m in Sources */,
 				189434221C8870DD00BEB073 /* MBProgressHUD.m in Sources */,
 				189418951C871EE000B284BA /* AFHTTPRequestOperationManager.m in Sources */,
+				18BA28C71C8DEB7900BCF0DD /* NSObject+MJMember.m in Sources */,
 				182E2AC41C8C901500836441 /* UIButton+WebCache.m in Sources */,
 				1894187F1C870C8500B284BA /* LZOAuthViewController.m in Sources */,
 				182E2AC01C8C901500836441 /* SDWebImageDownloader.m in Sources */,
@@ -708,17 +779,22 @@
 				1834F0AB1C81D14C00765525 /* LZMessageCenterViewController.m in Sources */,
 				18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */,
 				182E2AC71C8C901500836441 /* UIImage+WebP.m in Sources */,
+				18BA28C61C8DEB7900BCF0DD /* NSObject+MJKeyValue.m in Sources */,
 				189434201C8870DD00BEB073 /* MBProgressHUD+MJ.m in Sources */,
+				18BA28C11C8DEB7900BCF0DD /* MJMember.m in Sources */,
 				1834F0AA1C81D14C00765525 /* main.m in Sources */,
 				182E2AC31C8C901500836441 /* SDWebImagePrefetcher.m in Sources */,
 				182E2AC61C8C901500836441 /* UIImage+MultiFormat.m in Sources */,
 				18BA28A41C8DDA5600BCF0DD /* LZUser.m in Sources */,
+				18BA28C01C8DEB7900BCF0DD /* MJIvar.m in Sources */,
 				182E2ABE1C8C901500836441 /* SDWebImageCompat.m in Sources */,
+				18BA28BD1C8DEB7900BCF0DD /* MJArgument.m in Sources */,
 				18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */,
 				1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */,
 				1834F0AF1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m in Sources */,
 				1894189A1C871EE000B284BA /* AFURLRequestSerialization.m in Sources */,
 				189418941C871EE000B284BA /* AFHTTPRequestOperation.m in Sources */,
+				18BA28C41C8DEB7900BCF0DD /* MJTypeEncoding.m in Sources */,
 				182E2A6F1C8C80D700836441 /* LZTestOneViewController.m in Sources */,
 				182E2AC91C8C901500836441 /* UIImageView+WebCache.m in Sources */,
 				1894189B1C871EE000B284BA /* AFURLResponseSerialization.m in Sources */,
