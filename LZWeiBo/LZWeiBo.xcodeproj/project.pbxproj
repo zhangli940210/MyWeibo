@@ -37,6 +37,8 @@
 		1834F0AF1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F0AE1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m */; };
 		183C06591C8EC7AE0060292D /* LZUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 183C06571C8EC7AE0060292D /* LZUserCell.m */; };
 		183C065A1C8EC7AE0060292D /* LZUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183C06581C8EC7AE0060292D /* LZUserCell.xib */; };
+		183C065D1C8F2E890060292D /* LZLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 183C065C1C8F2E890060292D /* LZLoadMoreFooter.m */; };
+		183C065F1C8F2E9E0060292D /* LZLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183C065E1C8F2E9E0060292D /* LZLoadMoreFooter.xib */; };
 		18630EEA1C8A7C0C00D2445E /* LZAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18630EE91C8A7C0C00D2445E /* LZAccountTool.m */; };
 		1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0B1C78114D005C5F66 /* Assets.xcassets */; };
 		1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */; };
@@ -135,6 +137,9 @@
 		183C06561C8EC7AE0060292D /* LZUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZUserCell.h; sourceTree = "<group>"; };
 		183C06571C8EC7AE0060292D /* LZUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZUserCell.m; sourceTree = "<group>"; };
 		183C06581C8EC7AE0060292D /* LZUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZUserCell.xib; sourceTree = "<group>"; };
+		183C065B1C8F2E890060292D /* LZLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZLoadMoreFooter.h; sourceTree = "<group>"; };
+		183C065C1C8F2E890060292D /* LZLoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZLoadMoreFooter.m; sourceTree = "<group>"; };
+		183C065E1C8F2E9E0060292D /* LZLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZLoadMoreFooter.xib; sourceTree = "<group>"; };
 		18630EE81C8A7C0C00D2445E /* LZAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAccountTool.h; sourceTree = "<group>"; };
 		18630EE91C8A7C0C00D2445E /* LZAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAccountTool.m; sourceTree = "<group>"; };
 		1893CEFC1C78114D005C5F66 /* LZWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,6 +336,9 @@
 				18BED6211C858508000BC2A0 /* LZTitleMenuViewController.m */,
 				182E2A521C8BFFAB00836441 /* LZTitleButton.h */,
 				182E2A531C8BFFAB00836441 /* LZTitleButton.m */,
+				183C065B1C8F2E890060292D /* LZLoadMoreFooter.h */,
+				183C065C1C8F2E890060292D /* LZLoadMoreFooter.m */,
+				183C065E1C8F2E9E0060292D /* LZLoadMoreFooter.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -714,6 +722,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				183C065A1C8EC7AE0060292D /* LZUserCell.xib in Resources */,
+				183C065F1C8F2E9E0060292D /* LZLoadMoreFooter.xib in Resources */,
 				1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */,
 				1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */,
 				189434211C8870DD00BEB073 /* MBProgressHUD.bundle in Resources */,
@@ -770,6 +779,7 @@
 				1834F0AB1C81D14C00765525 /* LZMessageCenterViewController.m in Sources */,
 				18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */,
 				182E2AC71C8C901500836441 /* UIImage+WebP.m in Sources */,
+				183C065D1C8F2E890060292D /* LZLoadMoreFooter.m in Sources */,
 				18BA28C61C8DEB7900BCF0DD /* NSObject+MJKeyValue.m in Sources */,
 				189434201C8870DD00BEB073 /* MBProgressHUD+MJ.m in Sources */,
 				18BA28C11C8DEB7900BCF0DD /* MJMember.m in Sources */,

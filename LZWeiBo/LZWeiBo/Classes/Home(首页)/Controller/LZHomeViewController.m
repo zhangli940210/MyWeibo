@@ -16,6 +16,7 @@
 #import "LZUser.h"
 #import "LZStatus.h"
 #import "MJExtension.h"
+#import "LZLoadMoreFooter.h"
 
 
 @interface LZHomeViewController () <LZDropdownMenuDelegate>
@@ -46,14 +47,27 @@
     // 获得用户信息(昵称)
     [self setupUserInfo];
     
-    // 集成刷新控件
-    [self setupRefresh];
+    // 集成下拉刷新控件
+    [self setupDownRefresh];
+    
+    // 集成上拉刷新控件
+    [self setupUpRefresh];
+}
+
+/**
+ *  集成上拉刷新控件
+ */
+- (void)setupUpRefresh
+{
+    LZLoadMoreFooter *footer = [LZLoadMoreFooter loadMoreFooter];
+//    footer.hidden = YES;
+    self.tableView.tableFooterView = footer;
 }
 
 /**
  *  集成刷新控件
  */
-- (void)setupRefresh
+- (void)setupDownRefresh
 {
     // 1.添加刷新控件
     UIRefreshControl *control = [[UIRefreshControl alloc] init];
@@ -123,7 +137,7 @@
     // 1.创建label
     UILabel *label = [[UILabel alloc] init];
     label.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"timeline_new_status_background"]];
-    label.width = [UIScreen mainScreen].bounds.size.width;
+    label.width = ScreenW;
     label.height = 35;
     
     // 2.设置其他属性
