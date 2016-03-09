@@ -40,6 +40,8 @@
 		183C065D1C8F2E890060292D /* LZLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 183C065C1C8F2E890060292D /* LZLoadMoreFooter.m */; };
 		183C065F1C8F2E9E0060292D /* LZLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183C065E1C8F2E9E0060292D /* LZLoadMoreFooter.xib */; };
 		18630EEA1C8A7C0C00D2445E /* LZAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18630EE91C8A7C0C00D2445E /* LZAccountTool.m */; };
+		1880F7291C9071AE005B2456 /* LZStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880F7281C9071AE005B2456 /* LZStatusCell.m */; };
+		1880F72C1C9071E2005B2456 /* LZStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880F72B1C9071E2005B2456 /* LZStatusFrame.m */; };
 		1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0B1C78114D005C5F66 /* Assets.xcassets */; };
 		1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */; };
 		1894182E1C86872600B284BA /* LZNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894182D1C86872600B284BA /* LZNewfeatureViewController.m */; };
@@ -142,6 +144,10 @@
 		183C065E1C8F2E9E0060292D /* LZLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZLoadMoreFooter.xib; sourceTree = "<group>"; };
 		18630EE81C8A7C0C00D2445E /* LZAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAccountTool.h; sourceTree = "<group>"; };
 		18630EE91C8A7C0C00D2445E /* LZAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAccountTool.m; sourceTree = "<group>"; };
+		1880F7271C9071AE005B2456 /* LZStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZStatusCell.h; sourceTree = "<group>"; };
+		1880F7281C9071AE005B2456 /* LZStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZStatusCell.m; sourceTree = "<group>"; };
+		1880F72A1C9071E2005B2456 /* LZStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZStatusFrame.h; sourceTree = "<group>"; };
+		1880F72B1C9071E2005B2456 /* LZStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZStatusFrame.m; sourceTree = "<group>"; };
 		1893CEFC1C78114D005C5F66 /* LZWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1893CF0B1C78114D005C5F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1893CF0E1C78114D005C5F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -325,6 +331,8 @@
 				18BA28A01C8DDA5600BCF0DD /* LZStatus.m */,
 				18BA28A11C8DDA5600BCF0DD /* LZUser.h */,
 				18BA28A21C8DDA5600BCF0DD /* LZUser.m */,
+				1880F72A1C9071E2005B2456 /* LZStatusFrame.h */,
+				1880F72B1C9071E2005B2456 /* LZStatusFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -339,6 +347,8 @@
 				183C065B1C8F2E890060292D /* LZLoadMoreFooter.h */,
 				183C065C1C8F2E890060292D /* LZLoadMoreFooter.m */,
 				183C065E1C8F2E9E0060292D /* LZLoadMoreFooter.xib */,
+				1880F7271C9071AE005B2456 /* LZStatusCell.h */,
+				1880F7281C9071AE005B2456 /* LZStatusCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -755,6 +765,7 @@
 				183C06591C8EC7AE0060292D /* LZUserCell.m in Sources */,
 				182E2AC21C8C901500836441 /* SDWebImageManager.m in Sources */,
 				18BA28C31C8DEB7900BCF0DD /* MJType.m in Sources */,
+				1880F7291C9071AE005B2456 /* LZStatusCell.m in Sources */,
 				1834F0A71C81D14C00765525 /* LZNavigationController.m in Sources */,
 				182E2A541C8BFFAB00836441 /* LZTitleButton.m in Sources */,
 				182E2AC81C8C901500836441 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -774,6 +785,7 @@
 				182E2AC41C8C901500836441 /* UIButton+WebCache.m in Sources */,
 				1894187F1C870C8500B284BA /* LZOAuthViewController.m in Sources */,
 				182E2AC01C8C901500836441 /* SDWebImageDownloader.m in Sources */,
+				1880F72C1C9071E2005B2456 /* LZStatusFrame.m in Sources */,
 				182E2ABC1C8C901500836441 /* NSData+ImageContentType.m in Sources */,
 				1894182E1C86872600B284BA /* LZNewfeatureViewController.m in Sources */,
 				1834F0AB1C81D14C00765525 /* LZMessageCenterViewController.m in Sources */,

@@ -17,4 +17,10 @@
 
 /** string 用户的昵称*/
 @property (nonatomic, copy) NSString *screen_name;
+
+/** 会员类型 > 2代表是会员 */
+@property (nonatomic, assign) int mbtype;
+/** 会员等级 */
+@property (nonatomic, assign) int mbrank;
+@property (nonatomic, assign, getter = isVip) BOOL vip;
 @end
