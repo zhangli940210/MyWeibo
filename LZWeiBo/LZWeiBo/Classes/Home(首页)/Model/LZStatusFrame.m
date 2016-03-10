@@ -35,7 +35,7 @@
     LZUser *user = status.user;
     
     // cell的宽度
-    CGFloat cellW = ScreenW;
+    CGFloat cellW = [UIScreen mainScreen].bounds.size.width;
     
     /* 原创微博 */
     
@@ -98,7 +98,40 @@
     CGFloat originalW = cellW;
     self.originalViewF = CGRectMake(originalX, originalY, originalW, originalH);
     
-    self.cellHeight = CGRectGetMaxY(self.originalViewF);
+    /* 被转发微博 */
+    if (status.retweeted_status) {
+        LZStatus *retweeted_status = status.retweeted_status;
+        LZUser *retweeted_status_user = retweeted_status.user;
+        
+        /** 被转发微博正文 */
+        CGFloat retweetContentX = LZStatusCellBorderW;
+        CGFloat retweetContentY = LZStatusCellBorderW;
+        NSString *retweetContent = [NSString stringWithFormat:@"@%@ : %@", retweeted_status_user.name, retweeted_status.text];
+        CGSize retweetContentSize = [self sizeWithText:retweetContent font:LZStatusCellRetweetContentFont maxW:maxW];
+        self.retweetContentLabelF = (CGRect){{retweetContentX, retweetContentY}, retweetContentSize};
+        
+        /** 被转发微博配图 */
+        CGFloat retweetH = 0;
+        if (retweeted_status.pic_urls.count) { // 转发微博有配图
+            CGFloat retweetPhotoWH = 100;
+            CGFloat retweetPhotoX = retweetContentX;
+            CGFloat retweetPhotoY = CGRectGetMaxY(self.retweetContentLabelF) + LZStatusCellBorderW;
+            self.retweetPhotoViewF = CGRectMake(retweetPhotoX, retweetPhotoY, retweetPhotoWH, retweetPhotoWH);
+            
+            retweetH = CGRectGetMaxY(self.retweetPhotoViewF) + LZStatusCellBorderW;
+        } else { // 转发微博没有配图
+            retweetH = CGRectGetMaxY(self.retweetContentLabelF) + LZStatusCellBorderW;
+        }
+        
+        /** 被转发微博整体 */
+        CGFloat retweetX = 0;
+        CGFloat retweetY = CGRectGetMaxY(self.originalViewF);
+        CGFloat retweetW = cellW;
+        self.retweetViewF = CGRectMake(retweetX, retweetY, retweetW, retweetH);
+        
+        self.cellHeight = CGRectGetMaxY(self.retweetViewF);
+    } else {
+        self.cellHeight = CGRectGetMaxY(self.originalViewF);
+    }
 }
-
 @end
