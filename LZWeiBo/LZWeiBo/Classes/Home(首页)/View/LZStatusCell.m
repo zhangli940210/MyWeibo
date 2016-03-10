@@ -1,15 +1,8 @@
-//
-//  LZStatusCell.m
-//  LZWeiBo
-//
-//  Created by apple on 16/3/9.
-//  Copyright © 2016年 m14a. All rights reserved.
-//
-
 #import "LZStatusCell.h"
 #import "LZStatus.h"
 #import "LZUser.h"
 #import "LZStatusFrame.h"
+#import "LZPhoto.h"
 #import "UIImageView+WebCache.h"
 
 @interface LZStatusCell()
@@ -55,6 +48,7 @@
     if (self) {
         /** 原创微博整体 */
         UIView *originalView = [[UIView alloc] init];
+        originalView.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:originalView];
         self.originalView = originalView;
         
@@ -131,8 +125,17 @@
     }
     
     /** 配图 */
-    self.photoView.frame = statusFrame.photoViewF;
-    self.photoView.backgroundColor = [UIColor redColor];
+    if (status.pic_urls.count) { // 有配图
+        
+        self.photoView.frame = statusFrame.photoViewF;
+        LZPhoto *photo = [status.pic_urls firstObject];
+        [self.photoView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+        
+        self.photoView.hidden = NO;
+    } else { // 无配图
+        
+        self.photoView.hidden = YES;
+    }
     
     /** 昵称 */
     self.nameLabel.text = user.name;
