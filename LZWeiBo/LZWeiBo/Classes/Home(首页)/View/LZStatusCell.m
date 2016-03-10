@@ -5,6 +5,7 @@
 #import "LZStatusFrame.h"
 #import "LZPhoto.h"
 #import "UIImageView+WebCache.h"
+#import "LZStatusToolbar.h"
 
 @interface LZStatusCell()
 /* 原创微博 */
@@ -33,6 +34,9 @@
 /** 转发配图 */
 @property (nonatomic, weak) UIImageView *retweetPhotoView;
 
+/** 工具条 */
+@property (nonatomic, weak) LZStatusToolbar *toolbar;
+
 @end
 
 @implementation LZStatusCell
@@ -60,8 +64,21 @@
         
         // 初始化转发微博
         [self setupRetweet];
+        
+        // 初始化工具条
+        [self setupToolbar];
     }
     return self;
+}
+
+/**
+ * 初始化工具条
+ */
+- (void)setupToolbar
+{
+    LZStatusToolbar *toolbar = [LZStatusToolbar toolbar];
+    [self.contentView addSubview:toolbar];
+    self.toolbar = toolbar;
 }
 
 /**
@@ -223,6 +240,10 @@
     } else {
         self.retweetView.hidden = YES;
     }
+    
+    /** 工具条 */
+    self.toolbar.frame = statusFrame.toolbarF;
+    self.toolbar.status = status;
     
 }
 

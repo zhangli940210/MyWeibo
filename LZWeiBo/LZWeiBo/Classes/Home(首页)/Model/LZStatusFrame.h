@@ -25,6 +25,10 @@
 // 被转发微博的正文字体
 #define LZStatusCellRetweetContentFont [UIFont systemFontOfSize:13]
 
+// cell之间的间距
+#define LZStatusCellMargin 15
+
+
 @class LZStatus;
 
 @interface LZStatusFrame : NSObject
@@ -53,6 +57,9 @@
 @property (nonatomic, assign) CGRect retweetContentLabelF;
 /** 转发配图 */
 @property (nonatomic, assign) CGRect retweetPhotoViewF;
+
+/** 底部工具条 */
+@property (nonatomic, assign) CGRect toolbarF;
 
 /** cell的高度 */
 @property (nonatomic, assign) CGFloat cellHeight;

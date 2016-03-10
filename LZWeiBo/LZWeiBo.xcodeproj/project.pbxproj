@@ -40,6 +40,7 @@
 		183C065D1C8F2E890060292D /* LZLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 183C065C1C8F2E890060292D /* LZLoadMoreFooter.m */; };
 		183C065F1C8F2E9E0060292D /* LZLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183C065E1C8F2E9E0060292D /* LZLoadMoreFooter.xib */; };
 		185D39481C91900500AA0E00 /* LZPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 185D39471C91900500AA0E00 /* LZPhoto.m */; };
+		185D394B1C91B76800AA0E00 /* LZStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 185D394A1C91B76800AA0E00 /* LZStatusToolbar.m */; };
 		18630EEA1C8A7C0C00D2445E /* LZAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18630EE91C8A7C0C00D2445E /* LZAccountTool.m */; };
 		1880F7291C9071AE005B2456 /* LZStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880F7281C9071AE005B2456 /* LZStatusCell.m */; };
 		1880F72C1C9071E2005B2456 /* LZStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880F72B1C9071E2005B2456 /* LZStatusFrame.m */; };
@@ -145,6 +146,8 @@
 		183C065E1C8F2E9E0060292D /* LZLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZLoadMoreFooter.xib; sourceTree = "<group>"; };
 		185D39461C91900500AA0E00 /* LZPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZPhoto.h; sourceTree = "<group>"; };
 		185D39471C91900500AA0E00 /* LZPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPhoto.m; sourceTree = "<group>"; };
+		185D39491C91B76800AA0E00 /* LZStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZStatusToolbar.h; sourceTree = "<group>"; };
+		185D394A1C91B76800AA0E00 /* LZStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZStatusToolbar.m; sourceTree = "<group>"; };
 		18630EE81C8A7C0C00D2445E /* LZAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAccountTool.h; sourceTree = "<group>"; };
 		18630EE91C8A7C0C00D2445E /* LZAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAccountTool.m; sourceTree = "<group>"; };
 		1880F7271C9071AE005B2456 /* LZStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZStatusCell.h; sourceTree = "<group>"; };
@@ -354,6 +357,8 @@
 				183C065E1C8F2E9E0060292D /* LZLoadMoreFooter.xib */,
 				1880F7271C9071AE005B2456 /* LZStatusCell.h */,
 				1880F7281C9071AE005B2456 /* LZStatusCell.m */,
+				185D39491C91B76800AA0E00 /* LZStatusToolbar.h */,
+				185D394A1C91B76800AA0E00 /* LZStatusToolbar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -803,6 +808,7 @@
 				189434201C8870DD00BEB073 /* MBProgressHUD+MJ.m in Sources */,
 				18BA28C11C8DEB7900BCF0DD /* MJMember.m in Sources */,
 				1834F0AA1C81D14C00765525 /* main.m in Sources */,
+				185D394B1C91B76800AA0E00 /* LZStatusToolbar.m in Sources */,
 				182E2AC31C8C901500836441 /* SDWebImagePrefetcher.m in Sources */,
 				182E2AC61C8C901500836441 /* UIImage+MultiFormat.m in Sources */,
 				18BA28A41C8DDA5600BCF0DD /* LZUser.m in Sources */,
