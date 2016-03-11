@@ -13,17 +13,19 @@
 #import "LZPhoto.h"
 #import "UIImageView+WebCache.h"
 #import "LZStatusToolbar.h"
+#import "LZStatusPhotosView.h"
+#import "LZIconView.h"
 
 @interface LZStatusCell()
 /* 原创微博 */
 /** 原创微博整体 */
 @property (nonatomic, weak) UIView *originalView;
 /** 头像 */
-@property (nonatomic, weak) UIImageView *iconView;
+@property (nonatomic, weak) LZIconView *iconView;
 /** 会员图标 */
 @property (nonatomic, weak) UIImageView *vipView;
 /** 配图 */
-@property (nonatomic, weak) UIImageView *photoView;
+@property (nonatomic, weak) LZStatusPhotosView *photosView;
 /** 昵称 */
 @property (nonatomic, weak) UILabel *nameLabel;
 /** 时间 */
@@ -39,7 +41,8 @@
 /** 转发微博正文 + 昵称 */
 @property (nonatomic, weak) UILabel *retweetContentLabel;
 /** 转发配图 */
-@property (nonatomic, weak) UIImageView *retweetPhotoView;
+@property (nonatomic, weak) LZStatusPhotosView *retweetPhotosView;
+
 /** 工具条 */
 @property (nonatomic, weak) LZStatusToolbar *toolbar;
 
@@ -89,6 +92,12 @@
     return self;
 }
 
+//- (void)setFrame:(CGRect)frame
+//{
+//    frame.origin.y += LZStatusCellMargin;
+//    [super setFrame:frame];
+//}
+
 /**
  * 初始化工具条
  */
@@ -118,9 +127,9 @@
     self.retweetContentLabel = retweetContentLabel;
     
     /** 转发微博配图 */
-    UIImageView *retweetPhotoView = [[UIImageView alloc] init];
-    [retweetView addSubview:retweetPhotoView];
-    self.retweetPhotoView = retweetPhotoView;
+    LZStatusPhotosView *retweetPhotosView = [[LZStatusPhotosView alloc] init];
+    [retweetView addSubview:retweetPhotosView];
+    self.retweetPhotosView = retweetPhotosView;
 }
 
 /**
@@ -135,7 +144,7 @@
     self.originalView = originalView;
     
     /** 头像 */
-    UIImageView *iconView = [[UIImageView alloc] init];
+    LZIconView *iconView = [[LZIconView alloc] init];
     [originalView addSubview:iconView];
     self.iconView = iconView;
     
@@ -146,9 +155,9 @@
     self.vipView = vipView;
     
     /** 配图 */
-    UIImageView *photoView = [[UIImageView alloc] init];
-    [originalView addSubview:photoView];
-    self.photoView = photoView;
+    LZStatusPhotosView *photosView = [[LZStatusPhotosView alloc] init];
+    [originalView addSubview:photosView];
+    self.photosView = photosView;
     
     /** 昵称 */
     UILabel *nameLabel = [[UILabel alloc] init];
@@ -159,6 +168,7 @@
     /** 时间 */
     UILabel *timeLabel = [[UILabel alloc] init];
     timeLabel.font = LZStatusCellTimeFont;
+    timeLabel.textColor = [UIColor orangeColor];
     [originalView addSubview:timeLabel];
     self.timeLabel = timeLabel;
     
@@ -188,7 +198,7 @@
     
     /** 头像 */
     self.iconView.frame = statusFrame.iconViewF;
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
+    self.iconView.user = user;
     
     /** 会员图标 */
     if (user.isVip) {
@@ -206,13 +216,11 @@
     
     /** 配图 */
     if (status.pic_urls.count) {
-        self.photoView.frame = statusFrame.photoViewF;
-        LZPhoto *photo = [status.pic_urls firstObject];
-        [self.photoView sd_setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
-        
-        self.photoView.hidden = NO;
+        self.photosView.frame = statusFrame.photosViewF;
+        self.photosView.photos = status.pic_urls;
+        self.photosView.hidden = NO;
     } else {
-        self.photoView.hidden = YES;
+        self.photosView.hidden = YES;
     }
     
     /** 昵称 */
@@ -220,12 +228,19 @@
     self.nameLabel.frame = statusFrame.nameLabelF;
     
     /** 时间 */
-    self.timeLabel.text = status.created_at;
-    self.timeLabel.frame = statusFrame.timeLabelF;
+    NSString *time = status.created_at;
+    CGFloat timeX = statusFrame.nameLabelF.origin.x;
+    CGFloat timeY = CGRectGetMaxY(statusFrame.nameLabelF) + LZStatusCellBorderW;
+    CGSize timeSize = [time sizeWithFont:LZStatusCellTimeFont];
+    self.timeLabel.frame = (CGRect){{timeX, timeY}, timeSize};
+    self.timeLabel.text = time;
     
     /** 来源 */
+    CGFloat sourceX = CGRectGetMaxX(self.timeLabel.frame) + LZStatusCellBorderW;
+    CGFloat sourceY = timeY;
+    CGSize sourceSize = [status.source sizeWithFont:LZStatusCellSourceFont];
+    self.sourceLabel.frame = (CGRect){{sourceX, sourceY}, sourceSize};
     self.sourceLabel.text = status.source;
-    self.sourceLabel.frame = statusFrame.sourceLabelF;
     
     /** 正文 */
     self.contentLabel.text = status.text;
@@ -247,13 +262,11 @@
         
         /** 被转发的微博配图 */
         if (retweeted_status.pic_urls.count) {
-            self.retweetPhotoView.frame = statusFrame.retweetPhotoViewF;
-            LZPhoto *retweetedPhoto = [retweeted_status.pic_urls firstObject];
-            [self.retweetPhotoView sd_setImageWithURL:[NSURL URLWithString:retweetedPhoto.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
-            
-            self.retweetPhotoView.hidden = NO;
+            self.retweetPhotosView.frame = statusFrame.retweetPhotosViewF;
+            self.retweetPhotosView.photos = retweeted_status.pic_urls;
+            self.retweetPhotosView.hidden = NO;
         } else {
-            self.retweetPhotoView.hidden = YES;
+            self.retweetPhotosView.hidden = YES;
         }
     } else {
         self.retweetView.hidden = YES;

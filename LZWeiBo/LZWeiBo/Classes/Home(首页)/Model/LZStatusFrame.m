@@ -1,26 +1,17 @@
-
+//
+//  LZStatusFrame.m
+//  黑马微博2期
+//
+//  Created by apple on 14-10-14.
+//  Copyright (c) 2014年 heima. All rights reserved.
+//
 
 #import "LZStatusFrame.h"
 #import "LZStatus.h"
 #import "LZUser.h"
-
-// cell的边框宽度
-#define LZStatusCellBorderW 10
+#import "LZStatusPhotosView.h"
 
 @implementation LZStatusFrame
-
-- (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font maxW:(CGFloat)maxW
-{
-    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSFontAttributeName] = font;
-    CGSize maxSize = CGSizeMake(maxW, MAXFLOAT);
-    return [text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
-}
-
-- (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font
-{
-    return [self sizeWithText:text font:font maxW:MAXFLOAT];
-}
 
 - (void)setStatus:(LZStatus *)status
 {
@@ -42,7 +33,7 @@
     /** 昵称 */
     CGFloat nameX = CGRectGetMaxX(self.iconViewF) + LZStatusCellBorderW;
     CGFloat nameY = iconY;
-    CGSize nameSize = [self sizeWithText:user.name font:LZStatusCellNameFont];
+    CGSize nameSize = [user.name sizeWithFont:LZStatusCellNameFont];
     self.nameLabelF = (CGRect){{nameX, nameY}, nameSize};
     
     /** 会员图标 */
@@ -57,31 +48,31 @@
     /** 时间 */
     CGFloat timeX = nameX;
     CGFloat timeY = CGRectGetMaxY(self.nameLabelF) + LZStatusCellBorderW;
-    CGSize timeSize = [self sizeWithText:status.created_at font:LZStatusCellTimeFont];
+    CGSize timeSize = [status.created_at sizeWithFont:LZStatusCellTimeFont];
     self.timeLabelF = (CGRect){{timeX, timeY}, timeSize};
     
     /** 来源 */
     CGFloat sourceX = CGRectGetMaxX(self.timeLabelF) + LZStatusCellBorderW;
     CGFloat sourceY = timeY;
-    CGSize sourceSize = [self sizeWithText:status.source font:LZStatusCellSourceFont];
+    CGSize sourceSize = [status.source sizeWithFont:LZStatusCellSourceFont];
     self.sourceLabelF = (CGRect){{sourceX, sourceY}, sourceSize};
     
     /** 正文 */
     CGFloat contentX = iconX;
     CGFloat contentY = MAX(CGRectGetMaxY(self.iconViewF), CGRectGetMaxY(self.timeLabelF)) + LZStatusCellBorderW;
     CGFloat maxW = cellW - 2 * contentX;
-    CGSize contentSize = [self sizeWithText:status.text font:LZStatusCellContentFont maxW:maxW];
+    CGSize contentSize = [status.text sizeWithFont:LZStatusCellContentFont maxW:maxW];
     self.contentLabelF = (CGRect){{contentX, contentY}, contentSize};
     
     /** 配图 */
     CGFloat originalH = 0;
     if (status.pic_urls.count) { // 有配图
-        CGFloat photoWH = 100;
-        CGFloat photoX = contentX;
-        CGFloat photoY = CGRectGetMaxY(self.contentLabelF) + LZStatusCellBorderW;
-        self.photoViewF = CGRectMake(photoX, photoY, photoWH, photoWH);
+        CGFloat photosX = contentX;
+        CGFloat photosY = CGRectGetMaxY(self.contentLabelF) + LZStatusCellBorderW;
+        CGSize photosSize = [LZStatusPhotosView sizeWithCount:status.pic_urls.count];
+        self.photosViewF = (CGRect){{photosX, photosY}, photosSize};
         
-        originalH = CGRectGetMaxY(self.photoViewF) + LZStatusCellBorderW;
+        originalH = CGRectGetMaxY(self.photosViewF) + LZStatusCellBorderW;
     } else { // 没配图
         originalH = CGRectGetMaxY(self.contentLabelF) + LZStatusCellBorderW;
     }
@@ -102,18 +93,18 @@
         CGFloat retweetContentX = LZStatusCellBorderW;
         CGFloat retweetContentY = LZStatusCellBorderW;
         NSString *retweetContent = [NSString stringWithFormat:@"@%@ : %@", retweeted_status_user.name, retweeted_status.text];
-        CGSize retweetContentSize = [self sizeWithText:retweetContent font:LZStatusCellRetweetContentFont maxW:maxW];
+        CGSize retweetContentSize = [retweetContent sizeWithFont:LZStatusCellRetweetContentFont maxW:maxW];
         self.retweetContentLabelF = (CGRect){{retweetContentX, retweetContentY}, retweetContentSize};
         
         /** 被转发微博配图 */
         CGFloat retweetH = 0;
         if (retweeted_status.pic_urls.count) { // 转发微博有配图
-            CGFloat retweetPhotoWH = 100;
-            CGFloat retweetPhotoX = retweetContentX;
-            CGFloat retweetPhotoY = CGRectGetMaxY(self.retweetContentLabelF) + LZStatusCellBorderW;
-            self.retweetPhotoViewF = CGRectMake(retweetPhotoX, retweetPhotoY, retweetPhotoWH, retweetPhotoWH);
+            CGFloat retweetPhotosX = retweetContentX;
+            CGFloat retweetPhotosY = CGRectGetMaxY(self.retweetContentLabelF) + LZStatusCellBorderW;
+            CGSize retweetPhotosSize = [LZStatusPhotosView sizeWithCount:retweeted_status.pic_urls.count];
+            self.retweetPhotosViewF = (CGRect){{retweetPhotosX, retweetPhotosY}, retweetPhotosSize};
             
-            retweetH = CGRectGetMaxY(self.retweetPhotoViewF) + LZStatusCellBorderW;
+            retweetH = CGRectGetMaxY(self.retweetPhotosViewF) + LZStatusCellBorderW;
         } else { // 转发微博没有配图
             retweetH = CGRectGetMaxY(self.retweetContentLabelF) + LZStatusCellBorderW;
         }

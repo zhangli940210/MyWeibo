@@ -5,12 +5,27 @@
 #import "LZPhoto.h"
 
 @implementation LZStatus
-
 - (NSDictionary *)objectClassInArray
 {
     return @{@"pic_urls" : [LZPhoto class]};
 }
 
+/**
+ 1.今年
+ 1> 今天
+ * 1分内： 刚刚
+ * 1分~59分内：xx分钟前
+ * 大于60分钟：xx小时前
+ 
+ 2> 昨天
+ * 昨天 xx:xx
+ 
+ 3> 其他
+ * xx-xx xx:xx
+ 
+ 2.非今年
+ 1> xxxx-xx-xx xx:xx
+ */
 - (NSString *)created_at
 {
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
@@ -26,7 +41,7 @@
     // s:秒
     // y:年
     fmt.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
-    //    _created_at = @"Tue Sep 30 17:06:25 +0800 2014";
+    //    _created_at = @"Tue Sep 30 17:06:25 +0600 2014";
     
     // 微博的创建日期
     NSDate *createDate = [fmt dateFromString:_created_at];
@@ -62,6 +77,16 @@
     }
 }
 
-
-
+// source == <a href="http://app.weibo.com/t/feed/2llosp" rel="nofollow">OPPO_N1mini</a>
+- (void)setSource:(NSString *)source
+{
+    if (source.length != 0) {
+        // 截串 NSString
+        NSRange range = NSMakeRange(0, 0);
+        range.location = [source rangeOfString:@">"].location + 1;
+        range.length = [source rangeOfString:@"</"].location - range.location;
+        //    range.length = [source rangeOfString:@"<" options:NSBackwardsSearch];
+        _source = [NSString stringWithFormat:@"来自%@", [source substringWithRange:range]];
+    }
+}
 @end
