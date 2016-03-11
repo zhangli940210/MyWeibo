@@ -40,17 +40,16 @@
     [super layoutSubviews];
     // 如果仅仅是调整按钮内部titleLabel和imageView的位置，那么在layoutSubviews中单独设置位置即可
     
-    /*
     if (self.titleLabel.x > self.imageView.x) {
         // 1.计算titleLabel的frame
         self.titleLabel.x = self.imageView.x;
         
         // 2.计算imageView的frame
-        self.imageView.x = CGRectGetMaxX(self.titleLabel.frame);
+        self.imageView.x = CGRectGetMaxX(self.titleLabel.frame) + LZMargin;
     }
-    */
-    self.titleLabel.x = 0;
-    self.imageView.x = CGRectGetMaxX(self.titleLabel.frame) + LZMargin;
+    
+//    self.titleLabel.x = 0;
+//    self.imageView.x = CGRectGetMaxX(self.titleLabel.frame) + LZMargin;
 }
 
 - (void)setTitle:(NSString *)title forState:(UIControlState)state

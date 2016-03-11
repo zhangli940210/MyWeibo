@@ -1,3 +1,10 @@
+//
+//  LZStatusCell.m
+//  黑马微博2期
+//
+//  Created by apple on 14-10-14.
+//  Copyright (c) 2014年 heima. All rights reserved.
+//
 
 #import "LZStatusCell.h"
 #import "LZStatus.h"
@@ -59,6 +66,18 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.backgroundColor = [UIColor clearColor];
+        // 点击cell的时候不要变色
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        // 设置选中时的背景为蓝色
+        //        UIView *bg = [[UIView alloc] init];
+        //        bg.backgroundColor = [UIColor blueColor];
+        //        self.selectedBackgroundView = bg;
+        
+        // 这个做法不行
+        //        self.selectedBackgroundView.backgroundColor = [UIColor blueColor];
+        
         // 初始化原创微博
         [self setupOriginal];
         
@@ -70,6 +89,12 @@
     }
     return self;
 }
+
+//- (void)setFrame:(CGRect)frame
+//{
+//    frame.origin.y += LZStatusCellMargin;
+//    [super setFrame:frame];
+//}
 
 /**
  * 初始化工具条
@@ -88,7 +113,7 @@
 {
     /** 转发微博整体 */
     UIView *retweetView = [[UIView alloc] init];
-    retweetView.backgroundColor = LZColor(240, 240, 240);
+    retweetView.backgroundColor = LZColor(247, 247, 247);
     [self.contentView addSubview:retweetView];
     self.retweetView = retweetView;
     
@@ -112,7 +137,7 @@
 {
     /** 原创微博整体 */
     UIView *originalView = [[UIView alloc] init];
-    //    originalView.backgroundColor = [UIColor redColor];
+    originalView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:originalView];
     self.originalView = originalView;
     
