@@ -54,6 +54,7 @@
 		18042E491C92FBE400BD3AFE /* LZMessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18042E481C92FBE400BD3AFE /* LZMessageCenterViewController.m */; };
 		18042E501C92FC9C00BD3AFE /* LZDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18042E4D1C92FC9C00BD3AFE /* LZDiscoverViewController.m */; };
 		18042E551C92FD0B00BD3AFE /* LZProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18042E541C92FD0B00BD3AFE /* LZProfileViewController.m */; };
+		18042E581C930E4D00BD3AFE /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18042E571C930E4D00BD3AFE /* NSDate+Extension.m */; };
 		1820E8091C85F85B00956845 /* LZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820E8081C85F85B00956845 /* LZTabBar.m */; };
 		182E2A541C8BFFAB00836441 /* LZTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 182E2A531C8BFFAB00836441 /* LZTitleButton.m */; };
 		1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F0851C81D14C00765525 /* LZHomeViewController.m */; };
@@ -177,6 +178,8 @@
 		18042E4D1C92FC9C00BD3AFE /* LZDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZDiscoverViewController.m; sourceTree = "<group>"; };
 		18042E531C92FD0B00BD3AFE /* LZProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZProfileViewController.h; sourceTree = "<group>"; };
 		18042E541C92FD0B00BD3AFE /* LZProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZProfileViewController.m; sourceTree = "<group>"; };
+		18042E561C930E4D00BD3AFE /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		18042E571C930E4D00BD3AFE /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		1820E8071C85F85B00956845 /* LZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTabBar.h; sourceTree = "<group>"; };
 		1820E8081C85F85B00956845 /* LZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZTabBar.m; sourceTree = "<group>"; };
 		182E2A521C8BFFAB00836441 /* LZTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTitleButton.h; sourceTree = "<group>"; };
@@ -548,6 +551,8 @@
 				1834F0AE1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m */,
 				18E3331D1C8AD9D000AE5B6E /* UIWindow+Extension.h */,
 				18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */,
+				18042E561C930E4D00BD3AFE /* NSDate+Extension.h */,
+				18042E571C930E4D00BD3AFE /* NSDate+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -807,6 +812,7 @@
 				1894182E1C86872600B284BA /* LZNewfeatureViewController.m in Sources */,
 				18042E211C92F9E100BD3AFE /* NSObject+MJMember.m in Sources */,
 				18042E0E1C92F9E100BD3AFE /* AFNetworkReachabilityManager.m in Sources */,
+				18042E581C930E4D00BD3AFE /* NSDate+Extension.m in Sources */,
 				18042E0D1C92F9E100BD3AFE /* AFHTTPSessionManager.m in Sources */,
 				18042E1B1C92F9E100BD3AFE /* MJMember.m in Sources */,
 				18042E271C92F9E100BD3AFE /* SDWebImageDownloader.m in Sources */,

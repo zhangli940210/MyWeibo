@@ -7,6 +7,7 @@
 #import "UIView+LZExtension.h"
 #import "UIBarButtonItem+LZExtension.h"
 #import "UIWindow+Extension.h"
+#import "NSDate+Extension.h"
 
 #ifdef DEBUG
 #define LZLog(...)  NSLog(__VA_ARGS__)

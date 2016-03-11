@@ -40,7 +40,6 @@
 @property (nonatomic, weak) UILabel *retweetContentLabel;
 /** 转发配图 */
 @property (nonatomic, weak) UIImageView *retweetPhotoView;
-
 /** 工具条 */
 @property (nonatomic, weak) LZStatusToolbar *toolbar;
 
@@ -89,12 +88,6 @@
     }
     return self;
 }
-
-//- (void)setFrame:(CGRect)frame
-//{
-//    frame.origin.y += LZStatusCellMargin;
-//    [super setFrame:frame];
-//}
 
 /**
  * 初始化工具条
