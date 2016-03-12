@@ -84,6 +84,7 @@
 		18BED6221C858508000BC2A0 /* LZTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED6211C858508000BC2A0 /* LZTitleMenuViewController.m */; };
 		18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */; };
 		18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E333201C8AF75D00AE5B6E /* Foundation+Log.m */; };
+		18F9D5261C946CA50098A314 /* LZComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F9D5251C946CA50098A314 /* LZComposeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -240,6 +241,8 @@
 		18E3331D1C8AD9D000AE5B6E /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		18E333201C8AF75D00AE5B6E /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		18F9D5241C946CA50098A314 /* LZComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZComposeViewController.h; sourceTree = "<group>"; };
+		18F9D5251C946CA50098A314 /* LZComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZComposeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -703,6 +706,7 @@
 		18C16A451C80AFD600923474 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				18F9D5221C946C760098A314 /* Compose(发微博) */,
 				1894187B1C870C4B00B284BA /* OAuth(授权) */,
 				1894182A1C8686B000B284BA /* Newfeature(新特性) */,
 				1834F0821C81D14C00765525 /* Home(首页) */,
@@ -712,6 +716,23 @@
 				18042E4A1C92FC9C00BD3AFE /* Discover(发现) */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		18F9D5221C946C760098A314 /* Compose(发微博) */ = {
+			isa = PBXGroup;
+			children = (
+				18F9D5231C946C760098A314 /* Controller */,
+			);
+			path = "Compose(发微博)";
+			sourceTree = "<group>";
+		};
+		18F9D5231C946C760098A314 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18F9D5241C946CA50098A314 /* LZComposeViewController.h */,
+				18F9D5251C946CA50098A314 /* LZComposeViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -791,6 +812,7 @@
 				18042E361C92FA3F00BD3AFE /* main.m in Sources */,
 				18042E261C92F9E100BD3AFE /* SDWebImageDecoder.m in Sources */,
 				18042E2A1C92F9E100BD3AFE /* SDWebImagePrefetcher.m in Sources */,
+				18F9D5261C946CA50098A314 /* LZComposeViewController.m in Sources */,
 				18042E0B1C92F9E100BD3AFE /* AFHTTPRequestOperation.m in Sources */,
 				18042E2F1C92F9E100BD3AFE /* UIImageView+HighlightedWebCache.m in Sources */,
 				18042DB61C92F9BE00BD3AFE /* UIView+LZExtension.m in Sources */,

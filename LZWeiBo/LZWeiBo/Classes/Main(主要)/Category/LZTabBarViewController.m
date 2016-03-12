@@ -7,6 +7,7 @@
 #import "LZProfileViewController.h"
 #import "LZNavigationController.h"
 #import "LZTabBar.h"
+#import "LZComposeViewController.h"
 
 @interface LZTabBarViewController () <LZTabBarDelegate>
 
@@ -71,9 +72,9 @@
 #pragma mark - LZTabBarDelegate代理方法
 - (void)tabBarDidClickPlusButton:(LZTabBar *)tabBar
 {
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = [UIColor redColor];
-    [self presentViewController:vc animated:YES completion:nil];
+    LZComposeViewController *compose = [[LZComposeViewController alloc] init];
+    LZNavigationController *nav = [[LZNavigationController alloc] initWithRootViewController:compose];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 @end

@@ -24,30 +24,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        /*
-         UIViewContentModeScaleToFill:图片拉伸至填充整个UIImageView（图片可能会变形）
-         UIViewContentModeScaleAspectFit:图片拉伸至完全显示在UIImageView里面为止(图片不会变形)
-         UIViewContentModeScaleAspectFill:
-         图片拉伸至 图片的宽度等于UIImageView的宽度 或者图片的高度等于UIImageView的高度 为止，然后居中显示，可能左右超出，或者上下超出，图片不完全
-         
-         UIViewContentModeRedraw:调用了setNeedsDisplay方法时，就会将图片重新渲染
-         
-         UIViewContentModeCenter:居中显示
-         
-         UIViewContentModeTop
-         UIViewContentModeBottom
-         UIViewContentModeLeft
-         UIViewContentModeRight
-         UIViewContentModeTopLeft
-         UIViewContentModeTopRight
-         UIViewContentModeBottomLeft
-         UIViewContentModeBottomRight
-         
-         经验规律:
-         1.凡是带有Scale单词的，图片都会拉伸
-         2.凡是带有Aspect单词的，图片都会保持原来的宽高比，图片不会变形
-         */
         // 内容模式
         self.contentMode = UIViewContentModeScaleAspectFill;
         // 超出边框的内容都剪掉

@@ -168,7 +168,8 @@
     
     // 3.发送请求
     [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-        LZLog(@"%@", responseObject);
+//        LZLog(@"%@", responseObject);
+        
         
         // 将 "微博字典"数组 转为 "微博模型"数组
         NSArray *newStatuses = [LZStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
@@ -190,7 +191,7 @@
         // 显示最新微博的数量
         [self showNewStatusCount:newStatuses.count];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        LZLog(@"请求失败-%@", error);
+//        LZLog(@"请求失败-%@", error);
         
         // 结束刷新刷新
         [control endRefreshing];
@@ -236,7 +237,7 @@
         // 结束刷新(隐藏footer)
         self.tableView.tableFooterView.hidden = YES;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        LZLog(@"请求失败-%@", error);
+//        LZLog(@"请求失败-%@", error);
         
         // 结束刷新
         self.tableView.tableFooterView.hidden = YES;
@@ -311,7 +312,7 @@
     // 3.发送请求
     [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         // 标题按钮
-        UIButton *titleButton = (UIButton *)self.navigationItem.titleView;
+        LZTitleButton *titleButton = (LZTitleButton *)self.navigationItem.titleView;
         // 设置名字
         LZUser *user = [LZUser objectWithKeyValues:responseObject];
         [titleButton setTitle:user.name forState:UIControlStateNormal];
@@ -320,7 +321,7 @@
         account.name = user.name;
         [LZAccountTool saveAccount:account];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        LZLog(@"请求失败-%@", error);
+//        LZLog(@"请求失败-%@", error);
     }];
 }
 
