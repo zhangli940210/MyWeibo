@@ -85,6 +85,7 @@
 		18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */; };
 		18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E333201C8AF75D00AE5B6E /* Foundation+Log.m */; };
 		18F9D5261C946CA50098A314 /* LZComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F9D5251C946CA50098A314 /* LZComposeViewController.m */; };
+		18F9D5291C9481810098A314 /* LZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F9D5281C9481810098A314 /* LZTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -243,6 +244,8 @@
 		18E333201C8AF75D00AE5B6E /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		18F9D5241C946CA50098A314 /* LZComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZComposeViewController.h; sourceTree = "<group>"; };
 		18F9D5251C946CA50098A314 /* LZComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZComposeViewController.m; sourceTree = "<group>"; };
+		18F9D5271C9481810098A314 /* LZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTextView.h; sourceTree = "<group>"; };
+		18F9D5281C9481810098A314 /* LZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -589,6 +592,8 @@
 				18BED61E1C856C93000BC2A0 /* LZDropdownMenu.m */,
 				18042E621C931F0100BD3AFE /* LZIconView.h */,
 				18042E631C931F0100BD3AFE /* LZIconView.m */,
+				18F9D5271C9481810098A314 /* LZTextView.h */,
+				18F9D5281C9481810098A314 /* LZTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -822,6 +827,7 @@
 				18042E121C92F9E100BD3AFE /* AFURLResponseSerialization.m in Sources */,
 				18042E3B1C92FAE400BD3AFE /* LZNavigationController.m in Sources */,
 				18042E2E1C92F9E100BD3AFE /* UIImage+WebP.m in Sources */,
+				18F9D5291C9481810098A314 /* LZTextView.m in Sources */,
 				1820E8091C85F85B00956845 /* LZTabBar.m in Sources */,
 				18042E5E1C931D9D00BD3AFE /* LZStatusPhotosView.m in Sources */,
 				18042E5B1C93197000BD3AFE /* NSString+Extension.m in Sources */,

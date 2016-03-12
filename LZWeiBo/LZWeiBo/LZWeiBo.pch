@@ -10,6 +10,9 @@
 #import "NSDate+Extension.h"
 #import "NSString+Extension.h"
 
+// 通知中心
+#define LZNotificationCenter [NSNotificationCenter defaultCenter]
+
 #ifdef DEBUG
 #define LZLog(...)  NSLog(__VA_ARGS__)
 #else

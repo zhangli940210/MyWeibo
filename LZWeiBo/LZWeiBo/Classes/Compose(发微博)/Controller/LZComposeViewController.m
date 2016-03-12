@@ -8,8 +8,14 @@
 
 #import "LZComposeViewController.h"
 #import "LZAccountTool.h"
+#import "LZTextView.h"
+#import "MBProgressHUD+MJ.h"
+#import "AFNetworking.h"
 
 @interface LZComposeViewController ()
+
+/** 输入控件 */
+@property (nonatomic, weak) LZTextView *textView;
 
 @end
 
@@ -24,13 +30,10 @@
     [self setupNav];
     
     // 添加输入控件
-//    [self setupTextView];
+    [self setupTextView];
+    
+    
 }
-
-//- (void)dealloc
-//{
-//    [LZNotificationCenter removeObserver:self];
-//}
 
 #pragma mark - 初始化方法
 /**
@@ -71,7 +74,6 @@
 /**
  * 添加输入控件
  */
-/*
 - (void)setupTextView
 {
     // 在这个控制器中，textView的contentInset.top默认会等于64
@@ -86,27 +88,6 @@
     // 监听通知
     [LZNotificationCenter addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:textView];
 }
- */
-
-/**
- UITextField:
- 1.文字永远是一行，不能显示多行文字
- 2.有placehoder属性设置占位文字
- 3.继承自UIControl
- 4.监听行为
- 1> 设置代理
- 2> addTarget:action:forControlEvents:
- 3> 通知:UITextFieldTextDidChangeNotification
- 
- UITextView:
- 1.能显示任意行文字
- 2.不能设置占位文字
- 3.继承自UIScollView
- 4.监听行为
- 1> 设置代理
- 2> 通知:UITextViewTextDidChangeNotification
- */
-
 
 #pragma mark - 监听方法
 - (void)cancel {
@@ -144,11 +125,15 @@
 /**
  * 监听文字改变
  */
-/*
 - (void)textDidChange
 {
     self.navigationItem.rightBarButtonItem.enabled = self.textView.hasText;
 }
-*/
+
+- (void)dealloc
+{
+    [LZNotificationCenter removeObserver:self];
+}
+
 
 @end
