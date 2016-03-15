@@ -14,7 +14,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
         // 通知
         // 当UITextView的文字发生改变时，UITextView自己会发出一个UITextViewTextDidChangeNotification通知
         [LZNotificationCenter addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self];
@@ -68,6 +67,8 @@
 
 - (void)drawRect:(CGRect)rect
 {
+//    LZLog(@"--%@", NSStringFromCGRect(rect));
+    
     // 如果有输入文字，就直接返回，不画占位文字
     if (self.hasText) return;
     
@@ -76,7 +77,6 @@
     attrs[NSFontAttributeName] = self.font;
     attrs[NSForegroundColorAttributeName] = self.placeholderColor?self.placeholderColor:[UIColor grayColor];
     // 画文字
-    //    [self.placeholder drawAtPoint:CGPointMake(5, 8) withAttributes:attrs];
     CGFloat x = 5;
     CGFloat w = rect.size.width - 2 * x;
     CGFloat y = 8;

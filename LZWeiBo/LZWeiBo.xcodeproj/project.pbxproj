@@ -82,6 +82,8 @@
 		18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61B1C85435E000BC2A0 /* LZSearchBar.m */; };
 		18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61E1C856C93000BC2A0 /* LZDropdownMenu.m */; };
 		18BED6221C858508000BC2A0 /* LZTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED6211C858508000BC2A0 /* LZTitleMenuViewController.m */; };
+		18DD3DA21C98264900BB690E /* LZComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3D9F1C98264900BB690E /* LZComposePhotosView.m */; };
+		18DD3DA31C98264900BB690E /* LZComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3DA11C98264900BB690E /* LZComposeToolbar.m */; };
 		18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */; };
 		18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E333201C8AF75D00AE5B6E /* Foundation+Log.m */; };
 		18F9D5261C946CA50098A314 /* LZComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F9D5251C946CA50098A314 /* LZComposeViewController.m */; };
@@ -239,6 +241,10 @@
 		18BED6201C858508000BC2A0 /* LZTitleMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTitleMenuViewController.h; sourceTree = "<group>"; };
 		18BED6211C858508000BC2A0 /* LZTitleMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZTitleMenuViewController.m; sourceTree = "<group>"; };
 		18C16A4B1C80B10D00923474 /* LZWeiBo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZWeiBo.pch; sourceTree = "<group>"; };
+		18DD3D9E1C98264900BB690E /* LZComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZComposePhotosView.h; sourceTree = "<group>"; };
+		18DD3D9F1C98264900BB690E /* LZComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZComposePhotosView.m; sourceTree = "<group>"; };
+		18DD3DA01C98264900BB690E /* LZComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZComposeToolbar.h; sourceTree = "<group>"; };
+		18DD3DA11C98264900BB690E /* LZComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZComposeToolbar.m; sourceTree = "<group>"; };
 		18E3331D1C8AD9D000AE5B6E /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		18E333201C8AF75D00AE5B6E /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
@@ -723,9 +729,21 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		18DD3D9D1C98262500BB690E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18DD3D9E1C98264900BB690E /* LZComposePhotosView.h */,
+				18DD3D9F1C98264900BB690E /* LZComposePhotosView.m */,
+				18DD3DA01C98264900BB690E /* LZComposeToolbar.h */,
+				18DD3DA11C98264900BB690E /* LZComposeToolbar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		18F9D5221C946C760098A314 /* Compose(发微博) */ = {
 			isa = PBXGroup;
 			children = (
+				18DD3D9D1C98262500BB690E /* View */,
 				18F9D5231C946C760098A314 /* Controller */,
 			);
 			path = "Compose(发微博)";
@@ -815,6 +833,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18042E361C92FA3F00BD3AFE /* main.m in Sources */,
+				18DD3DA31C98264900BB690E /* LZComposeToolbar.m in Sources */,
 				18042E261C92F9E100BD3AFE /* SDWebImageDecoder.m in Sources */,
 				18042E2A1C92F9E100BD3AFE /* SDWebImagePrefetcher.m in Sources */,
 				18F9D5261C946CA50098A314 /* LZComposeViewController.m in Sources */,
@@ -833,6 +852,7 @@
 				18042E5B1C93197000BD3AFE /* NSString+Extension.m in Sources */,
 				18BED6221C858508000BC2A0 /* LZTitleMenuViewController.m in Sources */,
 				18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */,
+				18DD3DA21C98264900BB690E /* LZComposePhotosView.m in Sources */,
 				18042E101C92F9E100BD3AFE /* AFURLConnectionOperation.m in Sources */,
 				18042E301C92F9E100BD3AFE /* UIImageView+WebCache.m in Sources */,
 				18042E0C1C92F9E100BD3AFE /* AFHTTPRequestOperationManager.m in Sources */,
