@@ -1,10 +1,4 @@
-//
-//  LZComposeToolbar.m
-//  黑马微博2期
-//
-//  Created by apple on 14-10-20.
-//  Copyright (c) 2014年 heima. All rights reserved.
-//
+
 
 #import "LZComposeToolbar.h"
 
@@ -64,7 +58,7 @@
 - (void)btnClick:(UIButton *)btn
 {
     if ([self.delegate respondsToSelector:@selector(composeToolbar:didClickButton:)]) {
-//        NSUInteger index = (NSUInteger)(btn.x / btn.width);
+
         [self.delegate composeToolbar:self didClickButton:btn.tag];
     }
 }

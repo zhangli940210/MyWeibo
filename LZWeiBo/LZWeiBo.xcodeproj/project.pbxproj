@@ -59,6 +59,9 @@
 		18042E5E1C931D9D00BD3AFE /* LZStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18042E5D1C931D9D00BD3AFE /* LZStatusPhotosView.m */; };
 		18042E611C931E2000BD3AFE /* LZStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18042E601C931E2000BD3AFE /* LZStatusPhotoView.m */; };
 		18042E641C931F0100BD3AFE /* LZIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18042E631C931F0100BD3AFE /* LZIconView.m */; };
+		181FBEEF1C9BD13A009AA408 /* LZEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEA1C9BD13A009AA408 /* LZEmotionKeyboard.m */; };
+		181FBEF01C9BD13A009AA408 /* LZEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEC1C9BD13A009AA408 /* LZEmotionListView.m */; };
+		181FBEF11C9BD13A009AA408 /* LZEmotionTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEE1C9BD13A009AA408 /* LZEmotionTabBar.m */; };
 		1820E8091C85F85B00956845 /* LZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820E8081C85F85B00956845 /* LZTabBar.m */; };
 		182E2A541C8BFFAB00836441 /* LZTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 182E2A531C8BFFAB00836441 /* LZTitleButton.m */; };
 		1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F0851C81D14C00765525 /* LZHomeViewController.m */; };
@@ -196,6 +199,12 @@
 		18042E601C931E2000BD3AFE /* LZStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZStatusPhotoView.m; sourceTree = "<group>"; };
 		18042E621C931F0100BD3AFE /* LZIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZIconView.h; sourceTree = "<group>"; };
 		18042E631C931F0100BD3AFE /* LZIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZIconView.m; sourceTree = "<group>"; };
+		181FBEE91C9BD13A009AA408 /* LZEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionKeyboard.h; sourceTree = "<group>"; };
+		181FBEEA1C9BD13A009AA408 /* LZEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionKeyboard.m; sourceTree = "<group>"; };
+		181FBEEB1C9BD13A009AA408 /* LZEmotionListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionListView.h; sourceTree = "<group>"; };
+		181FBEEC1C9BD13A009AA408 /* LZEmotionListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionListView.m; sourceTree = "<group>"; };
+		181FBEED1C9BD13A009AA408 /* LZEmotionTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionTabBar.h; sourceTree = "<group>"; };
+		181FBEEE1C9BD13A009AA408 /* LZEmotionTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionTabBar.m; sourceTree = "<group>"; };
 		1820E8071C85F85B00956845 /* LZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTabBar.h; sourceTree = "<group>"; };
 		1820E8081C85F85B00956845 /* LZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZTabBar.m; sourceTree = "<group>"; };
 		182E2A521C8BFFAB00836441 /* LZTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTitleButton.h; sourceTree = "<group>"; };
@@ -736,6 +745,12 @@
 				18DD3D9F1C98264900BB690E /* LZComposePhotosView.m */,
 				18DD3DA01C98264900BB690E /* LZComposeToolbar.h */,
 				18DD3DA11C98264900BB690E /* LZComposeToolbar.m */,
+				181FBEE91C9BD13A009AA408 /* LZEmotionKeyboard.h */,
+				181FBEEA1C9BD13A009AA408 /* LZEmotionKeyboard.m */,
+				181FBEEB1C9BD13A009AA408 /* LZEmotionListView.h */,
+				181FBEEC1C9BD13A009AA408 /* LZEmotionListView.m */,
+				181FBEED1C9BD13A009AA408 /* LZEmotionTabBar.h */,
+				181FBEEE1C9BD13A009AA408 /* LZEmotionTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -840,6 +855,7 @@
 				18042E0B1C92F9E100BD3AFE /* AFHTTPRequestOperation.m in Sources */,
 				18042E2F1C92F9E100BD3AFE /* UIImageView+HighlightedWebCache.m in Sources */,
 				18042DB61C92F9BE00BD3AFE /* UIView+LZExtension.m in Sources */,
+				181FBEEF1C9BD13A009AA408 /* LZEmotionKeyboard.m in Sources */,
 				18042E351C92FA3F00BD3AFE /* LZAppDelegate.m in Sources */,
 				18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */,
 				189434261C88733300BEB073 /* LZAccount.m in Sources */,
@@ -849,6 +865,7 @@
 				18F9D5291C9481810098A314 /* LZTextView.m in Sources */,
 				1820E8091C85F85B00956845 /* LZTabBar.m in Sources */,
 				18042E5E1C931D9D00BD3AFE /* LZStatusPhotosView.m in Sources */,
+				181FBEF11C9BD13A009AA408 /* LZEmotionTabBar.m in Sources */,
 				18042E5B1C93197000BD3AFE /* NSString+Extension.m in Sources */,
 				18BED6221C858508000BC2A0 /* LZTitleMenuViewController.m in Sources */,
 				18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */,
@@ -896,6 +913,7 @@
 				18042E641C931F0100BD3AFE /* LZIconView.m in Sources */,
 				18042E491C92FBE400BD3AFE /* LZMessageCenterViewController.m in Sources */,
 				183C065D1C8F2E890060292D /* LZLoadMoreFooter.m in Sources */,
+				181FBEF01C9BD13A009AA408 /* LZEmotionListView.m in Sources */,
 				18042E2D1C92F9E100BD3AFE /* UIImage+MultiFormat.m in Sources */,
 				18042E611C931E2000BD3AFE /* LZStatusPhotoView.m in Sources */,
 				18042E311C92F9E100BD3AFE /* UIView+WebCacheOperation.m in Sources */,

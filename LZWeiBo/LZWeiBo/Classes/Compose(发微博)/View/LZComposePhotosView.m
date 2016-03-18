@@ -1,10 +1,6 @@
 //
 //  LZComposePhotosView.m
-//  黑马微博2期
-//
-//  Created by apple on 14-10-20.
-//  Copyright (c) 2014年 heima. All rights reserved.
-//
+
 
 #import "LZComposePhotosView.h"
 
@@ -12,15 +8,6 @@
 @end
 
 @implementation LZComposePhotosView
-
-//- (NSMutableArray *)addedPhotos
-//{
-//    if (!_addedPhotos) {
-////        self.addedPhotos = [[NSMutableArray alloc] init];
-//        self.addedPhotos = [NSMutableArray array];
-//    }
-//    return _addedPhotos;
-//}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -42,22 +29,24 @@
     [self.photos addObject:photo];
 }
 
+// 布局UIImageView子控件
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
     // 设置图片的尺寸和位置
     NSUInteger count = self.subviews.count;
-    int maxCol = 4;
+    // 设置4列
+    NSInteger maxCol = 4;
     CGFloat imageWH = 70;
     CGFloat imageMargin = 10;
     
-    for (int i = 0; i<count; i++) {
+    for (NSInteger i = 0; i < count; i++) {
         UIImageView *photoView = self.subviews[i];
-        
+        // 列号
         int col = i % maxCol;
         photoView.x = col * (imageWH + imageMargin);
-        
+        // 行号
         int row = i / maxCol;
         photoView.y = row * (imageWH + imageMargin);
         photoView.width = imageWH;
@@ -65,18 +54,5 @@
     }
 }
 
-//- (NSArray *)photos
-//{
-//    return self.addedPhotos;
-//}
-
-//- (NSArray *)photos
-//{
-//    NSMutableArray *photos = [NSMutableArray array];
-//    for (UIImageView *imageView in self.subviews) {
-//        [photos addObject:imageView.image];
-//    }
-//    return photos;
-//}
 
 @end

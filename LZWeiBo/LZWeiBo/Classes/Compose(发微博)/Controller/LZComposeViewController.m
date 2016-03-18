@@ -46,17 +46,6 @@
     [self setupPhotosView];
 }
 
-
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [super viewWillAppear:animated];
-//
-//    LZLog(@"viewWillAppear");
-//
-//    // 成为第一响应者（能输入文本的控件一旦成为第一响应者，就会叫出相应的键盘）
-//    [self.textView becomeFirstResponder];
-//}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -81,6 +70,7 @@
     photosView.width = self.view.width;
     // 随便写的
     photosView.height = self.view.height;
+    // 添加到textView上
     [self.textView addSubview:photosView];
     self.photosView = photosView;
 }
@@ -321,15 +311,13 @@
 - (void)openAlbum
 {
     // 如果想自己写一个图片选择控制器，得利用AssetsLibrary.framework，利用这个框架可以获得手机上的所有相册图片
-    // UIImagePickerControllerSourceTypePhotoLibrary > UIImagePickerControllerSourceTypeSavedPhotosAlbum
+    //  UIImagePickerControllerSourceTypePhotoLibrary > UIImagePickerControllerSourceTypeSavedPhotosAlbum
     [self openImagePickerController:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
 - (void)openImagePickerController:(UIImagePickerControllerSourceType)type
 {
     if (![UIImagePickerController isSourceTypeAvailable:type]) return;
-    
-    //    self.picking = YES;
     
     UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
     ipc.sourceType = type;
