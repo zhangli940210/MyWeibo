@@ -13,6 +13,7 @@
 #import "AFNetworking.h"
 #import "LZComposeToolbar.h"
 #import "LZComposePhotosView.h"
+#import "LZEmotionKeyboard.h"
 
 @interface LZComposeViewController () <UITextViewDelegate, LZComposeToolbarDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /** 输入控件 */
@@ -21,11 +22,27 @@
 @property (nonatomic, weak) LZComposeToolbar *toolbar;
 /** 相册（存放拍照或者相册中选择的图片） */
 @property (nonatomic, weak) LZComposePhotosView *photosView;
+#warning 一定要用strong
+/** 表情键盘 */
+@property (nonatomic, strong) LZEmotionKeyboard *emotionKeyboard;
+/** 是否正在切换键盘 */
+@property (nonatomic, assign) BOOL switchingKeybaord;
 
-//@property (nonatomic, assign) BOOL  picking;
 @end
 
 @implementation LZComposeViewController
+
+#pragma mark - 懒加载
+- (LZEmotionKeyboard *)emotionKeyboard
+{
+    if (!_emotionKeyboard) {
+        self.emotionKeyboard = [[LZEmotionKeyboard alloc] init];
+        self.emotionKeyboard.width = self.view.width;
+        self.emotionKeyboard.height = 216;
+    }
+    return _emotionKeyboard;
+}
+
 #pragma mark - 系统方法
 - (void)viewDidLoad
 {
@@ -160,7 +177,8 @@
  */
 - (void)keyboardWillChangeFrame:(NSNotification *)notification
 {
-    //    if (self.picking) return;
+    // 如果正在切换键盘，就不要执行后面的代码
+    if (self.switchingKeybaord) return;
     /**
      notification.userInfo = @{
      // 键盘弹出\隐藏后的frame
@@ -289,20 +307,51 @@
             break;
             
         case LZComposeToolbarButtonTypeMention: // @
-            LZLog(@"--- @");
             break;
             
         case LZComposeToolbarButtonTypeTrend: // #
-            LZLog(@"--- #");
             break;
             
         case LZComposeToolbarButtonTypeEmotion: // 表情\键盘
-            LZLog(@"--- 表情");
+            [self switchKeyboard];
             break;
     }
 }
 
 #pragma mark - 其他方法
+/**
+ *  切换键盘
+ */
+- (void)switchKeyboard
+{
+    // self.textView.inputView == nil : 使用的是系统自带的键盘
+    if (self.textView.inputView == nil) { // 切换为自定义的表情键盘
+        self.textView.inputView = self.emotionKeyboard;
+        
+        // 显示键盘按钮
+        self.toolbar.showKeyboardButton = YES;
+    } else { // 切换为系统自带的键盘
+        self.textView.inputView = nil;
+        
+        // 显示表情按钮
+        self.toolbar.showKeyboardButton = NO;
+    }
+    
+    // 开始切换键盘
+    self.switchingKeybaord = YES;
+    
+    // 退出键盘
+    [self.textView endEditing:YES];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 弹出键盘
+        [self.textView becomeFirstResponder];
+        
+        // 结束切换键盘
+        self.switchingKeybaord = NO;
+    });
+}
+
 - (void)openCamera
 {
     [self openImagePickerController:UIImagePickerControllerSourceTypeCamera];
@@ -339,16 +388,11 @@
     // 添加图片到photosView中
     [self.photosView addPhoto:image];
     
-    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    //        self.picking = NO;
-    //    });
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    //        self.picking = NO;
-    //    });
+    
 }
 
 @end

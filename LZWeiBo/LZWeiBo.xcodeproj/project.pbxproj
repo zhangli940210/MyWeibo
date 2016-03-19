@@ -62,6 +62,7 @@
 		181FBEEF1C9BD13A009AA408 /* LZEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEA1C9BD13A009AA408 /* LZEmotionKeyboard.m */; };
 		181FBEF01C9BD13A009AA408 /* LZEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEC1C9BD13A009AA408 /* LZEmotionListView.m */; };
 		181FBEF11C9BD13A009AA408 /* LZEmotionTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEE1C9BD13A009AA408 /* LZEmotionTabBar.m */; };
+		181FBF3A1C9CE224009AA408 /* LZEmotionTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBF391C9CE224009AA408 /* LZEmotionTabBarButton.m */; };
 		1820E8091C85F85B00956845 /* LZTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820E8081C85F85B00956845 /* LZTabBar.m */; };
 		182E2A541C8BFFAB00836441 /* LZTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 182E2A531C8BFFAB00836441 /* LZTitleButton.m */; };
 		1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834F0851C81D14C00765525 /* LZHomeViewController.m */; };
@@ -205,6 +206,8 @@
 		181FBEEC1C9BD13A009AA408 /* LZEmotionListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionListView.m; sourceTree = "<group>"; };
 		181FBEED1C9BD13A009AA408 /* LZEmotionTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionTabBar.h; sourceTree = "<group>"; };
 		181FBEEE1C9BD13A009AA408 /* LZEmotionTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionTabBar.m; sourceTree = "<group>"; };
+		181FBF381C9CE224009AA408 /* LZEmotionTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionTabBarButton.h; sourceTree = "<group>"; };
+		181FBF391C9CE224009AA408 /* LZEmotionTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionTabBarButton.m; sourceTree = "<group>"; };
 		1820E8071C85F85B00956845 /* LZTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTabBar.h; sourceTree = "<group>"; };
 		1820E8081C85F85B00956845 /* LZTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZTabBar.m; sourceTree = "<group>"; };
 		182E2A521C8BFFAB00836441 /* LZTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTitleButton.h; sourceTree = "<group>"; };
@@ -741,16 +744,18 @@
 		18DD3D9D1C98262500BB690E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				18DD3D9E1C98264900BB690E /* LZComposePhotosView.h */,
-				18DD3D9F1C98264900BB690E /* LZComposePhotosView.m */,
 				18DD3DA01C98264900BB690E /* LZComposeToolbar.h */,
 				18DD3DA11C98264900BB690E /* LZComposeToolbar.m */,
+				18DD3D9E1C98264900BB690E /* LZComposePhotosView.h */,
+				18DD3D9F1C98264900BB690E /* LZComposePhotosView.m */,
 				181FBEE91C9BD13A009AA408 /* LZEmotionKeyboard.h */,
 				181FBEEA1C9BD13A009AA408 /* LZEmotionKeyboard.m */,
-				181FBEEB1C9BD13A009AA408 /* LZEmotionListView.h */,
-				181FBEEC1C9BD13A009AA408 /* LZEmotionListView.m */,
 				181FBEED1C9BD13A009AA408 /* LZEmotionTabBar.h */,
 				181FBEEE1C9BD13A009AA408 /* LZEmotionTabBar.m */,
+				181FBF381C9CE224009AA408 /* LZEmotionTabBarButton.h */,
+				181FBF391C9CE224009AA408 /* LZEmotionTabBarButton.m */,
+				181FBEEB1C9BD13A009AA408 /* LZEmotionListView.h */,
+				181FBEEC1C9BD13A009AA408 /* LZEmotionListView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -922,6 +927,7 @@
 				18042E1D1C92F9E100BD3AFE /* MJType.m in Sources */,
 				18042E191C92F9E100BD3AFE /* MJFoundation.m in Sources */,
 				18042E161C92F9E100BD3AFE /* MBProgressHUD.m in Sources */,
+				181FBF3A1C9CE224009AA408 /* LZEmotionTabBarButton.m in Sources */,
 				18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */,
 				1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */,
 				1834F0AF1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m in Sources */,

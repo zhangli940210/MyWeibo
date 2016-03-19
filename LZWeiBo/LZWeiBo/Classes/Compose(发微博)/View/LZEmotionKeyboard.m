@@ -1,16 +1,10 @@
-//
-//  LZEmotionKeyboard.m
-//  黑马微博2期
-//
-//  Created by apple on 14-10-22.
-//  Copyright (c) 2014年 heima. All rights reserved.
-//
+
 
 #import "LZEmotionKeyboard.h"
 #import "LZEmotionListView.h"
 #import "LZEmotionTabBar.h"
 
-@interface LZEmotionKeyboard()
+@interface LZEmotionKeyboard() <LZEmotionTabBarDelegate>
 /** 表情内容 */
 @property (nonatomic, weak) LZEmotionListView *listView;
 /** tabbar */
@@ -31,7 +25,7 @@
         
         // 2.tabbar
         LZEmotionTabBar *tabBar = [[LZEmotionTabBar alloc] init];
-        tabBar.backgroundColor = LZRandomColor;
+        tabBar.delegate = self;
         [self addSubview:tabBar];
         self.tabBar = tabBar;
     }
@@ -44,7 +38,7 @@
     
     // 1.tabbar
     self.tabBar.width = self.width;
-    self.tabBar.height = 44;
+    self.tabBar.height = 37;
     self.tabBar.x = 0;
     self.tabBar.y = self.height - self.tabBar.height;
     
@@ -52,6 +46,28 @@
     self.listView.x = self.listView.y = 0;
     self.listView.width = self.width;
     self.listView.height = self.tabBar.y;
+}
+
+#pragma mark - LZEmotionTabBarDelegate
+- (void)emotionTabBar:(LZEmotionTabBar *)tabBar didSelectButton:(LZEmotionTabBarButtonType)buttonType
+{
+    switch (buttonType) {
+        case LZEmotionTabBarButtonTypeRecent: // 最近
+            LZLog(@"最近");
+            break;
+            
+        case LZEmotionTabBarButtonTypeDefault: // 默认
+            LZLog(@"默认");
+            break;
+            
+        case LZEmotionTabBarButtonTypeEmoji: // Emoji
+            LZLog(@"Emoji");
+            break;
+            
+        case LZEmotionTabBarButtonTypeLxh: // Lxh
+            LZLog(@"Lxh");
+            break;
+    }
 }
 
 @end
