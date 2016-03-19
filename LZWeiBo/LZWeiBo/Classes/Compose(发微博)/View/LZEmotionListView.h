@@ -4,5 +4,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LZEmotionListView : UIView
-
+/** 表情(里面存放的LZEmotion模型) */
+@property (nonatomic, strong) NSArray *emotions;
 @end

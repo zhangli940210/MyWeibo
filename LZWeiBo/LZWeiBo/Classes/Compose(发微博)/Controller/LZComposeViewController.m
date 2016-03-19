@@ -1,9 +1,9 @@
 //
 //  LZComposeViewController.m
-//  LZWeiBo
+//  黑马微博2期
 //
-//  Created by apple on 16/3/12.
-//  Copyright © 2016年 m14a. All rights reserved.
+//  Created by apple on 14-10-20.
+//  Copyright (c) 2014年 heima. All rights reserved.
 //
 
 #import "LZComposeViewController.h"
@@ -27,11 +27,9 @@
 @property (nonatomic, strong) LZEmotionKeyboard *emotionKeyboard;
 /** 是否正在切换键盘 */
 @property (nonatomic, assign) BOOL switchingKeybaord;
-
 @end
 
 @implementation LZComposeViewController
-
 #pragma mark - 懒加载
 - (LZEmotionKeyboard *)emotionKeyboard
 {
@@ -87,7 +85,6 @@
     photosView.width = self.view.width;
     // 随便写的
     photosView.height = self.view.height;
-    // 添加到textView上
     [self.textView addSubview:photosView];
     self.photosView = photosView;
 }
@@ -160,14 +157,6 @@
     
     // 键盘通知
     // 键盘的frame发生改变时发出的通知（位置和尺寸）
-    //    UIKeyboardWillChangeFrameNotification
-    //    UIKeyboardDidChangeFrameNotification
-    // 键盘显示时发出的通知
-    //    UIKeyboardWillShowNotification
-    //    UIKeyboardDidShowNotification
-    // 键盘隐藏时发出的通知
-    //    UIKeyboardWillHideNotification
-    //    UIKeyboardDidHideNotification
     [LZNotificationCenter addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
@@ -179,21 +168,11 @@
 {
     // 如果正在切换键盘，就不要执行后面的代码
     if (self.switchingKeybaord) return;
-    /**
-     notification.userInfo = @{
-     // 键盘弹出\隐藏后的frame
-     UIKeyboardFrameEndUserInfoKey = NSRect: {{0, 352}, {320, 216}},
-     // 键盘弹出\隐藏所耗费的时间
-     UIKeyboardAnimationDurationUserInfoKey = 0.25,
-     // 键盘弹出\隐藏动画的执行节奏（先快后慢，匀速）
-     UIKeyboardAnimationCurveUserInfoKey = 7
-     }
-     */
     
     NSDictionary *userInfo = notification.userInfo;
     // 动画的持续时间
     double duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    // 键盘弹出或者隐藏之后的frame
+    // 键盘的frame
     CGRect keyboardF = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
     // 执行动画
@@ -204,7 +183,6 @@
         } else {
             self.toolbar.y = keyboardF.origin.y - self.toolbar.height;
         }
-//        LZLog(@"%@", NSStringFromCGRect(self.toolbar.frame));
     }];
 }
 
@@ -288,7 +266,6 @@
 }
 
 #pragma mark - UITextViewDelegate
-// 开始拖拽
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self.view endEditing:YES];
@@ -307,9 +284,11 @@
             break;
             
         case LZComposeToolbarButtonTypeMention: // @
+            LZLog(@"--- @");
             break;
             
         case LZComposeToolbarButtonTypeTrend: // #
+            LZLog(@"--- #");
             break;
             
         case LZComposeToolbarButtonTypeEmotion: // 表情\键盘
@@ -360,7 +339,7 @@
 - (void)openAlbum
 {
     // 如果想自己写一个图片选择控制器，得利用AssetsLibrary.framework，利用这个框架可以获得手机上的所有相册图片
-    //  UIImagePickerControllerSourceTypePhotoLibrary > UIImagePickerControllerSourceTypeSavedPhotosAlbum
+    // UIImagePickerControllerSourceTypePhotoLibrary > UIImagePickerControllerSourceTypeSavedPhotosAlbum
     [self openImagePickerController:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
@@ -387,7 +366,6 @@
     
     // 添加图片到photosView中
     [self.photosView addPhoto:image];
-    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker

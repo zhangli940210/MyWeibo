@@ -25,7 +25,6 @@
     [self addSubview:photoView];
     
     // 存储图片
-//    [_photos addObject:photo];
     [self.photos addObject:photo];
 }
 

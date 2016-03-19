@@ -59,6 +59,8 @@
 		18042E5E1C931D9D00BD3AFE /* LZStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18042E5D1C931D9D00BD3AFE /* LZStatusPhotosView.m */; };
 		18042E611C931E2000BD3AFE /* LZStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18042E601C931E2000BD3AFE /* LZStatusPhotoView.m */; };
 		18042E641C931F0100BD3AFE /* LZIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18042E631C931F0100BD3AFE /* LZIconView.m */; };
+		18190BAB1C9D8879003F6CD3 /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = 18190BAA1C9D8879003F6CD3 /* EmotionIcons */; };
+		18190BAF1C9D8BF2003F6CD3 /* LZEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 18190BAE1C9D8BF2003F6CD3 /* LZEmotion.m */; };
 		181FBEEF1C9BD13A009AA408 /* LZEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEA1C9BD13A009AA408 /* LZEmotionKeyboard.m */; };
 		181FBEF01C9BD13A009AA408 /* LZEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEC1C9BD13A009AA408 /* LZEmotionListView.m */; };
 		181FBEF11C9BD13A009AA408 /* LZEmotionTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEE1C9BD13A009AA408 /* LZEmotionTabBar.m */; };
@@ -200,6 +202,9 @@
 		18042E601C931E2000BD3AFE /* LZStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZStatusPhotoView.m; sourceTree = "<group>"; };
 		18042E621C931F0100BD3AFE /* LZIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZIconView.h; sourceTree = "<group>"; };
 		18042E631C931F0100BD3AFE /* LZIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZIconView.m; sourceTree = "<group>"; };
+		18190BAA1C9D8879003F6CD3 /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
+		18190BAD1C9D8BF2003F6CD3 /* LZEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotion.h; sourceTree = "<group>"; };
+		18190BAE1C9D8BF2003F6CD3 /* LZEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotion.m; sourceTree = "<group>"; };
 		181FBEE91C9BD13A009AA408 /* LZEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionKeyboard.h; sourceTree = "<group>"; };
 		181FBEEA1C9BD13A009AA408 /* LZEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionKeyboard.m; sourceTree = "<group>"; };
 		181FBEEB1C9BD13A009AA408 /* LZEmotionListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionListView.h; sourceTree = "<group>"; };
@@ -512,6 +517,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		18190BAC1C9D8BC8003F6CD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18190BAD1C9D8BF2003F6CD3 /* LZEmotion.h */,
+				18190BAE1C9D8BF2003F6CD3 /* LZEmotion.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1834F0821C81D14C00765525 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +688,7 @@
 		1893CEFF1C78114D005C5F66 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18190BAA1C9D8879003F6CD3 /* EmotionIcons */,
 				1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */,
 				1893CF101C78114D005C5F66 /* Info.plist */,
 				18C16A4B1C80B10D00923474 /* LZWeiBo.pch */,
@@ -763,6 +778,7 @@
 		18F9D5221C946C760098A314 /* Compose(发微博) */ = {
 			isa = PBXGroup;
 			children = (
+				18190BAC1C9D8BC8003F6CD3 /* Model */,
 				18DD3D9D1C98262500BB690E /* View */,
 				18F9D5231C946C760098A314 /* Controller */,
 			);
@@ -840,6 +856,7 @@
 				183C065A1C8EC7AE0060292D /* LZUserCell.xib in Resources */,
 				183C065F1C8F2E9E0060292D /* LZLoadMoreFooter.xib in Resources */,
 				18042E151C92F9E100BD3AFE /* MBProgressHUD.bundle in Resources */,
+				18190BAB1C9D8879003F6CD3 /* EmotionIcons in Resources */,
 				1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */,
 				1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */,
 			);
@@ -863,6 +880,7 @@
 				181FBEEF1C9BD13A009AA408 /* LZEmotionKeyboard.m in Sources */,
 				18042E351C92FA3F00BD3AFE /* LZAppDelegate.m in Sources */,
 				18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */,
+				18190BAF1C9D8BF2003F6CD3 /* LZEmotion.m in Sources */,
 				189434261C88733300BEB073 /* LZAccount.m in Sources */,
 				18042E121C92F9E100BD3AFE /* AFURLResponseSerialization.m in Sources */,
 				18042E3B1C92FAE400BD3AFE /* LZNavigationController.m in Sources */,

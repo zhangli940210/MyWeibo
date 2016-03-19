@@ -37,11 +37,6 @@
     [btn setTitle:title forState:UIControlStateNormal];
     [self addSubview:btn];
     
-    // 选中“默认”按钮
-    if (buttonType == LZEmotionTabBarButtonTypeDefault) {
-        [self btnClick:btn];
-    }
-    
     // 设置背景图片
     NSString *image = @"compose_emotion_table_mid_normal";
     NSString *selectImage = @"compose_emotion_table_mid_selected";
@@ -74,6 +69,14 @@
         btn.x = i * btnW;
         btn.height = btnH;
     }
+}
+
+- (void)setDelegate:(id<LZEmotionTabBarDelegate>)delegate
+{
+    _delegate = delegate;
+    
+    // 选中“默认”按钮
+    [self btnClick:(LZEmotionTabBarButton *)[self viewWithTag:LZEmotionTabBarButtonTypeDefault]];
 }
 
 /**
