@@ -61,6 +61,8 @@
 		18042E641C931F0100BD3AFE /* LZIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18042E631C931F0100BD3AFE /* LZIconView.m */; };
 		18190BAB1C9D8879003F6CD3 /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = 18190BAA1C9D8879003F6CD3 /* EmotionIcons */; };
 		18190BAF1C9D8BF2003F6CD3 /* LZEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 18190BAE1C9D8BF2003F6CD3 /* LZEmotion.m */; };
+		18190BB21C9DAF89003F6CD3 /* LZEmotionPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18190BB11C9DAF89003F6CD3 /* LZEmotionPageView.m */; };
+		18190BB51C9DB08A003F6CD3 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 18190BB41C9DB08A003F6CD3 /* NSString+Emoji.m */; };
 		181FBEEF1C9BD13A009AA408 /* LZEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEA1C9BD13A009AA408 /* LZEmotionKeyboard.m */; };
 		181FBEF01C9BD13A009AA408 /* LZEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEC1C9BD13A009AA408 /* LZEmotionListView.m */; };
 		181FBEF11C9BD13A009AA408 /* LZEmotionTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 181FBEEE1C9BD13A009AA408 /* LZEmotionTabBar.m */; };
@@ -205,6 +207,10 @@
 		18190BAA1C9D8879003F6CD3 /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
 		18190BAD1C9D8BF2003F6CD3 /* LZEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotion.h; sourceTree = "<group>"; };
 		18190BAE1C9D8BF2003F6CD3 /* LZEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotion.m; sourceTree = "<group>"; };
+		18190BB01C9DAF89003F6CD3 /* LZEmotionPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionPageView.h; sourceTree = "<group>"; };
+		18190BB11C9DAF89003F6CD3 /* LZEmotionPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionPageView.m; sourceTree = "<group>"; };
+		18190BB31C9DB08A003F6CD3 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		18190BB41C9DB08A003F6CD3 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
 		181FBEE91C9BD13A009AA408 /* LZEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionKeyboard.h; sourceTree = "<group>"; };
 		181FBEEA1C9BD13A009AA408 /* LZEmotionKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionKeyboard.m; sourceTree = "<group>"; };
 		181FBEEB1C9BD13A009AA408 /* LZEmotionListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionListView.h; sourceTree = "<group>"; };
@@ -598,6 +604,8 @@
 		1834F0891C81D14C00765525 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				18190BB31C9DB08A003F6CD3 /* NSString+Emoji.h */,
+				18190BB41C9DB08A003F6CD3 /* NSString+Emoji.m */,
 				18E333201C8AF75D00AE5B6E /* Foundation+Log.m */,
 				18042DB41C92F9BE00BD3AFE /* UIView+LZExtension.h */,
 				18042DB51C92F9BE00BD3AFE /* UIView+LZExtension.m */,
@@ -771,6 +779,8 @@
 				181FBF391C9CE224009AA408 /* LZEmotionTabBarButton.m */,
 				181FBEEB1C9BD13A009AA408 /* LZEmotionListView.h */,
 				181FBEEC1C9BD13A009AA408 /* LZEmotionListView.m */,
+				18190BB01C9DAF89003F6CD3 /* LZEmotionPageView.h */,
+				18190BB11C9DAF89003F6CD3 /* LZEmotionPageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -872,6 +882,7 @@
 				18042E361C92FA3F00BD3AFE /* main.m in Sources */,
 				18DD3DA31C98264900BB690E /* LZComposeToolbar.m in Sources */,
 				18042E261C92F9E100BD3AFE /* SDWebImageDecoder.m in Sources */,
+				18190BB21C9DAF89003F6CD3 /* LZEmotionPageView.m in Sources */,
 				18042E2A1C92F9E100BD3AFE /* SDWebImagePrefetcher.m in Sources */,
 				18F9D5261C946CA50098A314 /* LZComposeViewController.m in Sources */,
 				18042E0B1C92F9E100BD3AFE /* AFHTTPRequestOperation.m in Sources */,
@@ -913,6 +924,7 @@
 				185D39481C91900500AA0E00 /* LZPhoto.m in Sources */,
 				18042E131C92F9E100BD3AFE /* AFURLSessionManager.m in Sources */,
 				1894187F1C870C8500B284BA /* LZOAuthViewController.m in Sources */,
+				18190BB51C9DB08A003F6CD3 /* NSString+Emoji.m in Sources */,
 				18042E1A1C92F9E100BD3AFE /* MJIvar.m in Sources */,
 				18042E0F1C92F9E100BD3AFE /* AFSecurityPolicy.m in Sources */,
 				18042E201C92F9E100BD3AFE /* NSObject+MJKeyValue.m in Sources */,
