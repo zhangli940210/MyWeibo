@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        
     }
     return self;
 }
@@ -23,15 +23,18 @@
 {
     _emotions = emotions;
     
+    // 当前界面的表情个数
     NSUInteger count = emotions.count;
-    for (int i = 0; i<count; i++) {
+    for (NSInteger i = 0; i < count; i++) {
+        // 创建按钮
         UIButton *btn = [[UIButton alloc] init];
+        // 从数组中取出对应的模型
         LZEmotion *emotion = emotions[i];
         
         if (emotion.png) { // 有图片
             [btn setImage:[UIImage imageNamed:emotion.png] forState:UIControlStateNormal];
         } else if (emotion.code) { // 是emoji表情
-            // 设置emoji
+            // 设置emoji,每一个表情都是一个文字
             [btn setTitle:emotion.code.emoji forState:UIControlStateNormal];
             btn.titleLabel.font = [UIFont systemFontOfSize:32];
         }
@@ -52,12 +55,12 @@
     NSUInteger count = self.emotions.count;
     CGFloat btnW = (self.width - 2 * inset) / LZEmotionMaxCols;
     CGFloat btnH = (self.height - inset) / LZEmotionMaxRows;
-    for (int i = 0; i<count; i++) {
+    for (NSInteger i = 0; i<count; i++) {
         UIButton *btn = self.subviews[i];
         btn.width = btnW;
         btn.height = btnH;
-        btn.x = inset + (i%LZEmotionMaxCols) * btnW;
-        btn.y = inset + (i/LZEmotionMaxCols) * btnH;
+        btn.x = inset + (i % LZEmotionMaxCols) * btnW;
+        btn.y = inset + (i / LZEmotionMaxCols) * btnH;
     }
 }
 @end

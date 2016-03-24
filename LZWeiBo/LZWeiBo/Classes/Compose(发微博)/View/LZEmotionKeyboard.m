@@ -99,25 +99,25 @@
     switch (buttonType) {
         case LZEmotionTabBarButtonTypeRecent: { // 最近
             [self addSubview:self.recentListView];
-            //            self.showingListView = self.recentListView;
+
             break;
         }
             
         case LZEmotionTabBarButtonTypeDefault: { // 默认
             [self addSubview:self.defaultListView];
-            //            self.showingListView = self.defaultListView;
+
             break;
         }
             
         case LZEmotionTabBarButtonTypeEmoji: { // Emoji
             [self addSubview:self.emojiListView];
-            //            self.showingListView = self.emojiListView;
+
             break;
         }
             
         case LZEmotionTabBarButtonTypeLxh: { // Lxh
             [self addSubview:self.lxhListView];
-            //            self.showingListView = self.lxhListView;
+
             break;
         }
     }
