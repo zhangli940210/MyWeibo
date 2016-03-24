@@ -7,110 +7,83 @@
 //
 
 #import "LZProfileViewController.h"
-//#import "HWTest1ViewController.h"
+#import "LZAttentionsViewController.h"
+#import "LZFansViewController.h"
 
 @interface LZProfileViewController ()
+
+/** 正在显示的控制器*/
+@property (nonatomic, weak) UIViewController *showingVC;
+
 @end
 
 @implementation LZProfileViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //从ios7开始当scrollView在导航控制器,会自动调用边距64
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    // 添加子控制器
+    [self addChildViewController:[[LZAttentionsViewController alloc] init]];
+    [self addChildViewController:[[LZFansViewController alloc] init]];
+    
+    // 添加子控件
+    [self setup];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:0 target:self action:@selector(setting)];
 }
 
 - (void)setting
 {
-//    HWTest1ViewController *test1 = [[HWTest1ViewController alloc] init];
-//    test1.title = @"test1";
-//    [self.navigationController pushViewController:test1 animated:YES];
+
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)setup
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    // 创建seg对象
+    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"路飞", @"索隆"]];
+    // 设置主题颜色
+    seg.tintColor = LZColor(0, 158, 161);
+    // 设置默认选中为0
+    seg.selectedSegmentIndex = 0;
+    // 设置选中的颜色
+    NSMutableDictionary *segTextAtt = [NSMutableDictionary dictionary];
+    segTextAtt[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    [seg setTitleTextAttributes:segTextAtt forState:UIControlStateSelected];
+    // 设置选中和没有选中的背景色
+    [seg setBackgroundImage:[UIImage imageNamed:@"CPArenaSegmentBG"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [seg setBackgroundImage:[UIImage imageNamed:@"CPArenaSegmentSelectedBG"] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     
-    // Configure the cell...
+    // 添加监听事件
+    [seg addTarget:self action:@selector(chooseController:) forControlEvents:UIControlEventValueChanged];
+    // 默认调用一次chooseController方法
+    [self chooseController:seg];
     
-    return cell;
+    // 赋值
+    self.navigationItem.titleView = seg;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)chooseController: (UISegmentedControl *)seg
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    // 1.移除正在显示的view
+    [self.showingVC.view removeFromSuperview];
+    // 2.判断
+    if (seg.selectedSegmentIndex == 0) {
+        // 2.添加要显示的view
+        // 2.1设置好要显示的控制器
+        self.showingVC = self.childViewControllers[0];
+        
+    } else {
+        self.showingVC = self.childViewControllers[1];
+    }
+    
+    self.showingVC.view.frame = CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height);
+    // 2.2添加要显示的控制器的view
+    [self.view addSubview:self.showingVC.view];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

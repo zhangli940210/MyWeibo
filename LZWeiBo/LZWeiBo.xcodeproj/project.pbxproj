@@ -90,6 +90,8 @@
 		18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61B1C85435E000BC2A0 /* LZSearchBar.m */; };
 		18BED61F1C856C93000BC2A0 /* LZDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61E1C856C93000BC2A0 /* LZDropdownMenu.m */; };
 		18BED6221C858508000BC2A0 /* LZTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED6211C858508000BC2A0 /* LZTitleMenuViewController.m */; };
+		18D02A091CA448F200824042 /* LZAttentionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D02A081CA448F200824042 /* LZAttentionsViewController.m */; };
+		18D02A0C1CA4492400824042 /* LZFansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D02A0B1CA4492400824042 /* LZFansViewController.m */; };
 		18DD3DA21C98264900BB690E /* LZComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3D9F1C98264900BB690E /* LZComposePhotosView.m */; };
 		18DD3DA31C98264900BB690E /* LZComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3DA11C98264900BB690E /* LZComposeToolbar.m */; };
 		18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */; };
@@ -264,6 +266,10 @@
 		18BED6201C858508000BC2A0 /* LZTitleMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTitleMenuViewController.h; sourceTree = "<group>"; };
 		18BED6211C858508000BC2A0 /* LZTitleMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZTitleMenuViewController.m; sourceTree = "<group>"; };
 		18C16A4B1C80B10D00923474 /* LZWeiBo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZWeiBo.pch; sourceTree = "<group>"; };
+		18D02A071CA448F200824042 /* LZAttentionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAttentionsViewController.h; sourceTree = "<group>"; };
+		18D02A081CA448F200824042 /* LZAttentionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAttentionsViewController.m; sourceTree = "<group>"; };
+		18D02A0A1CA4492400824042 /* LZFansViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZFansViewController.h; sourceTree = "<group>"; };
+		18D02A0B1CA4492400824042 /* LZFansViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZFansViewController.m; sourceTree = "<group>"; };
 		18DD3D9E1C98264900BB690E /* LZComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZComposePhotosView.h; sourceTree = "<group>"; };
 		18DD3D9F1C98264900BB690E /* LZComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZComposePhotosView.m; sourceTree = "<group>"; };
 		18DD3DA01C98264900BB690E /* LZComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZComposeToolbar.h; sourceTree = "<group>"; };
@@ -512,6 +518,8 @@
 			children = (
 				18042E531C92FD0B00BD3AFE /* LZProfileViewController.h */,
 				18042E541C92FD0B00BD3AFE /* LZProfileViewController.m */,
+				18D02A0D1CA4495500824042 /* LZAttentionsViewController */,
+				18D02A0E1CA4495E00824042 /* LZFansViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -764,6 +772,24 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		18D02A0D1CA4495500824042 /* LZAttentionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18D02A071CA448F200824042 /* LZAttentionsViewController.h */,
+				18D02A081CA448F200824042 /* LZAttentionsViewController.m */,
+			);
+			name = LZAttentionsViewController;
+			sourceTree = "<group>";
+		};
+		18D02A0E1CA4495E00824042 /* LZFansViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18D02A0A1CA4492400824042 /* LZFansViewController.h */,
+				18D02A0B1CA4492400824042 /* LZFansViewController.m */,
+			);
+			name = LZFansViewController;
+			sourceTree = "<group>";
+		};
 		18DD3D9D1C98262500BB690E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,6 +905,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D02A0C1CA4492400824042 /* LZFansViewController.m in Sources */,
 				18042E361C92FA3F00BD3AFE /* main.m in Sources */,
 				18DD3DA31C98264900BB690E /* LZComposeToolbar.m in Sources */,
 				18042E261C92F9E100BD3AFE /* SDWebImageDecoder.m in Sources */,
@@ -960,6 +987,7 @@
 				181FBF3A1C9CE224009AA408 /* LZEmotionTabBarButton.m in Sources */,
 				18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */,
 				1834F0A51C81D14C00765525 /* LZHomeViewController.m in Sources */,
+				18D02A091CA448F200824042 /* LZAttentionsViewController.m in Sources */,
 				1834F0AF1C81DA0A00765525 /* UIBarButtonItem+LZExtension.m in Sources */,
 				18042E241C92F9E100BD3AFE /* SDImageCache.m in Sources */,
 			);
