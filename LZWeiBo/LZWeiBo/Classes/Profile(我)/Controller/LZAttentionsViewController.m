@@ -7,7 +7,6 @@
 //
 
 #import "LZAttentionsViewController.h"
-#import "UIImageView+WebCache.h"
 #import "AFNetworking.h"
 #import "LZAccountTool.h"
 #import "LZUser.h"
@@ -34,13 +33,13 @@ static NSString *ID = @"user";
     // 注册方法
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LZUserCell class]) bundle:nil] forCellReuseIdentifier:ID];
     
-    // 获得用户信息（昵称）
+    // 获得用户信息（关注）
     [self setupUserInfo];
     
 }
 
 /**
- *  获得用户信息（昵称）
+ *  获得用户信息（关注）
  */
 - (void)setupUserInfo
 {
@@ -57,7 +56,7 @@ static NSString *ID = @"user";
     // 3.发送请求
     [mgr GET:@"https://api.weibo.com/2/friendships/friends.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         
-        // 将 "微博字典"数组 转为 "微博模型"数组
+        // 将 "用户字典"数组 转为 "用户模型"数组
         self.users = [LZUser objectArrayWithKeyValuesArray:responseObject[@"users"]];
         // 刷新数据
         [self.tableView reloadData];
@@ -68,18 +67,17 @@ static NSString *ID = @"user";
 }
 
 #pragma mark - Table view data source
-
+// 多少组
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
-
+// 每组多少行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.users.count;
 }
-
-
+// 每行显示什么内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     LZUserCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
@@ -90,7 +88,7 @@ static NSString *ID = @"user";
     
     return cell;
 }
-
+// 行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 90;

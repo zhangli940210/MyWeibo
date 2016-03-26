@@ -7,7 +7,6 @@
 //
 
 #import "LZFansViewController.h"
-#import "UIImageView+WebCache.h"
 #import "AFNetworking.h"
 #import "LZAccountTool.h"
 #import "LZUser.h"
@@ -34,13 +33,13 @@ static NSString *ID = @"user";
     // 注册方法
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LZUserCell class]) bundle:nil] forCellReuseIdentifier:ID];
     
-    // 获得用户信息（昵称）
+    // 获得用户信息（粉丝）
     [self setupUserInfo];
 
 }
 
 /**
- *  获得用户信息（昵称）
+ *  获得用户信息（粉丝）
  */
 - (void)setupUserInfo
 {
@@ -69,17 +68,18 @@ static NSString *ID = @"user";
 
 #pragma mark - Table view data source
 
+#pragma mark - Table view data source
+// 多少组
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
-
+// 每组多少行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.users.count;
 }
-
-
+// 每行显示什么内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     LZUserCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
@@ -90,7 +90,7 @@ static NSString *ID = @"user";
     
     return cell;
 }
-
+// 行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 90;

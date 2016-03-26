@@ -7,55 +7,104 @@
 //
 
 #import "LZDiscoverViewController.h"
+#import "AFNetworking.h"
+#import "LZAccountTool.h"
+#import "LZUser.h"
+#import "MJExtension.h"
 #import "LZSearchBar.h"
 
-@interface LZDiscoverViewController ()
+@interface LZDiscoverViewController () <UITextFieldDelegate>
+
+/** 保存搜索框里面的内容*/
+@property (nonatomic, copy) NSString *searchText;
 
 @end
 
 @implementation LZDiscoverViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // 创建搜索框对象
+    // 1.创建搜索框对象
+    [self createSearchBar];
+    
+}
+// 创建搜索框对象
+- (void)createSearchBar
+{
     LZSearchBar *searchBar = [LZSearchBar searchBar];
     searchBar.width = 300;
     searchBar.height = 30;
+    // 设置returnKeyType类型
+    searchBar.returnKeyType = UIReturnKeySearch;
+    // 添加监听事件
+    [searchBar addTarget:self action:@selector(textChange:) forControlEvents:UIControlEventEditingChanged];
+    // 设置代理
+    searchBar.delegate = self;
     self.navigationItem.titleView = searchBar;
 }
 
-- (void)didReceiveMemoryWarning
+// 当文本内容改变时调用
+- (void)textChange:(LZSearchBar *)searchBar
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.searchText = searchBar.text;
+}
+
+#pragma mark - UITextFieldDelegate方法
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+{
+    // 获得搜索信息
+    [self setupUserInfo];
+    return YES;
+}
+
+/**
+ *  获得搜索信息
+ */
+- (void)setupUserInfo
+{
+    // 1.请求管理者
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 2.拼接请求参数
+    LZAccount *account = [LZAccountTool account];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = account.access_token;
+    // 中文转码
+    self.searchText = [self.searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    params[@"q"] = [NSURL URLWithString:self.searchText];
+//    params[@"type"] = @1;
+//    params[@"count"] = @20;
+    
+    // 3.发送请求
+    [mgr GET:@"https://api.weibo.com/2/search/suggestions/schools.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+        
+        LZLog(@"--%@", responseObject);
+        
+        // 将 "微博字典"数组 转为 "微博模型"数组
+//        self.users = [LZUser objectArrayWithKeyValuesArray:responseObject[@"users"]];
+        // 刷新数据
+//        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        LZLog(@"请求失败-%@", error);
+    }];
+    
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    return 50;
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,53 +117,9 @@
 }
 */
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    [self.view endEditing:YES];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

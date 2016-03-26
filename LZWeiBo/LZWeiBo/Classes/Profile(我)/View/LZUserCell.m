@@ -34,16 +34,19 @@
 /**
  *  关注
  */
+/*
+// https://api.weibo.com/2/friendships/create.json
+//    必选	类型及范围	说明
+//    access_token	true	string	采用OAuth授权方式为必填参数，OAuth授权后获得。
+//    uid	false	int64	需要关注的用户ID。
+//    screen_name	false	string	需要关注的用户昵称。
+//    rip	false	string	开发者上报的操作用户真实IP，形如：211.156.0.1。
+*/
+
+/*
 - (IBAction)focus:(id)sender {
     LZLog(@"111");
-    /*
-     // https://api.weibo.com/2/friendships/create.json
-     //    必选	类型及范围	说明
-     //    access_token	true	string	采用OAuth授权方式为必填参数，OAuth授权后获得。
-     //    uid	false	int64	需要关注的用户ID。
-     //    screen_name	false	string	需要关注的用户昵称。
-     //    rip	false	string	开发者上报的操作用户真实IP，形如：211.156.0.1。
-     */
+   
     // 1.请求管理者
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
@@ -64,6 +67,7 @@
         LZLog(@"---%@", error);
     }];
 }
+ */
 
 // 设置数据
 - (void)setUser:(LZUser *)user
