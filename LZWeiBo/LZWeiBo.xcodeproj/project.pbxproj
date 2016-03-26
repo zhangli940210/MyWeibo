@@ -516,8 +516,7 @@
 		18042E511C92FCE300BD3AFE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18042E531C92FD0B00BD3AFE /* LZProfileViewController.h */,
-				18042E541C92FD0B00BD3AFE /* LZProfileViewController.m */,
+				18CE76641CA6A8CF00E9C968 /* LZProfileViewController */,
 				18D02A0D1CA4495500824042 /* LZAttentionsViewController */,
 				18D02A0E1CA4495E00824042 /* LZFansViewController */,
 			);
@@ -770,6 +769,15 @@
 				18042E4A1C92FC9C00BD3AFE /* Discover(发现) */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		18CE76641CA6A8CF00E9C968 /* LZProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18042E531C92FD0B00BD3AFE /* LZProfileViewController.h */,
+				18042E541C92FD0B00BD3AFE /* LZProfileViewController.m */,
+			);
+			name = LZProfileViewController;
 			sourceTree = "<group>";
 		};
 		18D02A0D1CA4495500824042 /* LZAttentionsViewController */ = {

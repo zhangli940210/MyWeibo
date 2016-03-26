@@ -7,45 +7,93 @@
 //
 
 #import "LZAttentionsViewController.h"
+#import "UIImageView+WebCache.h"
+#import "AFNetworking.h"
+#import "LZAccountTool.h"
+#import "LZUser.h"
+#import "MJExtension.h"
+#import "LZUserCell.h"
 
 @interface LZAttentionsViewController ()
+
+/**
+ *  粉丝数组（里面放的都是LZUser模型，一个LZUser对象就代表一个粉丝）
+ */
+@property (nonatomic, strong) NSArray *users;
 
 @end
 
 @implementation LZAttentionsViewController
 
-static NSString *ID = @"one";
+
+static NSString *ID = @"user";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // 注册方法
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LZUserCell class]) bundle:nil] forCellReuseIdentifier:ID];
+    
+    // 获得用户信息（昵称）
+    [self setupUserInfo];
+    
 }
 
-
+/**
+ *  获得用户信息（昵称）
+ */
+- (void)setupUserInfo
+{
+    // 1.请求管理者
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 2.拼接请求参数
+    LZAccount *account = [LZAccountTool account];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = account.access_token;
+    params[@"uid"] = account.uid;
+    params[@"count"] = @200;
+    
+    // 3.发送请求
+    [mgr GET:@"https://api.weibo.com/2/friendships/friends.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+        
+        // 将 "微博字典"数组 转为 "微博模型"数组
+        self.users = [LZUser objectArrayWithKeyValuesArray:responseObject[@"users"]];
+        // 刷新数据
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //        LZLog(@"请求失败-%@", error);
+    }];
+}
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 50;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.users.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    LZUserCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"One--%zd", indexPath.row];
+    // 拿到数据
+    LZUser *user = self.users[indexPath.row];
+    cell.user = user;
     
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 90;
+}
 
 @end

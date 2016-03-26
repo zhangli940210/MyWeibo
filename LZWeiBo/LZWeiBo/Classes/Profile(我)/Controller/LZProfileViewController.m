@@ -44,7 +44,7 @@
 - (void)setup
 {
     // 创建seg对象
-    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"路飞", @"索隆"]];
+    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"关注", @"粉丝"]];
     // 设置主题颜色
     seg.tintColor = LZColor(0, 158, 161);
     // 设置默认选中为0

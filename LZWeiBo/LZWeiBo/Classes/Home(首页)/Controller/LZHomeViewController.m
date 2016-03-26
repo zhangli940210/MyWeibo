@@ -69,8 +69,6 @@
  */
 - (void)setupUnreadCount
 {
-    //    LZLog(@"setupUnreadCount");
-    //    return;
     // 1.请求管理者
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
