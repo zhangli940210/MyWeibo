@@ -75,8 +75,8 @@
     // 中文转码
     self.searchText = [self.searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     params[@"q"] = [NSURL URLWithString:self.searchText];
-//    params[@"type"] = @1;
-//    params[@"count"] = @20;
+    params[@"type"] = @1;
+    params[@"count"] = @20;
     
     // 3.发送请求
     [mgr GET:@"https://api.weibo.com/2/search/suggestions/schools.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {

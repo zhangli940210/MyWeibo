@@ -15,6 +15,19 @@
 
 @implementation LZTabBarViewController
 
++ (void)initialize
+{
+    // 设置文字的样式
+    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+    textAttrs[NSForegroundColorAttributeName] = LZColor(123, 123, 123);
+    NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
+    selectTextAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    // 一次性设置整体皮肤样式
+    UITabBarItem *item = [UITabBarItem appearance];
+    [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+    [item setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -50,18 +63,9 @@
     // 设置子控制器的文字
     childVc.title = title; // 同时设置tabbar和navigationBar的文字
     
-    
     // 设置子控制器的图片
     childVc.tabBarItem.image = [UIImage imageNamed:image];
     childVc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    // 设置文字的样式
-    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSForegroundColorAttributeName] = LZColor(123, 123, 123);
-    NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
-    selectTextAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
-    [childVc.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
-    [childVc.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
     
     // 先给外面传进来的小控制器 包装 一个导航控制器
     LZNavigationController *nav = [[LZNavigationController alloc] initWithRootViewController:childVc];
