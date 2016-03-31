@@ -1,20 +1,30 @@
-//
-//  LZEmotionPageView.m
-//  LZWeiBo
-//
-//  Created by apple on 16/3/20.
-//  Copyright © 2016年 m14a. All rights reserved.
-//
+
 
 #import "LZEmotionPageView.h"
 #import "LZEmotion.h"
+#import "LZEmotionPopView.h"
+#import "LZEmotionButton.h"
+
+@interface LZEmotionPageView()
+/** 点击表情后弹出的放大镜 */
+@property (nonatomic, strong) LZEmotionPopView *popView;
+@end
+
 @implementation LZEmotionPageView
+
+- (LZEmotionPopView *)popView
+{
+    if (!_popView) {
+        self.popView = [LZEmotionPopView popView];
+    }
+    return _popView;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        // Initialization code
     }
     return self;
 }
@@ -23,23 +33,16 @@
 {
     _emotions = emotions;
     
-    // 当前界面的表情个数
     NSUInteger count = emotions.count;
-    for (NSInteger i = 0; i < count; i++) {
-        // 创建按钮
-        UIButton *btn = [[UIButton alloc] init];
-        // 从数组中取出对应的模型
-        LZEmotion *emotion = emotions[i];
-        
-        if (emotion.png) { // 有图片
-            [btn setImage:[UIImage imageNamed:emotion.png] forState:UIControlStateNormal];
-        } else if (emotion.code) { // 是emoji表情
-            // 设置emoji,每一个表情都是一个文字
-            [btn setTitle:emotion.code.emoji forState:UIControlStateNormal];
-            btn.titleLabel.font = [UIFont systemFontOfSize:32];
-        }
-        
+    for (int i = 0; i<count; i++) {
+        LZEmotionButton *btn = [[LZEmotionButton alloc] init];
         [self addSubview:btn];
+        
+        // 设置表情数据
+        btn.emotion = emotions[i];
+        
+        // 监听按钮点击
+        [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
 
@@ -55,12 +58,32 @@
     NSUInteger count = self.emotions.count;
     CGFloat btnW = (self.width - 2 * inset) / LZEmotionMaxCols;
     CGFloat btnH = (self.height - inset) / LZEmotionMaxRows;
-    for (NSInteger i = 0; i<count; i++) {
+    for (int i = 0; i<count; i++) {
         UIButton *btn = self.subviews[i];
         btn.width = btnW;
         btn.height = btnH;
-        btn.x = inset + (i % LZEmotionMaxCols) * btnW;
-        btn.y = inset + (i / LZEmotionMaxCols) * btnH;
+        btn.x = inset + (i%LZEmotionMaxCols) * btnW;
+        btn.y = inset + (i/LZEmotionMaxCols) * btnH;
     }
+}
+
+/**
+ *  监听表情按钮点击
+ *
+ *  @param btn 被点击的表情按钮
+ */
+- (void)btnClick:(LZEmotionButton *)btn
+{
+    // 给popView传递数据
+    self.popView.emotion = btn.emotion;
+    
+    // 取得最上面的window
+    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    [window addSubview:self.popView];
+    
+    // 计算出被点击的按钮在window中的frame
+    CGRect btnFrame = [btn convertRect:btn.bounds toView:nil];
+    self.popView.y = CGRectGetMidY(btnFrame) - self.popView.height; // 100
+    self.popView.centerX = CGRectGetMidX(btnFrame);
 }
 @end
