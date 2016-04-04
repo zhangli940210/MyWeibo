@@ -13,19 +13,29 @@
 
 @implementation LZEmotionTool
 
+// 全局变量
+static NSMutableArray *_recentEmotions;
+
+// 当前类或者当前类的子类第一次使用的时候调用
++ (void)initialize
+{
+    _recentEmotions = [NSKeyedUnarchiver unarchiveObjectWithFile:LZRecentEmotionsPath];
+    if (_recentEmotions == nil) {
+        _recentEmotions = [NSMutableArray array];
+    }
+}
+
+// 添加表情
 + (void)addRecentEmotion:(LZEmotion *)emotion
 {
-    // 加载沙盒中的表情数据
-    NSMutableArray *emotions = (NSMutableArray *)[self recentEmotions];
-    if (emotions == nil) {
-        emotions = [NSMutableArray array];
-    }
+    // 删除重复的表情
+    [_recentEmotions removeObject:emotion];
     
     // 将表情放到数组的最前面
-    [emotions insertObject:emotion atIndex:0];
+    [_recentEmotions insertObject:emotion atIndex:0];
     
     // 将所有的表情数据写入沙盒
-    [NSKeyedArchiver archiveRootObject:emotions toFile:LZRecentEmotionsPath];
+    [NSKeyedArchiver archiveRootObject:_recentEmotions toFile:LZRecentEmotionsPath];
 }
 
 /**
@@ -33,7 +43,8 @@
  */
 + (NSArray *)recentEmotions
 {
-    return [NSKeyedUnarchiver unarchiveObjectWithFile:LZRecentEmotionsPath];
+    return _recentEmotions;
 }
+
 
 @end

@@ -40,4 +40,33 @@ MJCodingImplementation
 //    [encoder encodeObject:self.code forKey:@"code"];
 //}
 
+
+/**
+ *  常用来比较两个LZEmotion对象是否一样
+ *
+ *  @param other 另外一个LZEmotion对象
+ *
+ *  @return YES : 代表2个对象是一样的，NO: 代表2个对象是不一样
+ */
+// 默认情况下比较的是:两个对象的内存地址
+- (BOOL)isEqual:(LZEmotion *)other
+{
+    //    if (self == other) {
+    //        return YES;
+    //    } else {
+    //        return NO;
+    //    }
+    
+    //    HWLog(@"%@--isEqual---%@", self.chs, other.chs);
+    
+    //    NSString *str1 = @"jack";
+    //    NSString *str2 = [NSString stringWithFormat:@"jack"];
+    //
+    //    str1 == str2 // no
+    //    [str1 isEqual:str2]; // NO    比较的是内存地址
+    //    [str1 isEqualToString:str2] // YES    比较的是内容
+    //    比较的是内容
+    return [self.chs isEqualToString:other.chs] || [self.code isEqualToString:other.code];
+}
+
 @end

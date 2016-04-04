@@ -72,9 +72,23 @@
         tabBar.delegate = self;
         [self addSubview:tabBar];
         self.tabBar = tabBar;
+        
+        // 表情选中的通知
+        [LZNotificationCenter addObserver:self selector:@selector(emotionDidSelect) name:LZEmotionDidSelectNotification object:nil];
     }
     return self;
 }
+
+- (void)emotionDidSelect
+{
+    self.recentListView.emotions = [LZEmotionTool recentEmotions];
+}
+
+- (void)dealloc
+{
+    [LZNotificationCenter removeObserver:self];
+}
+
 
 - (void)layoutSubviews
 {
