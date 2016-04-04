@@ -43,15 +43,14 @@
     for (NSInteger i = 0; i < count; i++) {
         UIImageView *photoView = self.subviews[i];
         // 列号
-        int col = i % maxCol;
+        NSInteger col = i % maxCol;
         photoView.x = col * (imageWH + imageMargin);
         // 行号
-        int row = i / maxCol;
+        NSInteger row = i / maxCol;
         photoView.y = row * (imageWH + imageMargin);
         photoView.width = imageWH;
         photoView.height = imageWH;
     }
 }
-
 
 @end

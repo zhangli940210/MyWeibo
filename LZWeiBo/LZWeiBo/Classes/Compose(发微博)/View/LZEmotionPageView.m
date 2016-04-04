@@ -85,5 +85,15 @@
     CGRect btnFrame = [btn convertRect:btn.bounds toView:nil];
     self.popView.y = CGRectGetMidY(btnFrame) - self.popView.height; // 100
     self.popView.centerX = CGRectGetMidX(btnFrame);
+    
+    // 等会让popView自动消失
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.popView removeFromSuperview];
+    });
+    
+    // 发出通知
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    userInfo[LZSelectEmotionKey] = btn.emotion;
+    [[NSNotificationCenter defaultCenter] postNotificationName:LZEmotionDidSelectNotification object:nil userInfo:userInfo];
 }
 @end

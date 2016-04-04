@@ -9,15 +9,17 @@
 #import "LZComposeViewController.h"
 #import "LZAccountTool.h"
 #import "LZTextView.h"
+#import "LZEmotionTextView.h"
 #import "MBProgressHUD+MJ.h"
 #import "AFNetworking.h"
 #import "LZComposeToolbar.h"
 #import "LZComposePhotosView.h"
 #import "LZEmotionKeyboard.h"
+#import "LZEmotion.h"
 
 @interface LZComposeViewController () <UITextViewDelegate, LZComposeToolbarDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /** 输入控件 */
-@property (nonatomic, weak) LZTextView *textView;
+@property (nonatomic, weak) LZEmotionTextView *textView;
 /** 键盘顶部的工具条 */
 @property (nonatomic, weak) LZComposeToolbar *toolbar;
 /** 相册（存放拍照或者相册中选择的图片） */
@@ -142,7 +144,7 @@
 - (void)setupTextView
 {
     // 在这个控制器中，textView的contentInset.top默认会等于64
-    LZTextView *textView = [[LZTextView alloc] init];
+    LZEmotionTextView *textView = [[LZEmotionTextView alloc] init];
     // 垂直方向上永远可以拖拽（有弹簧效果）
     textView.alwaysBounceVertical = YES;
     textView.frame = self.view.bounds;
@@ -158,6 +160,19 @@
     // 键盘通知
     // 键盘的frame发生改变时发出的通知（位置和尺寸）
     [LZNotificationCenter addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+    // 表情选中的通知
+    [LZNotificationCenter addObserver:self selector:@selector(emotionDidSelect:) name:LZEmotionDidSelectNotification object:nil];
+}
+
+#pragma mark - 监听方法
+/**
+ *  表情被选中了
+ */
+- (void)emotionDidSelect:(NSNotification *)notification
+{
+    LZEmotion *emotion = notification.userInfo[LZSelectEmotionKey];
+    [self.textView insertEmotion:emotion];
 }
 
 #pragma mark - 监听方法
@@ -372,5 +387,7 @@
 {
     
 }
+
+
 
 @end

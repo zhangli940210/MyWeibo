@@ -83,6 +83,8 @@
 		18925CCC1CAD3608000462A2 /* LZEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18925CCB1CAD3608000462A2 /* LZEmotionPopView.m */; };
 		18925CCE1CAD362F000462A2 /* LZEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18925CCD1CAD362F000462A2 /* LZEmotionPopView.xib */; };
 		18925CD51CAD47BF000462A2 /* LZEmotionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18925CD41CAD47BF000462A2 /* LZEmotionButton.m */; };
+		18925CD81CAD5C47000462A2 /* UITextView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18925CD71CAD5C47000462A2 /* UITextView+Extension.m */; };
+		18925CDB1CAD5CB9000462A2 /* LZEmotionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18925CDA1CAD5CB9000462A2 /* LZEmotionTextView.m */; };
 		1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0B1C78114D005C5F66 /* Assets.xcassets */; };
 		1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1893CF0D1C78114D005C5F66 /* LaunchScreen.storyboard */; };
 		1894182E1C86872600B284BA /* LZNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894182D1C86872600B284BA /* LZNewfeatureViewController.m */; };
@@ -97,6 +99,8 @@
 		18D02A0C1CA4492400824042 /* LZFansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D02A0B1CA4492400824042 /* LZFansViewController.m */; };
 		18DD3DA21C98264900BB690E /* LZComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3D9F1C98264900BB690E /* LZComposePhotosView.m */; };
 		18DD3DA31C98264900BB690E /* LZComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3DA11C98264900BB690E /* LZComposeToolbar.m */; };
+		18DD5F7B1CB1FFEA0053FAF6 /* LZEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD5F7A1CB1FFEA0053FAF6 /* LZEmotionAttachment.m */; };
+		18DDF02D1CB00AF800812EBA /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF02C1CB00AF800812EBA /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */; };
 		18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E333201C8AF75D00AE5B6E /* Foundation+Log.m */; };
 		18F9D5261C946CA50098A314 /* LZComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F9D5251C946CA50098A314 /* LZComposeViewController.m */; };
@@ -253,6 +257,10 @@
 		18925CCD1CAD362F000462A2 /* LZEmotionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZEmotionPopView.xib; sourceTree = "<group>"; };
 		18925CD31CAD47BF000462A2 /* LZEmotionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionButton.h; sourceTree = "<group>"; };
 		18925CD41CAD47BF000462A2 /* LZEmotionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionButton.m; sourceTree = "<group>"; };
+		18925CD61CAD5C47000462A2 /* UITextView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Extension.h"; sourceTree = "<group>"; };
+		18925CD71CAD5C47000462A2 /* UITextView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Extension.m"; sourceTree = "<group>"; };
+		18925CD91CAD5CB9000462A2 /* LZEmotionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionTextView.h; sourceTree = "<group>"; };
+		18925CDA1CAD5CB9000462A2 /* LZEmotionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionTextView.m; sourceTree = "<group>"; };
 		1893CEFC1C78114D005C5F66 /* LZWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1893CF0B1C78114D005C5F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1893CF0E1C78114D005C5F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -282,6 +290,10 @@
 		18DD3D9F1C98264900BB690E /* LZComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZComposePhotosView.m; sourceTree = "<group>"; };
 		18DD3DA01C98264900BB690E /* LZComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZComposeToolbar.h; sourceTree = "<group>"; };
 		18DD3DA11C98264900BB690E /* LZComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZComposeToolbar.m; sourceTree = "<group>"; };
+		18DD5F791CB1FFEA0053FAF6 /* LZEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionAttachment.h; sourceTree = "<group>"; };
+		18DD5F7A1CB1FFEA0053FAF6 /* LZEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionAttachment.m; sourceTree = "<group>"; };
+		18DDF02B1CB00AF800812EBA /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		18DDF02C1CB00AF800812EBA /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		18E3331D1C8AD9D000AE5B6E /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		18E333201C8AF75D00AE5B6E /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
@@ -543,6 +555,8 @@
 			children = (
 				18190BAD1C9D8BF2003F6CD3 /* LZEmotion.h */,
 				18190BAE1C9D8BF2003F6CD3 /* LZEmotion.m */,
+				18DD5F791CB1FFEA0053FAF6 /* LZEmotionAttachment.h */,
+				18DD5F7A1CB1FFEA0053FAF6 /* LZEmotionAttachment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -632,6 +646,10 @@
 				18042E571C930E4D00BD3AFE /* NSDate+Extension.m */,
 				18042E591C93197000BD3AFE /* NSString+Extension.h */,
 				18042E5A1C93197000BD3AFE /* NSString+Extension.m */,
+				18925CD61CAD5C47000462A2 /* UITextView+Extension.h */,
+				18925CD71CAD5C47000462A2 /* UITextView+Extension.m */,
+				18DDF02B1CB00AF800812EBA /* NSString+URLEncoding.h */,
+				18DDF02C1CB00AF800812EBA /* NSString+URLEncoding.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -828,6 +846,8 @@
 				18925CCD1CAD362F000462A2 /* LZEmotionPopView.xib */,
 				18925CD31CAD47BF000462A2 /* LZEmotionButton.h */,
 				18925CD41CAD47BF000462A2 /* LZEmotionButton.m */,
+				18925CD91CAD5CB9000462A2 /* LZEmotionTextView.h */,
+				18925CDA1CAD5CB9000462A2 /* LZEmotionTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -927,6 +947,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DDF02D1CB00AF800812EBA /* NSString+URLEncoding.m in Sources */,
 				18D02A0C1CA4492400824042 /* LZFansViewController.m in Sources */,
 				18042E361C92FA3F00BD3AFE /* main.m in Sources */,
 				18DD3DA31C98264900BB690E /* LZComposeToolbar.m in Sources */,
@@ -938,6 +959,7 @@
 				18042E2F1C92F9E100BD3AFE /* UIImageView+HighlightedWebCache.m in Sources */,
 				18042DB61C92F9BE00BD3AFE /* UIView+LZExtension.m in Sources */,
 				181FBEEF1C9BD13A009AA408 /* LZEmotionKeyboard.m in Sources */,
+				18925CDB1CAD5CB9000462A2 /* LZEmotionTextView.m in Sources */,
 				18042E351C92FA3F00BD3AFE /* LZAppDelegate.m in Sources */,
 				18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */,
 				18190BAF1C9D8BF2003F6CD3 /* LZEmotion.m in Sources */,
@@ -977,6 +999,7 @@
 				18190BB51C9DB08A003F6CD3 /* NSString+Emoji.m in Sources */,
 				18042E1A1C92F9E100BD3AFE /* MJIvar.m in Sources */,
 				18042E0F1C92F9E100BD3AFE /* AFSecurityPolicy.m in Sources */,
+				18DD5F7B1CB1FFEA0053FAF6 /* LZEmotionAttachment.m in Sources */,
 				18042E201C92F9E100BD3AFE /* NSObject+MJKeyValue.m in Sources */,
 				1880F72C1C9071E2005B2456 /* LZStatusFrame.m in Sources */,
 				18042E2B1C92F9E100BD3AFE /* UIButton+WebCache.m in Sources */,
@@ -1006,6 +1029,7 @@
 				185D394B1C91B76800AA0E00 /* LZStatusToolbar.m in Sources */,
 				18BA28A41C8DDA5600BCF0DD /* LZUser.m in Sources */,
 				18042E1D1C92F9E100BD3AFE /* MJType.m in Sources */,
+				18925CD81CAD5C47000462A2 /* UITextView+Extension.m in Sources */,
 				18042E191C92F9E100BD3AFE /* MJFoundation.m in Sources */,
 				18042E161C92F9E100BD3AFE /* MBProgressHUD.m in Sources */,
 				181FBF3A1C9CE224009AA408 /* LZEmotionTabBarButton.m in Sources */,

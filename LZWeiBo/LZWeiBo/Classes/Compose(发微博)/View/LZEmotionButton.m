@@ -45,13 +45,15 @@
     [self setup];
 }
 
-
+// 初始化
 - (void)setup
 {
     self.titleLabel.font = [UIFont systemFontOfSize:32];
+    
+    // 按钮高亮的时候,不要去调整图片（不要调整图片为灰色）
+//    self.adjustsImageWhenHighlighted = NO;
+    //    self.adjustsImageWhenDisabled
 }
-
-
 
 - (void)setEmotion:(LZEmotion *)emotion
 {
@@ -65,5 +67,9 @@
     }
 }
 
+- (void)setHighlighted:(BOOL)highlighted
+{
+    
+}
 
 @end

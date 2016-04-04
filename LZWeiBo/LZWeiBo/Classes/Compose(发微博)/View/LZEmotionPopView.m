@@ -21,8 +21,7 @@
 
 + (instancetype)popView
 {
-//    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
-    return [[[NSBundle mainBundle] loadNibNamed:@"LZEmotionPopView" owner:nil options:nil] lastObject];
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
 }
 
 - (void)setEmotion:(LZEmotion *)emotion

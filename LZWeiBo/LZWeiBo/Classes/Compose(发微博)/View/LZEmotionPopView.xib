@@ -14,7 +14,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoticon_keyboard_magnifier" translatesAutoresizingMaskIntoConstraints="NO" id="ejb-Bz-Dx7" userLabel="背景">
                     <rect key="frame" x="0.0" y="0.0" width="64" height="91"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zw-1M-XI7" customClass="LZEmotionButton">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zw-1M-XI7" customClass="LZEmotionButton">
                     <rect key="frame" x="0.0" y="0.0" width="64" height="69"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="69" id="SQ5-Zi-DHc"/>
