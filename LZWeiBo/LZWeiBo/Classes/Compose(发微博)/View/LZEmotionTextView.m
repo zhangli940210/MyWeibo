@@ -42,7 +42,6 @@
 - (NSString *)fullText
 {
     NSMutableString *fullText = [NSMutableString string];
-    
     // 遍历所有的属性文字（图片、emoji、普通文字）
     [self.attributedText enumerateAttributesInRange:NSMakeRange(0, self.attributedText.length) options:0 usingBlock:^(NSDictionary *attrs, NSRange range, BOOL *stop) {
         // 如果是图片表情
@@ -55,7 +54,6 @@
             [fullText appendString:str.string];
         }
     }];
-    
     return fullText;
 }
 

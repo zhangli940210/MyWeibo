@@ -100,6 +100,7 @@
 		18DD3DA21C98264900BB690E /* LZComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3D9F1C98264900BB690E /* LZComposePhotosView.m */; };
 		18DD3DA31C98264900BB690E /* LZComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3DA11C98264900BB690E /* LZComposeToolbar.m */; };
 		18DD5F7B1CB1FFEA0053FAF6 /* LZEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD5F7A1CB1FFEA0053FAF6 /* LZEmotionAttachment.m */; };
+		18DD5F7F1CB239A00053FAF6 /* LZEmotionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DD5F7E1CB239A00053FAF6 /* LZEmotionTool.m */; };
 		18DDF02D1CB00AF800812EBA /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF02C1CB00AF800812EBA /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */; };
 		18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E333201C8AF75D00AE5B6E /* Foundation+Log.m */; };
@@ -292,6 +293,8 @@
 		18DD3DA11C98264900BB690E /* LZComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZComposeToolbar.m; sourceTree = "<group>"; };
 		18DD5F791CB1FFEA0053FAF6 /* LZEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionAttachment.h; sourceTree = "<group>"; };
 		18DD5F7A1CB1FFEA0053FAF6 /* LZEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionAttachment.m; sourceTree = "<group>"; };
+		18DD5F7D1CB239A00053FAF6 /* LZEmotionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionTool.h; sourceTree = "<group>"; };
+		18DD5F7E1CB239A00053FAF6 /* LZEmotionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionTool.m; sourceTree = "<group>"; };
 		18DDF02B1CB00AF800812EBA /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
 		18DDF02C1CB00AF800812EBA /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		18E3331D1C8AD9D000AE5B6E /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
@@ -852,9 +855,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		18DD5F7C1CB239840053FAF6 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				18DD5F7D1CB239A00053FAF6 /* LZEmotionTool.h */,
+				18DD5F7E1CB239A00053FAF6 /* LZEmotionTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		18F9D5221C946C760098A314 /* Compose(发微博) */ = {
 			isa = PBXGroup;
 			children = (
+				18DD5F7C1CB239840053FAF6 /* Tool */,
 				18190BAC1C9D8BC8003F6CD3 /* Model */,
 				18DD3D9D1C98262500BB690E /* View */,
 				18F9D5231C946C760098A314 /* Controller */,
@@ -1004,6 +1017,7 @@
 				1880F72C1C9071E2005B2456 /* LZStatusFrame.m in Sources */,
 				18042E2B1C92F9E100BD3AFE /* UIButton+WebCache.m in Sources */,
 				18042E251C92F9E100BD3AFE /* SDWebImageCompat.m in Sources */,
+				18DD5F7F1CB239A00053FAF6 /* LZEmotionTool.m in Sources */,
 				1894182E1C86872600B284BA /* LZNewfeatureViewController.m in Sources */,
 				18042E211C92F9E100BD3AFE /* NSObject+MJMember.m in Sources */,
 				18042E0E1C92F9E100BD3AFE /* AFNetworkReachabilityManager.m in Sources */,

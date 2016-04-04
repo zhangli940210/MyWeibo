@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class LZEmotion;
+@class LZEmotionButton;
 @interface LZEmotionPopView : UIView
 
 + (instancetype)popView;
-@property (nonatomic, strong) LZEmotion *emotion;
+- (void)showFrom:(LZEmotionButton *)button;
+
 @end

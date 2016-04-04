@@ -1,13 +1,22 @@
-
+//
+//  LZEmotionPageView.m
+//  黑马微博2期
+//
+//  Created by apple on 14-10-22.
+//  Copyright (c) 2014年 heima. All rights reserved.
+//
 
 #import "LZEmotionPageView.h"
 #import "LZEmotion.h"
 #import "LZEmotionPopView.h"
 #import "LZEmotionButton.h"
+#import "LZEmotionTool.h"
 
 @interface LZEmotionPageView()
 /** 点击表情后弹出的放大镜 */
 @property (nonatomic, strong) LZEmotionPopView *popView;
+/** 删除按钮 */
+@property (nonatomic, weak) UIButton *deleteButton;
 @end
 
 @implementation LZEmotionPageView
@@ -24,9 +33,68 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        // 1.删除按钮
+        UIButton *deleteButton = [[UIButton alloc] init];
+        [deleteButton setImage:[UIImage imageNamed:@"compose_emotion_delete_highlighted"] forState:UIControlStateHighlighted];
+        [deleteButton setImage:[UIImage imageNamed:@"compose_emotion_delete"] forState:UIControlStateNormal];
+        [deleteButton addTarget:self action:@selector(deleteClick) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:deleteButton];
+        self.deleteButton = deleteButton;
+        
+        // 2.添加长按手势
+        [self addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressPageView:)]];
     }
     return self;
+}
+
+/**
+ *  根据手指位置所在的表情按钮
+ */
+- (LZEmotionButton *)emotionButtonWithLocation:(CGPoint)location
+{
+    NSUInteger count = self.emotions.count;
+    for (int i = 0; i<count; i++) {
+        LZEmotionButton *btn = self.subviews[i + 1];
+        if (CGRectContainsPoint(btn.frame, location)) {
+            
+            // 已经找到手指所在的表情按钮了，就没必要再往下遍历
+            return btn;
+        }
+    }
+    return nil;
+}
+
+/**
+ *  在这个方法中处理长按手势
+ */
+- (void)longPressPageView:(UILongPressGestureRecognizer *)recognizer
+{
+    CGPoint location = [recognizer locationInView:recognizer.view];
+    // 获得手指所在的位置\所在的表情按钮
+    LZEmotionButton *btn = [self emotionButtonWithLocation:location];
+    
+    switch (recognizer.state) {
+        case UIGestureRecognizerStateCancelled:
+        case UIGestureRecognizerStateEnded: // 手指已经不再触摸pageView
+            // 移除popView
+            [self.popView removeFromSuperview];
+            
+            // 如果手指还在表情按钮上
+            if (btn) {
+                // 发出通知
+                [self selectEmotion:btn.emotion];
+            }
+            break;
+            
+        case UIGestureRecognizerStateBegan: // 手势开始（刚检测到长按）
+        case UIGestureRecognizerStateChanged: { // 手势改变（手指的位置改变）
+            [self.popView showFrom:btn];
+            break;
+        }
+            
+        default:
+            break;
+    }
 }
 
 - (void)setEmotions:(NSArray *)emotions
@@ -59,12 +127,26 @@
     CGFloat btnW = (self.width - 2 * inset) / LZEmotionMaxCols;
     CGFloat btnH = (self.height - inset) / LZEmotionMaxRows;
     for (int i = 0; i<count; i++) {
-        UIButton *btn = self.subviews[i];
+        UIButton *btn = self.subviews[i + 1];
         btn.width = btnW;
         btn.height = btnH;
         btn.x = inset + (i%LZEmotionMaxCols) * btnW;
         btn.y = inset + (i/LZEmotionMaxCols) * btnH;
     }
+    
+    // 删除按钮
+    self.deleteButton.width = btnW;
+    self.deleteButton.height = btnH;
+    self.deleteButton.y = self.height - btnH;
+    self.deleteButton.x = self.width - inset - btnW;
+}
+
+/**
+ *  监听删除按钮点击
+ */
+- (void)deleteClick
+{
+    [LZNotificationCenter postNotificationName:LZEmotionDidDeleteNotification object:nil];
 }
 
 /**
@@ -74,26 +156,31 @@
  */
 - (void)btnClick:(LZEmotionButton *)btn
 {
-    // 给popView传递数据
-    self.popView.emotion = btn.emotion;
-    
-    // 取得最上面的window
-    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
-    [window addSubview:self.popView];
-    
-    // 计算出被点击的按钮在window中的frame
-    CGRect btnFrame = [btn convertRect:btn.bounds toView:nil];
-    self.popView.y = CGRectGetMidY(btnFrame) - self.popView.height; // 100
-    self.popView.centerX = CGRectGetMidX(btnFrame);
+    // 显示popView
+    [self.popView showFrom:btn];
     
     // 等会让popView自动消失
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.popView removeFromSuperview];
     });
     
     // 发出通知
+    [self selectEmotion:btn.emotion];
+}
+
+/**
+ *  选中某个表情，发出通知
+ *
+ *  @param emotion 被选中的表情
+ */
+- (void)selectEmotion:(LZEmotion *)emotion
+{
+    // 将这个表情存进沙盒
+    [LZEmotionTool addRecentEmotion:emotion];
+    
+    // 发出通知
     NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-    userInfo[LZSelectEmotionKey] = btn.emotion;
-    [[NSNotificationCenter defaultCenter] postNotificationName:LZEmotionDidSelectNotification object:nil userInfo:userInfo];
+    userInfo[LZSelectEmotionKey] = emotion;
+    [LZNotificationCenter postNotificationName:LZEmotionDidSelectNotification object:nil userInfo:userInfo];
 }
 @end

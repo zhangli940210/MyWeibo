@@ -58,6 +58,13 @@
     [self setNeedsDisplay];
 }
 
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
+    // 重绘
+    [self setNeedsDisplay];
+}
+
 - (void)setFont:(UIFont *)font
 {
     [super setFont:font];

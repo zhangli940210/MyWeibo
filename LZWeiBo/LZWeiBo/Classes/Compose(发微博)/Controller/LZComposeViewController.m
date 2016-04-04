@@ -1,14 +1,7 @@
-//
-//  LZComposeViewController.m
-//  黑马微博2期
-//
-//  Created by apple on 14-10-20.
-//  Copyright (c) 2014年 heima. All rights reserved.
-//
+
 
 #import "LZComposeViewController.h"
 #import "LZAccountTool.h"
-#import "LZTextView.h"
 #import "LZEmotionTextView.h"
 #import "MBProgressHUD+MJ.h"
 #import "AFNetworking.h"
@@ -37,6 +30,7 @@
 {
     if (!_emotionKeyboard) {
         self.emotionKeyboard = [[LZEmotionKeyboard alloc] init];
+        // 键盘的宽度
         self.emotionKeyboard.width = self.view.width;
         self.emotionKeyboard.height = 216;
     }
@@ -163,9 +157,20 @@
     
     // 表情选中的通知
     [LZNotificationCenter addObserver:self selector:@selector(emotionDidSelect:) name:LZEmotionDidSelectNotification object:nil];
+    
+    // 删除文字的通知
+    [LZNotificationCenter addObserver:self selector:@selector(emotionDidDelete) name:LZEmotionDidDeleteNotification object:nil];
 }
 
 #pragma mark - 监听方法
+/**
+ *  删除文字
+ */
+- (void)emotionDidDelete
+{
+    [self.textView deleteBackward];
+}
+
 /**
  *  表情被选中了
  */
@@ -175,7 +180,6 @@
     [self.textView insertEmotion:emotion];
 }
 
-#pragma mark - 监听方法
 /**
  * 键盘的frame发生改变时调用（显示、隐藏等）
  */
@@ -232,7 +236,7 @@
     // 2.拼接请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [LZAccountTool account].access_token;
-    params[@"status"] = self.textView.text;
+    params[@"status"] = self.textView.fullText;
     
     // 3.发送请求
     [mgr POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
@@ -262,7 +266,7 @@
     // 2.拼接请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [LZAccountTool account].access_token;
-    params[@"status"] = self.textView.text;
+    params[@"status"] = self.textView.fullText;
     
     // 3.发送请求
     [mgr POST:@"https://api.weibo.com/2/statuses/update.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
@@ -337,12 +341,12 @@
     // 退出键盘
     [self.textView endEditing:YES];
     
+    // 结束切换键盘
+    self.switchingKeybaord = NO;
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 弹出键盘
         [self.textView becomeFirstResponder];
-        
-        // 结束切换键盘
-        self.switchingKeybaord = NO;
     });
 }
 
@@ -387,7 +391,5 @@
 {
     
 }
-
-
 
 @end

@@ -33,9 +33,10 @@
 
 // 通知
 // 表情选中的通知
-#define LZEmotionDidSelectNotification @"HWEmotionDidSelectNotification"
-#define LZSelectEmotionKey @"HWSelectEmotionKey"
-
+#define LZEmotionDidSelectNotification @"LZEmotionDidSelectNotification"
+#define LZSelectEmotionKey @"LZSelectEmotionKey"
+// 删除文字的通知
+#define LZEmotionDidDeleteNotification @"LZEmotionDidDeleteNotification"
 #endif
 
 

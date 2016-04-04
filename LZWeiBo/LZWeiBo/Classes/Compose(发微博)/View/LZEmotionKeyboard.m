@@ -5,6 +5,7 @@
 #import "LZEmotionTabBar.h"
 #import "LZEmotion.h"
 #import "MJExtension.h"
+#import "LZEmotionTool.h"
 
 @interface LZEmotionKeyboard() <LZEmotionTabBarDelegate>
 /** 保存正在显示listView */
@@ -25,6 +26,8 @@
 {
     if (!_recentListView) {
         self.recentListView = [[LZEmotionListView alloc] init];
+        // 加载沙盒中的数据
+        self.recentListView.emotions = [LZEmotionTool recentEmotions];
     }
     return _recentListView;
 }
