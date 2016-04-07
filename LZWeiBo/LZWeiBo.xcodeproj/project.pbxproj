@@ -80,6 +80,9 @@
 		18630EEA1C8A7C0C00D2445E /* LZAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18630EE91C8A7C0C00D2445E /* LZAccountTool.m */; };
 		1880F7291C9071AE005B2456 /* LZStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880F7281C9071AE005B2456 /* LZStatusCell.m */; };
 		1880F72C1C9071E2005B2456 /* LZStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880F72B1C9071E2005B2456 /* LZStatusFrame.m */; };
+		18833F541CB68741000D7C9F /* LZSchoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18833F531CB68741000D7C9F /* LZSchoolItem.m */; };
+		18833F581CB687AA000D7C9F /* LZSchoolViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18833F561CB687AA000D7C9F /* LZSchoolViewCell.m */; };
+		18833F591CB687AA000D7C9F /* LZSchoolViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18833F571CB687AA000D7C9F /* LZSchoolViewCell.xib */; };
 		18925CCC1CAD3608000462A2 /* LZEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18925CCB1CAD3608000462A2 /* LZEmotionPopView.m */; };
 		18925CCE1CAD362F000462A2 /* LZEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18925CCD1CAD362F000462A2 /* LZEmotionPopView.xib */; };
 		18925CD51CAD47BF000462A2 /* LZEmotionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18925CD41CAD47BF000462A2 /* LZEmotionButton.m */; };
@@ -253,6 +256,11 @@
 		1880F7281C9071AE005B2456 /* LZStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZStatusCell.m; sourceTree = "<group>"; };
 		1880F72A1C9071E2005B2456 /* LZStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZStatusFrame.h; sourceTree = "<group>"; };
 		1880F72B1C9071E2005B2456 /* LZStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZStatusFrame.m; sourceTree = "<group>"; };
+		18833F521CB68741000D7C9F /* LZSchoolItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZSchoolItem.h; sourceTree = "<group>"; };
+		18833F531CB68741000D7C9F /* LZSchoolItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZSchoolItem.m; sourceTree = "<group>"; };
+		18833F551CB687AA000D7C9F /* LZSchoolViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZSchoolViewCell.h; sourceTree = "<group>"; };
+		18833F561CB687AA000D7C9F /* LZSchoolViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZSchoolViewCell.m; sourceTree = "<group>"; };
+		18833F571CB687AA000D7C9F /* LZSchoolViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZSchoolViewCell.xib; sourceTree = "<group>"; };
 		18925CCA1CAD3608000462A2 /* LZEmotionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZEmotionPopView.h; sourceTree = "<group>"; };
 		18925CCB1CAD3608000462A2 /* LZEmotionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZEmotionPopView.m; sourceTree = "<group>"; };
 		18925CCD1CAD362F000462A2 /* LZEmotionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZEmotionPopView.xib; sourceTree = "<group>"; };
@@ -525,6 +533,8 @@
 		18042E4E1C92FC9C00BD3AFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18833F521CB68741000D7C9F /* LZSchoolItem.h */,
+				18833F531CB68741000D7C9F /* LZSchoolItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -532,6 +542,9 @@
 		18042E4F1C92FC9C00BD3AFE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18833F551CB687AA000D7C9F /* LZSchoolViewCell.h */,
+				18833F561CB687AA000D7C9F /* LZSchoolViewCell.m */,
+				18833F571CB687AA000D7C9F /* LZSchoolViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -949,6 +962,7 @@
 				18042E151C92F9E100BD3AFE /* MBProgressHUD.bundle in Resources */,
 				18190BAB1C9D8879003F6CD3 /* EmotionIcons in Resources */,
 				1893CF0F1C78114D005C5F66 /* LaunchScreen.storyboard in Resources */,
+				18833F591CB687AA000D7C9F /* LZSchoolViewCell.xib in Resources */,
 				1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -990,6 +1004,7 @@
 				18DD3DA21C98264900BB690E /* LZComposePhotosView.m in Sources */,
 				18042E101C92F9E100BD3AFE /* AFURLConnectionOperation.m in Sources */,
 				18042E301C92F9E100BD3AFE /* UIImageView+WebCache.m in Sources */,
+				18833F541CB68741000D7C9F /* LZSchoolItem.m in Sources */,
 				18042E0C1C92F9E100BD3AFE /* AFHTTPRequestOperationManager.m in Sources */,
 				18042E501C92FC9C00BD3AFE /* LZDiscoverViewController.m in Sources */,
 				18042E291C92F9E100BD3AFE /* SDWebImageManager.m in Sources */,
@@ -1013,6 +1028,7 @@
 				18042E1A1C92F9E100BD3AFE /* MJIvar.m in Sources */,
 				18042E0F1C92F9E100BD3AFE /* AFSecurityPolicy.m in Sources */,
 				18DD5F7B1CB1FFEA0053FAF6 /* LZEmotionAttachment.m in Sources */,
+				18833F581CB687AA000D7C9F /* LZSchoolViewCell.m in Sources */,
 				18042E201C92F9E100BD3AFE /* NSObject+MJKeyValue.m in Sources */,
 				1880F72C1C9071E2005B2456 /* LZStatusFrame.m in Sources */,
 				18042E2B1C92F9E100BD3AFE /* UIButton+WebCache.m in Sources */,
