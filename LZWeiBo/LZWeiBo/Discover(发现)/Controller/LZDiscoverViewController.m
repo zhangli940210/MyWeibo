@@ -70,17 +70,17 @@
     
     // 2.拼接请求参数
     LZAccount *account = [LZAccountTool account];
+    /*
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = account.access_token;
     // 中文转码
-//    self.searchText = [self.searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    params[@"q"] = [NSURL URLWithString:self.searchText];
     params[@"q"] = [self.searchText URLEncodedString];
-//    params[@"type"] = @1;
-//    params[@"count"] = @20;
-    
+    params[@"type"] = @(0);
+    params[@"count"] = @20;
+     */
+    NSString *URLStr = [NSString stringWithFormat:@"https://api.weibo.com/2/search/suggestions/schools.json?access_token=%@&q=%@&count=%@", account.access_token, [self.searchText URLEncodedString], @20];
     // 3.发送请求
-    [mgr GET:@"https://api.weibo.com/2/search/suggestions/schools.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+    [mgr GET:URLStr parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         
         LZLog(@"--%@", responseObject);
         
