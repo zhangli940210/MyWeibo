@@ -29,6 +29,15 @@ typedef enum {
 
 /** string 用户的昵称*/
 @property (nonatomic, copy) NSString *screen_name;
+/** string 用户个人描述*/
+@property (nonatomic, copy) NSString *description;
+
+/** 微博数*/
+@property (nonatomic, assign) NSInteger statuses_count;
+/** 关注数*/
+@property (nonatomic, assign) NSInteger friends_count;
+/** 粉丝数*/
+@property (nonatomic, assign) NSInteger followers_count;
 
 /** 会员类型 > 2代表是会员 */
 @property (nonatomic, assign) int mbtype;

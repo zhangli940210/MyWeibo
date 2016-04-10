@@ -24,9 +24,12 @@
 - (void)setItem:(LZSchoolItem *)item
 {
     _item = item;
-    self.nameLabel.text = item.school_name;
-    self.typeLabel.text = item.type;
-    self.locationLabel.text = item.location;
+//    self.nameLabel.text = item.school_name;
+    self.nameLabel.text = [NSString stringWithFormat:@"名称:%@", item.school_name];
+//    self.typeLabel.text = item.type;
+    self.typeLabel.text = [NSString stringWithFormat:@"类型:%@", item.type];
+//    self.locationLabel.text = item.location;
+    self.locationLabel.text = [NSString stringWithFormat:@"位置:%@", item.location];
 }
 
 - (void)setFrame:(CGRect)frame

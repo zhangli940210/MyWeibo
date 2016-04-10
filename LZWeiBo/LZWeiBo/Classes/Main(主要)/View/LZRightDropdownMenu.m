@@ -1,29 +1,31 @@
 //
-//  LZDropdownMenu.m
+//  LZRightDropdownMenu.m
 //  LZWeiBo
 //
-//  Created by apple on 16/3/1.
+//  Created by apple on 16/4/9.
 //  Copyright © 2016年 m14a. All rights reserved.
-// LZDropdownMenu创建的UIView对象，是一个看不见的蒙版，clearColor
+//
 
-#import "LZDropdownMenu.h"
+#import "LZRightDropdownMenu.h"
 
-@interface LZDropdownMenu ()
+@interface LZRightDropdownMenu ()
 
 /**
  *  将来用来显示具体内容的容器
  */
 @property (nonatomic, weak) UIImageView *containerView;
+
 @end
 
-@implementation LZDropdownMenu
+@implementation LZRightDropdownMenu
 
 - (UIImageView *)containerView
 {
     if (!_containerView) {
         // 添加一个灰色图片控件
         UIImageView *containerView = [[UIImageView alloc] init];
-        containerView.image = [UIImage imageNamed:@"popover_background"];
+        // 160 * 62
+        containerView.image = [UIImage imageNamed:@"popover_background_right"];
         containerView.userInteractionEnabled = YES; // 开启交互
         [self addSubview:containerView];
         _containerView = containerView;
@@ -47,6 +49,7 @@
     return [[self alloc] init];
 }
 
+// 设置内容
 - (void)setContent:(UIView *)content
 {
     _content = content;
@@ -89,12 +92,13 @@
     // 转换坐标系
     CGRect newFrame = [from convertRect:from.bounds toView:window];
     //    CGRect newFrame = [from.superview convertRect:from.frame toView:window];
-    self.containerView.centerX = CGRectGetMidX(newFrame);
+    self.containerView.centerX = CGRectGetMidX(newFrame) - 50;
     self.containerView.y = CGRectGetMaxY(newFrame);
     
     // 通知外界，自己显示了
-    if ([self.delegate respondsToSelector:@selector(dropdownMenuDidShow:)]) {
-        [self.delegate dropdownMenuDidShow:self];
+    if ([self.delegate respondsToSelector:@selector(rightDropdownMenuDidShow:)])
+    {
+        [self.delegate rightDropdownMenuDidShow:self];
     }
     
 }
@@ -106,8 +110,8 @@
 {
     [self removeFromSuperview];
     // 通知外界，自己被销毁了
-    if ([self.delegate respondsToSelector:@selector(dropdownMenuDidDismiss:)]) {
-        [self.delegate dropdownMenuDidDismiss:self];
+    if ([self.delegate respondsToSelector:@selector(rightDropdownMenuDidDismiss:)]) {
+        [self.delegate rightDropdownMenuDidDismiss:self];
     }
 }
 
@@ -115,4 +119,6 @@
 {
     [self dismiss];
 }
+
+
 @end

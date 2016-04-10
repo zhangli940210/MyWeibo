@@ -42,6 +42,8 @@ static NSString const * ID = @"school";
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([LZSchoolViewCell class]) bundle:nil] forCellReuseIdentifier:ID];
     // 3.设置背景色
     self.tableView.backgroundColor = [UIColor grayColor];
+    // 4.取消系统分割线
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
 // 创建搜索框对象

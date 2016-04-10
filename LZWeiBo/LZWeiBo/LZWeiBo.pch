@@ -12,6 +12,7 @@
 #import "NSString+Emoji.h"
 #import "UITextView+Extension.h"
 #import "NSString+URLEncoding.h"
+#import "UIImage+Render.h"
 
 // 通知中心
 #define LZNotificationCenter [NSNotificationCenter defaultCenter]

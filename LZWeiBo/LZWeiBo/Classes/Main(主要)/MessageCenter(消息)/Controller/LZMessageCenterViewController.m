@@ -1,6 +1,7 @@
 
 
 #import "LZMessageCenterViewController.h"
+#import "LZUserInfoView.h"
 
 
 @interface LZMessageCenterViewController ()
@@ -9,14 +10,7 @@
 
 @implementation LZMessageCenterViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
@@ -26,11 +20,11 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"写私信" style:UIBarButtonItemStylePlain target:self action:@selector(composeMsg)];
     // 这个item不能点击(目前放在viewWillAppear就能显示disable下的主题)
     self.navigationItem.rightBarButtonItem.enabled = NO;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+    
+    // 创建对象
+    LZUserInfoView *userInfoView = [LZUserInfoView userInfoView];
+    userInfoView.height = 130;
+    self.tableView.tableHeaderView = userInfoView;
 }
 
 - (void)composeMsg
@@ -39,9 +33,10 @@
 }
 
 #pragma mark - Table view data sourc
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -52,21 +47,18 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"test-message-%d", indexPath.row];
+    cell.textLabel.text = @"我的赞";
+    cell.imageView.image = [UIImage imageNamed:@"like"];
+    // 设置右边显示的指示样式
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
 
-#pragma mark - 代理方法
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    HWTest1ViewController *test1 = [[HWTest1ViewController alloc] init];
-//    test1.title = @"测试1控制器";
-//    // 当test1控制器被push的时候，test1所在的tabbarcontroller的tabbar会自动隐藏
-//    // 当test1控制器被pop的时候，test1所在的tabbarcontroller的tabbar会自动显示
-////    test1.hidesBottomBarWhenPushed = YES;
-//    
-//    // self.navigationController === HWNavigationController
-//    [self.navigationController pushViewController:test1 animated:YES];
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    return 10;
+//}
+
+
 @end

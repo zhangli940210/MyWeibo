@@ -35,7 +35,11 @@
     [btn setImage:[UIImage imageNamed:highImage] forState:UIControlStateHighlighted];
     // 设置尺寸
     [btn sizeToFit];
-    return [[UIBarButtonItem alloc] initWithCustomView:btn];
+    // 解决导航条按钮 点击范围过大的问题
+    UIView *btnView = [[UIView alloc] initWithFrame:btn.bounds];
+    [btnView addSubview:btn];
+    
+    return [[UIBarButtonItem alloc] initWithCustomView:btnView];
 }
 
 /**
@@ -62,6 +66,10 @@
     [btn setTitleColor:highColor forState:UIControlStateHighlighted];
     // 设置尺寸
     [btn sizeToFit];
-    return [[UIBarButtonItem alloc] initWithCustomView:btn];
+    // 解决导航条按钮 点击范围过大的问题
+    UIView *btnView = [[UIView alloc] initWithFrame:btn.bounds];
+    [btnView addSubview:btn];
+    
+    return [[UIBarButtonItem alloc] initWithCustomView:btnView];
 }
 @end

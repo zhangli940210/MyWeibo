@@ -14,6 +14,8 @@
 #import "LZStatusCell.h"
 #import "LZStatusFrame.h"
 
+#import "LZRightDropdownMenu.h"
+
 @interface LZHomeViewController () <LZDropdownMenuDelegate>
 /**
  *  微博数组（里面放的都是LZStatusFrame模型，一个LZStatusFrame对象就代表一条微博）
@@ -329,7 +331,7 @@
 {
     /* 设置导航栏上面的内容 */
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(friendSearch) image:@"navigationbar_friendsearch" highImage:@"navigationbar_friendsearch_highlighted"];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(pop) image:@"navigationbar_pop" highImage:@"navigationbar_pop_highlighted"];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(pop:) image:@"navigationbar_pop" highImage:@"navigationbar_pop_highlighted"];
     
     /* 中间的标题按钮 */
     LZTitleButton *titleButton = [[LZTitleButton alloc] init];
@@ -360,14 +362,25 @@
     [menu showFrom:titleButton];
 }
 
+- (void)pop:(UIButton *)button
+{
+    // 1.创建右侧下拉菜单 // 160 * 62
+    LZRightDropdownMenu *menu = [LZRightDropdownMenu menu];
+//    menu.delegate = self;
+    
+    // 2.设置内容
+    LZTitleMenuViewController *vc = [[LZTitleMenuViewController alloc] init];
+    vc.view.height = 150;
+    vc.view.width = 150;
+    menu.contentController = vc;
+    
+    // 3.显示
+    [menu showFrom:button];
+}
+
 - (void)friendSearch
 {
     NSLog(@"friendSearch");
-}
-
-- (void)pop
-{
-    NSLog(@"pop");
 }
 
 #pragma mark - LZDropdownMenuDelegate
@@ -390,6 +403,8 @@
     // 让箭头向上
     titleButton.selected = YES;
 }
+
+
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
