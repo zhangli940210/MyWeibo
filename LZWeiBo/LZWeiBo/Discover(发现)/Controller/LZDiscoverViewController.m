@@ -30,7 +30,7 @@
 
 @implementation LZDiscoverViewController
 
-static NSString const * ID = @"school";
+static NSString * const ID = @"school";
 
 - (void)viewDidLoad
 {
@@ -83,7 +83,6 @@ static NSString const * ID = @"school";
 /**
  *  获得搜索信息
  */
-
 - (void)setupUserInfo
 {
     // 1.请求管理者
@@ -106,7 +105,6 @@ static NSString const * ID = @"school";
         self.schools = [LZSchoolItem objectArrayWithKeyValuesArray:responseObject];
         // 刷新数据
         [self.tableView reloadData];
-        [self.view endEditing:YES];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 //        LZLog(@"请求失败-%@", error);
@@ -140,6 +138,11 @@ static NSString const * ID = @"school";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 60;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 @end

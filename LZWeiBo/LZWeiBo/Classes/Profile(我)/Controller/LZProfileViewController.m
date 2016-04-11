@@ -9,6 +9,7 @@
 #import "LZProfileViewController.h"
 #import "LZAttentionsViewController.h"
 #import "LZFansViewController.h"
+#import "LZSettingViewController.h"
 
 @interface LZProfileViewController ()
 
@@ -38,7 +39,8 @@
 
 - (void)setting
 {
-
+    LZSettingViewController *settingVC = [[LZSettingViewController alloc] init];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 - (void)setup
