@@ -13,6 +13,7 @@
 #import "UITextView+Extension.h"
 #import "NSString+URLEncoding.h"
 #import "UIImage+Render.h"
+#import "LZFileManager.h"
 
 // 通知中心
 #define LZNotificationCenter [NSNotificationCenter defaultCenter]
@@ -38,6 +39,9 @@
 #define LZSelectEmotionKey @"LZSelectEmotionKey"
 // 删除文字的通知
 #define LZEmotionDidDeleteNotification @"LZEmotionDidDeleteNotification"
+
+#define cachePath  NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0]
+
 #endif
 
 

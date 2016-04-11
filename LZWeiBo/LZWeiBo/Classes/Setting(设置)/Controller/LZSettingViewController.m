@@ -8,6 +8,7 @@
 
 #import "LZSettingViewController.h"
 #import "LZGeneralSettingViewController.h"
+#import "MBProgressHUD+MJ.h"
 
 @interface LZSettingViewController ()
 
@@ -58,7 +59,8 @@
     LZArrowItem *item1 = [LZArrowItem settingRowItemWithImage:nil title:@"清理缓存"];
     LZArrowItem *item2 = [LZArrowItem settingRowItemWithImage:nil title:@"意见反馈"];
     LZArrowItem *item3 = [LZArrowItem settingRowItemWithImage:nil title:@"关于微博"];
-    
+    // 2.赋值,获取文件尺寸字符串
+    item1.detailTitle = [self getFileSizeStr];
     // 创建一个行数组,装的是行模型
     NSArray *rowArray = @[item1, item2, item3];
     // 创建一个组模型
@@ -73,9 +75,56 @@
     // 取出当前是第几组
     LZSettingGroupItem *groupItem  = self.groupArray[indexPath.section];
     LZSettingRowItem *rowItem = groupItem.rowArray[indexPath.row];
+    
+    if (indexPath.section == 2 && indexPath.row == 0) {
+        rowItem.detailTitle = [self getFileSizeStr];
+    }
     // 给Cell赋值模型
     cell.rowItem = rowItem;
+    
     return cell;
+}
+
+// 点击选中某一行
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 2 && indexPath.row == 0) {
+        
+        UIAlertController *alertController = [[UIAlertController alloc] init];
+        // 添加按钮
+        UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+
+            [UIView animateWithDuration:2.0 animations:^{
+                
+                [MBProgressHUD showSuccess:@"正在清理缓存..."];
+                
+            } completion:^(BOOL finished) {
+                
+                [UIView animateWithDuration:2.0 delay:2.0 options:0 animations:^{
+                    
+                     [MBProgressHUD showSuccess:@"缓存已清除"];
+                    
+                } completion:^(BOOL finished) {
+                    // 清空缓存
+                    // 获取Cache文件下所有文件
+                    // 获取文件夹下一级目录
+                    [LZFileManager removeDirectoryPath:cachePath];
+                    // 刷新表格
+                    [self.tableView reloadData];
+                }];
+            }];
+            
+            
+        }];
+        UIAlertAction *cancellAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+        
+        [alertController addAction:sureAction];
+        [alertController addAction:cancellAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+    } else { // 保持父类的做法
+        [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,6 +146,21 @@
     if([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]){
         [cell setPreservesSuperviewLayoutMargins:NO];
     }
+}
+
+// 获取文件尺寸字符串
+- (NSString *)getFileSizeStr
+{
+    // 获取文件夹尺寸
+    NSInteger totalSize = [LZFileManager getDirectorySize:cachePath];
+    
+    NSString *str = @"0M";
+    // 判断
+    if (totalSize > 1000 * 1000) { // MB
+        CGFloat totalSizeF = totalSize / 1000.0 / 1000.0;
+        str = [NSString stringWithFormat:@"%.0fM",totalSizeF];
+    }
+    return str;
 }
 
 @end
