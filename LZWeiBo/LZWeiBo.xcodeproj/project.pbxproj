@@ -122,6 +122,8 @@
 		18DDF02D1CB00AF800812EBA /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF02C1CB00AF800812EBA /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */; };
 		18E333211C8AF75D00AE5B6E /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E333201C8AF75D00AE5B6E /* Foundation+Log.m */; };
+		18EB5D931CBFD5BA00C1CE64 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB5D921CBFD5BA00C1CE64 /* QRCodeViewController.m */; };
+		18EB5D951CBFD5D100C1CE64 /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EB5D941CBFD5D100C1CE64 /* QRCodeViewController.storyboard */; };
 		18F9D5261C946CA50098A314 /* LZComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F9D5251C946CA50098A314 /* LZComposeViewController.m */; };
 		18F9D5291C9481810098A314 /* LZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F9D5281C9481810098A314 /* LZTextView.m */; };
 /* End PBXBuildFile section */
@@ -350,6 +352,9 @@
 		18E3331D1C8AD9D000AE5B6E /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		18E3331E1C8AD9D000AE5B6E /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		18E333201C8AF75D00AE5B6E /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		18EB5D911CBFD5BA00C1CE64 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		18EB5D921CBFD5BA00C1CE64 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		18EB5D941CBFD5D100C1CE64 /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
 		18F9D5241C946CA50098A314 /* LZComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZComposeViewController.h; sourceTree = "<group>"; };
 		18F9D5251C946CA50098A314 /* LZComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZComposeViewController.m; sourceTree = "<group>"; };
 		18F9D5271C9481810098A314 /* LZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTextView.h; sourceTree = "<group>"; };
@@ -637,6 +642,9 @@
 			children = (
 				1834F0841C81D14C00765525 /* LZHomeViewController.h */,
 				1834F0851C81D14C00765525 /* LZHomeViewController.m */,
+				18EB5D911CBFD5BA00C1CE64 /* QRCodeViewController.h */,
+				18EB5D921CBFD5BA00C1CE64 /* QRCodeViewController.m */,
+				18EB5D941CBFD5D100C1CE64 /* QRCodeViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1092,6 +1100,7 @@
 				18833F591CB687AA000D7C9F /* LZSchoolViewCell.xib in Resources */,
 				18D9CEA21CBB5A4C00B8DFE6 /* Contents.json in Resources */,
 				1893CF0C1C78114D005C5F66 /* Assets.xcassets in Resources */,
+				18EB5D951CBFD5D100C1CE64 /* QRCodeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1191,6 +1200,7 @@
 				18042E611C931E2000BD3AFE /* LZStatusPhotoView.m in Sources */,
 				18C6956E1CBBF88B00DA7189 /* LZFileManager.m in Sources */,
 				18D9CEAB1CBB5AD000B8DFE6 /* LZSettingViewController.m in Sources */,
+				18EB5D931CBFD5BA00C1CE64 /* QRCodeViewController.m in Sources */,
 				18042E311C92F9E100BD3AFE /* UIView+WebCacheOperation.m in Sources */,
 				185D394B1C91B76800AA0E00 /* LZStatusToolbar.m in Sources */,
 				18BA28A41C8DDA5600BCF0DD /* LZUser.m in Sources */,
@@ -1315,7 +1325,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LZWeiBo/LZWeiBo.pch;
 				INFOPLIST_FILE = LZWeiBo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.m14a.cn.LZWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1333,7 +1343,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LZWeiBo/LZWeiBo.pch;
 				INFOPLIST_FILE = LZWeiBo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.m14a.cn.LZWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

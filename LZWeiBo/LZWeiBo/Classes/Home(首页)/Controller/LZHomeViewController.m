@@ -15,6 +15,7 @@
 #import "LZStatusFrame.h"
 
 #import "LZRightDropdownMenu.h"
+#import "QRCodeViewController.h"
 
 @interface LZHomeViewController () <LZDropdownMenuDelegate>
 /**
@@ -362,8 +363,10 @@
     [menu showFrom:titleButton];
 }
 
+// 扫描二维码
 - (void)pop:(UIButton *)button
 {
+    /*
     // 1.创建右侧下拉菜单 // 160 * 62
     LZRightDropdownMenu *menu = [LZRightDropdownMenu menu];
 //    menu.delegate = self;
@@ -376,6 +379,10 @@
     
     // 3.显示
     [menu showFrom:button];
+     */
+    UIStoryboard *qrcStoryB = [UIStoryboard storyboardWithName:@"QRCodeViewController" bundle:nil];
+    UIViewController *qrcVC = qrcStoryB.instantiateInitialViewController;
+    [self presentViewController:qrcVC animated:YES completion:nil];
 }
 
 - (void)friendSearch
@@ -429,10 +436,10 @@
     // 如果tableView还没有数据，就直接返回
     if (self.statusFrames.count == 0 || self.tableView.tableFooterView.isHidden == NO) return;
     
-    CGFloat offsetY = scrollView.contentOffset.y;
+//    CGFloat offsetY = scrollView.contentOffset.y;
     // 当最后一个cell完全显示在眼前时，contentOffset的y值
     CGFloat judgeOffsetY = scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.height - self.tableView.tableFooterView.height;
-    if (offsetY >= judgeOffsetY) { // 最后一个cell完全进入视野范围内
+    if (scrollView.contentOffset.y >= judgeOffsetY) { // 最后一个cell完全进入视野范围内
         // 显示footer
         self.tableView.tableFooterView.hidden = NO;
         
