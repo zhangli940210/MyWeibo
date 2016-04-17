@@ -94,6 +94,10 @@
 		1894182E1C86872600B284BA /* LZNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894182D1C86872600B284BA /* LZNewfeatureViewController.m */; };
 		1894187F1C870C8500B284BA /* LZOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894187E1C870C8500B284BA /* LZOAuthViewController.m */; };
 		189434261C88733300BEB073 /* LZAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 189434251C88733300BEB073 /* LZAccount.m */; };
+		18AD15EC1CC35FCF004A894D /* LZSettingBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AD15EB1CC35FCF004A894D /* LZSettingBottomView.m */; };
+		18AD15EE1CC35FE4004A894D /* LZSettingBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AD15ED1CC35FE4004A894D /* LZSettingBottomView.xib */; };
+		18AD15F11CC3675F004A894D /* LZPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AD15F01CC3675F004A894D /* LZPrivacyViewController.m */; };
+		18AD15F41CC368E9004A894D /* LZNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AD15F31CC368E9004A894D /* LZNotificationViewController.m */; };
 		18BA28A31C8DDA5600BCF0DD /* LZStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28A01C8DDA5600BCF0DD /* LZStatus.m */; };
 		18BA28A41C8DDA5600BCF0DD /* LZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA28A21C8DDA5600BCF0DD /* LZUser.m */; };
 		18BED61C1C85435E000BC2A0 /* LZSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BED61B1C85435E000BC2A0 /* LZSearchBar.m */; };
@@ -299,6 +303,13 @@
 		1894187E1C870C8500B284BA /* LZOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZOAuthViewController.m; sourceTree = "<group>"; };
 		189434241C88733300BEB073 /* LZAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAccount.h; sourceTree = "<group>"; };
 		189434251C88733300BEB073 /* LZAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAccount.m; sourceTree = "<group>"; };
+		18AD15EA1CC35FCF004A894D /* LZSettingBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZSettingBottomView.h; sourceTree = "<group>"; };
+		18AD15EB1CC35FCF004A894D /* LZSettingBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZSettingBottomView.m; sourceTree = "<group>"; };
+		18AD15ED1CC35FE4004A894D /* LZSettingBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZSettingBottomView.xib; sourceTree = "<group>"; };
+		18AD15EF1CC3675F004A894D /* LZPrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZPrivacyViewController.h; sourceTree = "<group>"; };
+		18AD15F01CC3675F004A894D /* LZPrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPrivacyViewController.m; sourceTree = "<group>"; };
+		18AD15F21CC368E9004A894D /* LZNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZNotificationViewController.h; sourceTree = "<group>"; };
+		18AD15F31CC368E9004A894D /* LZNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZNotificationViewController.m; sourceTree = "<group>"; };
 		18BA289F1C8DDA5600BCF0DD /* LZStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZStatus.h; sourceTree = "<group>"; };
 		18BA28A01C8DDA5600BCF0DD /* LZStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZStatus.m; sourceTree = "<group>"; };
 		18BA28A11C8DDA5600BCF0DD /* LZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZUser.h; sourceTree = "<group>"; };
@@ -945,6 +956,10 @@
 				18D9CEAA1CBB5AD000B8DFE6 /* LZSettingViewController.m */,
 				18D9CEAC1CBB5DC000B8DFE6 /* LZGeneralSettingViewController.h */,
 				18D9CEAD1CBB5DC000B8DFE6 /* LZGeneralSettingViewController.m */,
+				18AD15EF1CC3675F004A894D /* LZPrivacyViewController.h */,
+				18AD15F01CC3675F004A894D /* LZPrivacyViewController.m */,
+				18AD15F21CC368E9004A894D /* LZNotificationViewController.h */,
+				18AD15F31CC368E9004A894D /* LZNotificationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -969,6 +984,9 @@
 			children = (
 				18D9CE9F1CBB5A4C00B8DFE6 /* LZSettingCell.h */,
 				18D9CEA01CBB5A4C00B8DFE6 /* LZSettingCell.m */,
+				18AD15EA1CC35FCF004A894D /* LZSettingBottomView.h */,
+				18AD15EB1CC35FCF004A894D /* LZSettingBottomView.m */,
+				18AD15ED1CC35FE4004A894D /* LZSettingBottomView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1092,6 +1110,7 @@
 				183C065A1C8EC7AE0060292D /* LZUserCell.xib in Resources */,
 				183C065F1C8F2E9E0060292D /* LZLoadMoreFooter.xib in Resources */,
 				18D9CE881CBAB56000B8DFE6 /* LZUserInfoView.xib in Resources */,
+				18AD15EE1CC35FE4004A894D /* LZSettingBottomView.xib in Resources */,
 				18925CCE1CAD362F000462A2 /* LZEmotionPopView.xib in Resources */,
 				18042E151C92F9E100BD3AFE /* MBProgressHUD.bundle in Resources */,
 				18D9CEA11CBB5A4C00B8DFE6 /* arrow_right@2x.png in Resources */,
@@ -1126,6 +1145,7 @@
 				18925CDB1CAD5CB9000462A2 /* LZEmotionTextView.m in Sources */,
 				18042E351C92FA3F00BD3AFE /* LZAppDelegate.m in Sources */,
 				18E3331F1C8AD9D000AE5B6E /* UIWindow+Extension.m in Sources */,
+				18AD15F41CC368E9004A894D /* LZNotificationViewController.m in Sources */,
 				18190BAF1C9D8BF2003F6CD3 /* LZEmotion.m in Sources */,
 				189434261C88733300BEB073 /* LZAccount.m in Sources */,
 				184B83121CB89C51009DAB59 /* LZRightDropdownMenu.m in Sources */,
@@ -1167,6 +1187,7 @@
 				1894187F1C870C8500B284BA /* LZOAuthViewController.m in Sources */,
 				18190BB51C9DB08A003F6CD3 /* NSString+Emoji.m in Sources */,
 				18042E1A1C92F9E100BD3AFE /* MJIvar.m in Sources */,
+				18AD15EC1CC35FCF004A894D /* LZSettingBottomView.m in Sources */,
 				18042E0F1C92F9E100BD3AFE /* AFSecurityPolicy.m in Sources */,
 				18DD5F7B1CB1FFEA0053FAF6 /* LZEmotionAttachment.m in Sources */,
 				18833F581CB687AA000D7C9F /* LZSchoolViewCell.m in Sources */,
@@ -1195,6 +1216,7 @@
 				18042E641C931F0100BD3AFE /* LZIconView.m in Sources */,
 				18042E491C92FBE400BD3AFE /* LZMessageCenterViewController.m in Sources */,
 				183C065D1C8F2E890060292D /* LZLoadMoreFooter.m in Sources */,
+				18AD15F11CC3675F004A894D /* LZPrivacyViewController.m in Sources */,
 				181FBEF01C9BD13A009AA408 /* LZEmotionListView.m in Sources */,
 				18042E2D1C92F9E100BD3AFE /* UIImage+MultiFormat.m in Sources */,
 				18042E611C931E2000BD3AFE /* LZStatusPhotoView.m in Sources */,
@@ -1325,7 +1347,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LZWeiBo/LZWeiBo.pch;
 				INFOPLIST_FILE = LZWeiBo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.m14a.cn.LZWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1343,7 +1365,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LZWeiBo/LZWeiBo.pch;
 				INFOPLIST_FILE = LZWeiBo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.m14a.cn.LZWeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

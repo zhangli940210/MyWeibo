@@ -104,10 +104,10 @@
                         <constraint firstAttribute="height" constant="1" id="g44-fh-Lc0"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="common_icon_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="59Y-De-Pe1">
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_icon_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="59Y-De-Pe1">
                     <rect key="frame" x="353" y="10" width="12" height="60"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLc-BN-ZwO">
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLc-BN-ZwO">
                     <rect key="frame" x="293" y="10" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="B9i-BL-LFM"/>
@@ -176,7 +176,7 @@
                 <outlet property="nameLabel" destination="EZZ-7p-CYx" id="fjr-xz-5Cl"/>
                 <outlet property="weiboNumLabel" destination="PoC-6G-HUc" id="UZR-p9-gWe"/>
             </connections>
-            <point key="canvasLocation" x="316.5" y="409"/>
+            <point key="canvasLocation" x="201.5" y="377"/>
         </view>
     </objects>
     <resources>

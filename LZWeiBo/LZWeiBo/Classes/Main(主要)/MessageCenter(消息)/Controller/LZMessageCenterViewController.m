@@ -13,18 +13,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
     // 创建对象
     LZUserInfoView *userInfoView = [LZUserInfoView userInfoView];
+    // 解决方案
+    userInfoView.autoresizingMask = UIViewAutoresizingNone;
+    
     userInfoView.frame = CGRectMake(0, 0, 0, 140);
     self.tableView.tableHeaderView = userInfoView;
-    
 }
+
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    
+//}
 
 - (void)composeMsg
 {

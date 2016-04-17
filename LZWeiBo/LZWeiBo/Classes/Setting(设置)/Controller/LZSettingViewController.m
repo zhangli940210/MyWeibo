@@ -9,6 +9,9 @@
 #import "LZSettingViewController.h"
 #import "LZGeneralSettingViewController.h"
 #import "MBProgressHUD+MJ.h"
+#import "LZSettingBottomView.h"
+#import "LZPrivacyViewController.h"
+#import "LZNotificationViewController.h"
 
 @interface LZSettingViewController ()
 
@@ -24,6 +27,18 @@
     [self addGroup0];
     [self addGroup1];
     [self addGroup2];
+    
+    // 设置底部控件
+    [self setupBottomView];
+}
+
+- (void)setupBottomView
+{
+    // 1.拿到底部视图
+    LZSettingBottomView *bottomView = [LZSettingBottomView settingBottomView];
+    // 2.设置高度
+    bottomView.height = 59;
+    self.tableView.tableFooterView = bottomView;
 }
 
 // 第0组
@@ -45,6 +60,8 @@
     LZArrowItem *item1 = [LZArrowItem settingRowItemWithImage:nil title:@"通知"];
     LZArrowItem *item2 = [LZArrowItem settingRowItemWithImage:nil title:@"隐私与安全"];
     LZArrowItem *item3 = [LZArrowItem settingRowItemWithImage:nil title:@"通用设置"];
+    item1.desClass = [LZNotificationViewController class];
+    item2.desClass = [LZPrivacyViewController class];
     item3.desClass = [LZGeneralSettingViewController class];
     // 创建一个行数组,装的是行模型
     NSArray *rowArray = @[item1, item2, item3];
@@ -93,26 +110,19 @@
         // 添加按钮
         UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
 
-            [UIView animateWithDuration:2.0 animations:^{
-                
-                [MBProgressHUD showSuccess:@"正在清理缓存..."];
-                
-            } completion:^(BOOL finished) {
-                
-                [UIView animateWithDuration:2.0 delay:2.0 options:0 animations:^{
-                    
-                     [MBProgressHUD showSuccess:@"缓存已清除"];
-                    
-                } completion:^(BOOL finished) {
-                    // 清空缓存
-                    // 获取Cache文件下所有文件
-                    // 获取文件夹下一级目录
-                    [LZFileManager removeDirectoryPath:cachePath];
-                    // 刷新表格
-                    [self.tableView reloadData];
-                }];
-            }];
             
+            
+            [MBProgressHUD showSuccess:@"正在清理缓存..."];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MBProgressHUD showSuccess:@"缓存已清除"];
+            });
+            
+            // 清空缓存
+            // 获取Cache文件下所有文件
+            // 获取文件夹下一级目录
+            [LZFileManager removeDirectoryPath:cachePath];
+            // 刷新表格
+            [self.tableView reloadData];
             
         }];
         UIAlertAction *cancellAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
