@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TYw-TQ-gA5">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
@@ -14,12 +15,12 @@
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="HXA-7R-CqU" kind="relationship" relationship="rootViewController" id="oOE-t9-ax4"/>
+                        <segue destination="HXA-7R-CqU" kind="relationship" relationship="rootViewController" id="B7N-7h-3YZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yuh-ZO-c6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1231" y="442"/>
+            <point key="canvasLocation" x="-1909" y="216"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="gRV-ZS-DoY">
@@ -40,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="49" id="9W4-uo-ksP"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem title="二维码" image="qrcode_tabbar_icon_qrcode" id="GtN-4b-o9q"/>
+                                    <tabBarItem tag="1" title="二维码" image="qrcode_tabbar_icon_qrcode" id="GtN-4b-o9q"/>
                                     <tabBarItem title="条形码" image="qrcode_tabbar_icon_barcode" id="qIj-m8-Frm"/>
                                 </items>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eU-2z-oUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-605" y="406"/>
+            <point key="canvasLocation" x="-1223" y="45"/>
         </scene>
     </scenes>
     <resources>

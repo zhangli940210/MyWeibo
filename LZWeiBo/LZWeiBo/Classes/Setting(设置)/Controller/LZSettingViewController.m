@@ -109,8 +109,6 @@
         UIAlertController *alertController = [[UIAlertController alloc] init];
         // 添加按钮
         UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-
-            
             
             [MBProgressHUD showSuccess:@"正在清理缓存..."];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
