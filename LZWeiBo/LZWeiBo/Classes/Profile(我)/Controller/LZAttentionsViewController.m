@@ -81,9 +81,15 @@ static NSString *ID = @"user";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     LZUserCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
     // 拿到数据
     LZUser *user = self.users[indexPath.row];
+    // 如果想要做一些比较炫的动画效果, 可以在这
+    [cell.layer removeAnimationForKey:@"cell"];
+    CAKeyframeAnimation *animation = [[CAKeyframeAnimation alloc] init];
+    animation.keyPath = @"transform.rotation.z";
+    animation.values = @[@(1), @(0), @(-1), @(0)];
+    animation.duration = 0.5;
+    [cell.layer addAnimation:animation forKey:@"cell"];
     cell.user = user;
     
     return cell;

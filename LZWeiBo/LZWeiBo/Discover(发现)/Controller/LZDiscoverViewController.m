@@ -131,13 +131,22 @@ static NSString * const ID = @"school";
     LZSchoolViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     // 2.赋值
     cell.item = self.schools[indexPath.row];
+    
+    // 如果想要做一些比较炫的动画效果, 可以在这
+    [cell.layer removeAnimationForKey:@"cell"];
+    CAKeyframeAnimation *animation = [[CAKeyframeAnimation alloc] init];
+    animation.keyPath = @"transform.rotation.z";
+    animation.values = @[@(1), @(0), @(-1), @(0)];
+    animation.duration = 0.5;
+    [cell.layer addAnimation:animation forKey:@"cell"];
+    
     // 3.返回cell
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 100;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

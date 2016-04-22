@@ -14,8 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 /** 学校类型*/
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
-/** 学校地址*/
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end
 
@@ -25,11 +23,9 @@
 {
     _item = item;
 
-    self.nameLabel.text = [NSString stringWithFormat:@"名称:%@", item.school_name];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@", item.school_name];
 
     self.typeLabel.text = [NSString stringWithFormat:@"类型:%@", item.type];
-
-    self.locationLabel.text = [NSString stringWithFormat:@"位置:%@", item.location];
 }
 
 - (void)setFrame:(CGRect)frame

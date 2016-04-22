@@ -122,7 +122,11 @@
     [self.session addOutput:self.output];
     // 4.设置输出能够解析的数据类型
     // 注意: 设置能够解析的数据类型, 一定要在输出对象添加到会员之后设置, 否则会报错
-    self.output.metadataObjectTypes = self.output.availableMetadataObjectTypes;
+//    self.output.metadataObjectTypes = self.output.availableMetadataObjectTypes;
+
+    [self.output setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
+//  [output setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
+    
     // 5.设置输出对象的代理, 只要解析成功就会通知代理
     [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
@@ -197,10 +201,21 @@
     [self clearConers];
     // 1.获取扫描到的数据
     // 注意: 要使用stringValue
-    NSString *str = [[metadataObjects lastObject] stringValue];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+//    NSString *str = [[metadataObjects lastObject] stringValue];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    
+    if (metadataObjects.count > 0) {
+        AVMetadataMachineReadableCodeObject *object = [metadataObjects lastObject];
+        NSString *str = object.stringValue;
+        NSLog(@"str = %@", str);
+        // 关闭会话
+        [self.session stopRunning];
+//        [self.layer removeFromSuperlayer];
+    }
+    /*
     // 2.获取扫描到的二维码的位置
     // 2.1转换坐标
+    
     for (id object in metadataObjects) {
         
         // 2.1.1判断当前获取到的数据, 是否是机器可识别的类型
@@ -212,6 +227,7 @@
             [self drawCorners:(AVMetadataMachineReadableCodeObject *)(codeObject)];
         }
     }
+     */
     
 }
 
