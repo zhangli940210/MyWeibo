@@ -70,10 +70,19 @@
                                     <constraint firstItem="tqL-jZ-LfA" firstAttribute="height" secondItem="cAY-Sg-rLn" secondAttribute="height" id="vSf-Th-G3r"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描之后即可显示数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Al0-zY-Hig">
+                                <rect key="frame" x="215" y="104" width="170" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cAY-Sg-rLn" firstAttribute="centerY" secondItem="9dS-Xo-zFN" secondAttribute="centerY" id="1qH-fB-aPQ"/>
+                            <constraint firstItem="Al0-zY-Hig" firstAttribute="top" secondItem="Pmn-sI-5pN" secondAttribute="bottom" constant="40" id="BJy-AD-aqt"/>
+                            <constraint firstItem="Al0-zY-Hig" firstAttribute="centerX" secondItem="9dS-Xo-zFN" secondAttribute="centerX" id="BZT-tT-Kpx"/>
                             <constraint firstItem="2u7-vi-rqv" firstAttribute="top" secondItem="2NI-pi-lwn" secondAttribute="bottom" id="Kx1-xX-OcH"/>
                             <constraint firstItem="cAY-Sg-rLn" firstAttribute="centerX" secondItem="9dS-Xo-zFN" secondAttribute="centerX" id="ZGc-ox-Aen"/>
                             <constraint firstAttribute="trailing" secondItem="2NI-pi-lwn" secondAttribute="trailing" id="kAD-PU-Kru"/>
@@ -91,6 +100,7 @@
                     <connections>
                         <outlet property="containerHeightCons" destination="n78-vX-g9B" id="7EG-UQ-MeK"/>
                         <outlet property="customTabBar" destination="2NI-pi-lwn" id="7GX-c3-GJh"/>
+                        <outlet property="resultLabel" destination="Al0-zY-Hig" id="PIT-qj-BiV"/>
                         <outlet property="scanLineCons" destination="bs7-oM-WZ3" id="n7Y-xd-oDo"/>
                         <outlet property="scanLineView" destination="tqL-jZ-LfA" id="cZK-Sr-kQ6"/>
                     </connections>

@@ -1,5 +1,3 @@
-//
-//  LZComposePhotosView.m
 
 
 #import "LZComposePhotosView.h"

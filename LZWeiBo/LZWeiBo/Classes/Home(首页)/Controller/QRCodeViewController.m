@@ -30,6 +30,8 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 /** 创建用于绘制边线的图层*/
 @property (nonatomic, strong) CALayer *drawLayer;
+/** 显示扫描二维码之后的数据结果*/
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
 @end
 
@@ -200,14 +202,24 @@
     // 0.清空图层
     [self clearConers];
     // 1.获取扫描到的数据
+    /*
+//    self.resultLabel.text = metadataObjects.last?.stringValue
+//    let str = metadataObjects.last?.stringValue
+//    self.resultLabel.sizeToFit()
+     */
+    /*
+     //    self.resultLabel.text = [[metadataObjects lastObject] stringValue];
+     //    [self.resultLabel sizeToFit];
     // 注意: 要使用stringValue
 //    NSString *str = [[metadataObjects lastObject] stringValue];
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-    
+    */
     if (metadataObjects.count > 0) {
         AVMetadataMachineReadableCodeObject *object = [metadataObjects lastObject];
         NSString *str = object.stringValue;
-        NSLog(@"str = %@", str);
+        self.resultLabel.text = str;
+        [self.resultLabel sizeToFit];
+//        LZLog(@"str = %@", str);
         // 关闭会话
         [self.session stopRunning];
 //        [self.layer removeFromSuperlayer];
@@ -228,7 +240,6 @@
         }
     }
      */
-    
 }
 
 /**

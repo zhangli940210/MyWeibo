@@ -1,10 +1,4 @@
-//
-//  LZEmotionPageView.h
-//  LZWeiBo
-//
-//  Created by apple on 16/3/20.
-//  Copyright © 2016年 m14a. All rights reserved.
-//
+
 
 //  用来表示一页的表情（里面显示1~20个表情）
 

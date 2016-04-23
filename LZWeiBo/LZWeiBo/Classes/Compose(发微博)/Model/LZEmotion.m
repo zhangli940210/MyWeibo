@@ -51,6 +51,7 @@ MJCodingImplementation
 // 默认情况下比较的是:两个对象的内存地址
 - (BOOL)isEqual:(LZEmotion *)other
 {
+    /*
     //    if (self == other) {
     //        return YES;
     //    } else {
@@ -66,6 +67,7 @@ MJCodingImplementation
     //    [str1 isEqual:str2]; // NO    比较的是内存地址
     //    [str1 isEqualToString:str2] // YES    比较的是内容
     //    比较的是内容
+     */
     return [self.chs isEqualToString:other.chs] || [self.code isEqualToString:other.code];
 }
 
