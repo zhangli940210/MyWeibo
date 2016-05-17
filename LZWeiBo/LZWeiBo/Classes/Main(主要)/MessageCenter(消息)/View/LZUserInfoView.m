@@ -51,14 +51,16 @@
         // 获取用户数据
         LZUser *user = [LZUser objectWithKeyValues:responseObject];
         // 设置头像
-        [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"avatar_default_small"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        // 头像
+        UIImage *placeholder = [UIImage lz_circleImageNamed:@"avatar_default_small"];
+        
+        [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             
             if (image == nil) {
                 return ;
             }
             // 获取圆形图片
-            UIImage *newImage = [image circleImage];
-            self.iconView.image = newImage;
+            self.iconView.image = [image circleImage];
             
         }];
         // 设置昵称

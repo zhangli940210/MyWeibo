@@ -22,11 +22,6 @@
     self.tableView.tableHeaderView = userInfoView;
 }
 
-//- (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    
-//}
-
 - (void)composeMsg
 {
     NSLog(@"composeMsg");

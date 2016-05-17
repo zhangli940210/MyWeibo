@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerHeightCons;
 // 底部视图
 @property (weak, nonatomic) IBOutlet UITabBar *customTabBar;
-
 /** 会话*/
 @property (nonatomic, strong) AVCaptureSession *session;
 /** 拿到输入设备*/
@@ -132,8 +131,13 @@
     // 5.设置输出对象的代理, 只要解析成功就会通知代理
     [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
-    [self.view.layer insertSublayer:self.previewLayer atIndex:0];
-    
+    NSArray<CALayer *> *sublayers = self.view.layer.sublayers;
+    if (sublayers == nil || ![sublayers containsObject:self.previewLayer]) {
+        
+        [self.view.layer insertSublayer:self.previewLayer atIndex:0];
+        
+    }
+
     // 6.告诉session开始扫描
     [self.session startRunning];
 }
@@ -219,15 +223,12 @@
         NSString *str = object.stringValue;
         self.resultLabel.text = str;
         [self.resultLabel sizeToFit];
-//        LZLog(@"str = %@", str);
         // 关闭会话
         [self.session stopRunning];
-//        [self.layer removeFromSuperlayer];
     }
-    /*
+    
     // 2.获取扫描到的二维码的位置
     // 2.1转换坐标
-    
     for (id object in metadataObjects) {
         
         // 2.1.1判断当前获取到的数据, 是否是机器可识别的类型
@@ -239,7 +240,7 @@
             [self drawCorners:(AVMetadataMachineReadableCodeObject *)(codeObject)];
         }
     }
-     */
+    
 }
 
 /**

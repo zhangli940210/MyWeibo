@@ -55,9 +55,9 @@
     [self setupUpRefresh];
     
     // 获得未读数
-    //    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(setupUnreadCount) userInfo:nil repeats:YES];
-    //    // 主线程也会抽时间处理一下timer（不管主线程是否正在其他事件）
-    //    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(setupUnreadCount) userInfo:nil repeats:YES];
+    // 主线程也会抽时间处理一下timer（不管主线程是否正在其他事件）
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -100,7 +100,6 @@
             [UIApplication sharedApplication].applicationIconBadgeNumber = status.intValue;
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        LZLog(@"请求失败-%@", error);
     }];
 }
 
@@ -154,12 +153,10 @@
     
     // 1.请求管理者
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
     // 2.拼接请求参数
     LZAccount *account = [LZAccountTool account];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = account.access_token;
-    
     // 取出最前面的微博（最新的微博，ID最大的微博）
     LZStatusFrame *firstStatusF = [self.statusFrames firstObject];
     if (firstStatusF) {
@@ -169,7 +166,6 @@
     
     // 3.发送请求
     [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-//        LZLog(@"%@", responseObject);
         
         // 将 "微博字典"数组 转为 "微博模型"数组
         NSArray *newStatuses = [LZStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
@@ -224,20 +220,15 @@
     [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
         // 将 "微博字典"数组 转为 "微博模型"数组
         NSArray *newStatuses = [LZStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
-        
         // 将 LZStatus数组 转为 LZStatusFrame数组
         NSArray *newFrames = [self stausFramesWithStatuses:newStatuses];
-        
         // 将更多的微博数据，添加到总数组的最后面
         [self.statusFrames addObjectsFromArray:newFrames];
-        
         // 刷新表格
         [self.tableView reloadData];
-        
         // 结束刷新(隐藏footer)
         self.tableView.tableFooterView.hidden = YES;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        LZLog(@"请求失败-%@", error);
         
         // 结束刷新
         self.tableView.tableFooterView.hidden = YES;

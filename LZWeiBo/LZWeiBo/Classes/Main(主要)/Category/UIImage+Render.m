@@ -1,9 +1,4 @@
-//
-//  UIImage+Render.m
-//  BuDeJie
-//
-//  Copyright © 2016年 小码哥. All rights reserved.
-//
+
 
 #import "UIImage+Render.h"
 
@@ -38,5 +33,9 @@
     return image;
 }
 
++ (UIImage *)lz_circleImageNamed:(NSString *)name
+{
+    return [[UIImage imageNamed:name] circleImage];
+}
 
 @end
